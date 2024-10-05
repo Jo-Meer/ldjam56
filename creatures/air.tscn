@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://drysl1numdpp5"]
+
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_4i7co"]
+[ext_resource type="Texture2D" uid="uid://b3q0xs2d8ar2" path="res://creatures/placeholder_element.png" id="2_yxg2n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
+size = Vector2(64, 64)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_4i7co")
+JUMP_VELOCITY = -600.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yxg2n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hog4m")
+one_way_collision_margin = 0.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.0403785, 0.43423, 0, 0.372549)

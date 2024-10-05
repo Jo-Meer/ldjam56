@@ -22,6 +22,9 @@ func _physics_process(delta: float) -> void:
 	if is_active == false:
 		# break and handle gravity
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if velocity.y < 0:
+			velocity.y = move_toward(velocity.y, 0, SPEED)
+
 		move_and_slide()
 		return
 
