@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://c8kptit4jpth0"]
+[gd_scene load_steps=10 format=4 uid="uid://c8kptit4jpth0"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_xtxmx"]
 [ext_resource type="Texture2D" uid="uid://ddrp6lamkcyq3" path="res://icon.svg" id="2_u0klx"]
@@ -6,10 +6,14 @@
 [ext_resource type="TileSet" uid="uid://cmgfutv0oul4w" path="res://tiles/example.tres" id="3_ioktk"]
 [ext_resource type="PackedScene" uid="uid://cmrpjxtuy1cgk" path="res://objects/Door.tscn" id="4_bvxr7"]
 [ext_resource type="PackedScene" uid="uid://dg6wlvr8uyxqe" path="res://objects/TriggerAir.tscn" id="6_5ucr2"]
+[ext_resource type="PackedScene" uid="uid://de74m1nu5kftq" path="res://objects/Darkness.tscn" id="7_7dw0g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kokif"]
 radius = 48.28
 height = 125.27
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po0xm"]
+size = Vector2(256, 192)
 
 [node name="Node2D" type="Node2D"]
 
@@ -43,3 +47,12 @@ targets = [NodePath("../Door")]
 
 [node name="TriggerAir" parent="." instance=ExtResource("6_5ucr2")]
 position = Vector2(-128, 128)
+
+[node name="Darkness" parent="." instance=ExtResource("7_7dw0g")]
+position = Vector2(104, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Darkness"]
+visible = false
+position = Vector2(128, 96)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_po0xm")
