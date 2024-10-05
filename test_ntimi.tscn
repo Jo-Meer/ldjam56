@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=4 uid="uid://c8kptit4jpth0"]
+
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_xtxmx"]
+[ext_resource type="Texture2D" uid="uid://ddrp6lamkcyq3" path="res://icon.svg" id="2_u0klx"]
+[ext_resource type="PackedScene" uid="uid://cglcykaqjpxl0" path="res://objects/TriggerFire.tscn" id="3_4lfxq"]
+[ext_resource type="TileSet" uid="uid://cmgfutv0oul4w" path="res://tiles/example.tres" id="3_ioktk"]
+[ext_resource type="PackedScene" uid="uid://cmrpjxtuy1cgk" path="res://objects/Door.tscn" id="4_bvxr7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kokif"]
+radius = 48.28
+height = 125.27
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-128, 0)
+collision_layer = 3
+script = ExtResource("1_xtxmx")
+JUMP_VELOCITY = -600.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_u0klx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_kokif")
+one_way_collision_margin = 0.0
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position_smoothing_enabled = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8/wIAAQAGAAAAAAD9/wIAAQAGAAAAAAD+/wIAAQAGAAAAAAD//wIAAQAGAAAAAAAAAAIAAQAGAAAAAAABAAIAAQAGAAAAAAACAAIAAQAGAAAAAAADAAIAAQAGAAAAAAAEAAIAAQAGAAAAAAAFAAIAAQAGAAAAAAAGAAIAAQAGAAAAAAAHAAIAAQAGAAAAAAAIAAIAAQACAAAAAAAIAAEAAQACAAAAAAAIAAAAAQABAAAAAAAJAAAAAQACAAAAAAAKAAAAAQACAAAAAAALAAAAAQADAAAAAAALAAEAAQACAAAAAAALAAIAAQACAAAAAAAMAAIAAQACAAAAAAANAAIAAQACAAAAAAAOAAIAAQACAAAAAAAPAAIAAQACAAAAAAAQAAIAAQACAAAAAAA=")
+tile_set = ExtResource("3_ioktk")
+
+[node name="Door" parent="." instance=ExtResource("4_bvxr7")]
+position = Vector2(320, 128)
+
+[node name="TriggerFire" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("3_4lfxq")]
+position = Vector2(64, 128)
+targets = [NodePath("../Door")]
