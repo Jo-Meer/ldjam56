@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=4 uid="uid://bqti0huii8fac"]
+
+[ext_resource type="PackedScene" uid="uid://cjpvetl63rgkb" path="res://scenes/base.tscn" id="1_ino6p"]
+[ext_resource type="PackedScene" uid="uid://bljut2rijnhk" path="res://creatures/avatar.tscn" id="2_qmnn4"]
+[ext_resource type="TileSet" uid="uid://cmgfutv0oul4w" path="res://tiles/example.tres" id="3_5i46q"]
+
+[node name="TestJonas" type="Node"]
+
+[node name="Base" parent="." node_paths=PackedStringArray("avatar") instance=ExtResource("1_ino6p")]
+avatar = NodePath("CharacterBody2D")
+
+[node name="CharacterBody2D" parent="Base" instance=ExtResource("2_qmnn4")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Base"]
+tile_map_data = PackedByteArray("AAD8/wIAAQAGAAAAAAD9/wIAAQAGAAAAAAD+/wIAAQAGAAAAAAD//wIAAQAGAAAAAAAAAAIAAQAGAAAAAAABAAIAAQAGAAAAAAACAAIAAQAGAAAAAAADAAIAAQAGAAAAAAAEAAIAAQAGAAAAAAAFAAIAAQAGAAAAAAAGAAIAAQAGAAAAAAAHAAIAAQAGAAAAAAAIAAIAAQACAAAAAAAIAAEAAQACAAAAAAAIAAAAAQABAAAAAAAJAAAAAQACAAAAAAAKAAAAAQACAAAAAAALAAAAAQADAAAAAAALAAEAAQACAAAAAAALAAIAAQACAAAAAAAMAAIAAQACAAAAAAANAAIAAQACAAAAAAAOAAIAAQACAAAAAAAPAAIAAQACAAAAAAAQAAIAAQACAAAAAAA=")
+tile_set = ExtResource("3_5i46q")
