@@ -15,13 +15,14 @@ func _ready() -> void:
 func activate():
 	if is_active:
 		return;
+	is_active = true;
 	for target in targets:
 		target.toggle();
 
 func deactivate():
 	if not is_active:
 		return
-		
+	is_active = false;
 	for target in targets:
 		target.toggle();
 
@@ -45,5 +46,4 @@ func _on_body_entered(body: Node2D):
 		deactivate();
 
 func _on_body_exited(body: Node2D):
-	if not body.is_in_group("element"):
-		return
+	return
