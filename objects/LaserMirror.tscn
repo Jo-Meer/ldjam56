@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://010dbqlsa3an"]
+
+[ext_resource type="Script" path="res://objects/scripts/laser_mirror.gd" id="1_nylql"]
+[ext_resource type="Texture2D" uid="uid://cj0fma22eptjj" path="res://objects/sprites/placeholder_mirror.png" id="2_3ij5t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scht1"]
+size = Vector2(64, 64)
+
+[node name="LaserMirror" type="StaticBody2D" groups=["mirror"]]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("1_nylql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_scht1")
+
+[node name="PlaceholderMirror" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("2_3ij5t")

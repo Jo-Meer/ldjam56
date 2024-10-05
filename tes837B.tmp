@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=4 uid="uid://c8kptit4jpth0"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_ea4dv"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_xtxmx"]
+[ext_resource type="Texture2D" uid="uid://ddrp6lamkcyq3" path="res://icon.svg" id="2_u0klx"]
+[ext_resource type="PackedScene" uid="uid://cglcykaqjpxl0" path="res://objects/TriggerFire.tscn" id="3_4lfxq"]
+[ext_resource type="TileSet" uid="uid://cmgfutv0oul4w" path="res://tiles/example.tres" id="3_ioktk"]
+[ext_resource type="PackedScene" uid="uid://cmrpjxtuy1cgk" path="res://objects/Door.tscn" id="4_bvxr7"]
+[ext_resource type="PackedScene" uid="uid://dg6wlvr8uyxqe" path="res://objects/TriggerAir.tscn" id="6_5ucr2"]
+[ext_resource type="PackedScene" uid="uid://de74m1nu5kftq" path="res://objects/Darkness.tscn" id="7_7dw0g"]
+[ext_resource type="PackedScene" uid="uid://c5tqajgscdup3" path="res://objects/Laser.tscn" id="8_xs458"]
+[ext_resource type="PackedScene" uid="uid://010dbqlsa3an" path="res://objects/LaserMirror.tscn" id="9_jbgx5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kokif"]
+radius = 48.28
+height = 125.27
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po0xm"]
+size = Vector2(256, 192)
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("start_creature")]
+script = ExtResource("1_ea4dv")
+start_creature = NodePath("CharacterBody2D")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-128, 0)
+collision_layer = 3
+script = ExtResource("1_xtxmx")
+JUMP_VELOCITY = -600.0
+type = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_u0klx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_kokif")
+one_way_collision_margin = 0.0
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position_smoothing_enabled = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8/wIAAQAGAAAAAAD9/wIAAQAGAAAAAAD+/wIAAQAGAAAAAAD//wIAAQAGAAAAAAAAAAIAAQAGAAAAAAABAAIAAQAGAAAAAAACAAIAAQAGAAAAAAADAAIAAQAGAAAAAAAEAAIAAQAGAAAAAAAFAAIAAQAGAAAAAAAGAAIAAQAGAAAAAAAHAAIAAQAGAAAAAAAIAAIAAQACAAAAAAAIAAEAAQACAAAAAAAIAAAAAQABAAAAAAAJAAAAAQACAAAAAAAKAAAAAQACAAAAAAALAAAAAQADAAAAAAALAAEAAQACAAAAAAALAAIAAQACAAAAAAAMAAIAAQACAAAAAAANAAIAAQACAAAAAAAOAAIAAQACAAAAAAAPAAIAAQACAAAAAAAQAAIAAQACAAAAAAD8//r/AQAMAAUAAAD9//r/AQAMAAUAAAD+//r/AQAMAAUAAAD///r/AQAMAAUAAAAAAPr/AQAMAAUAAAABAPr/AQAMAAUAAAACAPr/AQAMAAUAAAADAPr/AQAMAAUAAAAEAPr/AQAMAAUAAAAFAPr/AQAMAAUAAAAGAPr/AQAMAAUAAAAHAPr/AQAMAAUAAAAIAPr/AQAMAAUAAAAJAPr/AQAMAAUAAAAKAPr/AQAMAAUAAAALAPr/AQAMAAUAAAAMAPr/AQAMAAUAAAANAPr/AQAMAAUAAAAOAPr/AQAMAAUAAAAPAPr/AQAMAAUAAAAQAPr/AQAMAAUAAAARAPr/AQAMAAUAAAASAPr/AQAMAAUAAAD5//r/AQAMAAUAAAD6//r/AQAMAAUAAAD7//r/AQAMAAUAAAATAPr/AQAMAAUAAAAUAPr/AQAMAAUAAAAWAPr/AQAMAAUAAAAVAPr/AQAMAAUAAAAXAPr/AQAMAAUAAAAYAPr/AQAMAAUAAAAYAPv/AQAMAAUAAAAYAPz/AQAMAAUAAAAYAP3/AQAMAAUAAAAYAP7/AQAMAAUAAAAYAP//AQAMAAUAAAAYAAAAAQAMAAUAAAAYAAEAAQAMAAUAAAAYAAIAAQAMAAUAAAAYAAMAAQAMAAUAAAAYAAQAAQAMAAUAAAD5//v/AQAMAAUAAAD5//z/AQAMAAUAAAD5//3/AQAMAAUAAAD5//7/AQAMAAUAAAD5////AQAMAAUAAAD6/wAAAQAMAAUAAAD6/wEAAQAMAAUAAAD6/wIAAQAMAAUAAAD6/wMAAQAMAAUAAAD6/wQAAQAMAAUAAAD5/wUAAQAMAAUAAAD5/wQAAQAMAAUAAAD5/wMAAQAMAAUAAAD5/wIAAQAMAAUAAAD5/wEAAQAMAAUAAAD5/wAAAQAMAAUAAAD6/wUAAQAMAAUAAAD6/wYAAQAMAAUAAAD6/wcAAQAMAAUAAAD5/wYAAQAMAAUAAAD5/wcAAQAMAAUAAAD6/wgAAQAMAAUAAAD7/wcAAQAMAAUAAAD8/wcAAQAMAAUAAAD9/wcAAQAMAAUAAAD+/wcAAQAMAAUAAAD//wcAAQAMAAUAAAAAAAcAAQAMAAUAAAABAAcAAQAMAAUAAAACAAcAAQAMAAUAAAADAAcAAQAMAAUAAAAEAAcAAQAMAAUAAAAFAAcAAQAMAAUAAAAGAAcAAQAMAAUAAAAHAAcAAQAMAAUAAAAIAAcAAQAMAAUAAAAJAAcAAQAMAAUAAAAKAAcAAQAMAAUAAAALAAcAAQAMAAUAAAAMAAcAAQAMAAUAAAANAAcAAQAMAAUAAAAOAAcAAQAMAAUAAAAPAAcAAQAMAAUAAAAQAAcAAQAMAAUAAAARAAcAAQAMAAUAAAASAAcAAQAMAAUAAAATAAcAAQAMAAUAAAAUAAcAAQAMAAUAAAAVAAYAAQAMAAUAAAAWAAYAAQAMAAUAAAAXAAYAAQAMAAUAAAAYAAYAAQAMAAUAAAAYAAcAAQAMAAUAAAAYAAUAAQAMAAUAAAAXAAcAAQAMAAUAAAAWAAcAAQAMAAUAAAAVAAcAAQAMAAUAAAA=")
+tile_set = ExtResource("3_ioktk")
+
+[node name="Door" parent="." instance=ExtResource("4_bvxr7")]
+position = Vector2(320, 128)
+
+[node name="TriggerFire" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("3_4lfxq")]
+position = Vector2(64, 128)
+targets = [NodePath("../Door")]
+
+[node name="TriggerAir" parent="." instance=ExtResource("6_5ucr2")]
+position = Vector2(-128, 128)
+
+[node name="Darkness" parent="." instance=ExtResource("7_7dw0g")]
+position = Vector2(104, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Darkness"]
+visible = false
+position = Vector2(128, 96)
+shape = SubResource("RectangleShape2D_po0xm")
+
+[node name="Laser" parent="." instance=ExtResource("8_xs458")]
+position = Vector2(176, -192)
+
+[node name="LaserMirror" parent="." instance=ExtResource("9_jbgx5")]
+position = Vector2(144, 24)
+direction = 3
+
+[node name="LaserMirror2" parent="." instance=ExtResource("9_jbgx5")]
+position = Vector2(408, 24)
+
+[node name="LaserMirror3" parent="." instance=ExtResource("9_jbgx5")]
+position = Vector2(408, -202)
+direction = 3
+
+[node name="LaserMirror4" parent="." instance=ExtResource("9_jbgx5")]
+position = Vector2(696, -202)
+direction = 1

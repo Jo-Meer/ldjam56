@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://wbbodrrqmssl"]
+
+[ext_resource type="Script" path="res://objects/scripts/laser_beam.gd" id="1_ekip3"]
+
+[sub_resource type="Curve2D" id="Curve2D_id8b3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000)
+}
+point_count = 2
+
+[node name="LaserBeam" type="Node2D" groups=["laserbeam"]]
+script = ExtResource("1_ekip3")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_id8b3")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+visible = false
+target_position = Vector2(0, 1000)
+collision_mask = 259
+
+[node name="Points" type="Node2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
+
+[node name="CreateTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true

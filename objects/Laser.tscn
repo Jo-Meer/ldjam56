@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5tqajgscdup3"]
+
+[ext_resource type="Script" path="res://objects/scripts/laser.gd" id="1_u2vs3"]
+[ext_resource type="PackedScene" uid="uid://wbbodrrqmssl" path="res://objects/LaserBeam.tscn" id="2_4gw6j"]
+
+[node name="Laser" type="Node2D"]
+script = ExtResource("1_u2vs3")
+
+[node name="LaserBeam" parent="." instance=ExtResource("2_4gw6j")]
