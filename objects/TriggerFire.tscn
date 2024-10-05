@@ -1,9 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://cglcykaqjpxl0"]
+[gd_scene load_steps=7 format=3 uid="uid://cglcykaqjpxl0"]
 
-[ext_resource type="Script" path="res://objects/trigger_fire.gd" id="1_646vv"]
+[ext_resource type="Script" path="res://objects/scripts/trigger_fire.gd" id="1_646vv"]
+[ext_resource type="Texture2D" uid="uid://cm2iq58qyj4r3" path="res://objects/sprites/placeholder_trigger.png" id="2_32qn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlob8"]
 size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuhu7"]
+atlas = ExtResource("2_32qn2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s1j8"]
+atlas = ExtResource("2_32qn2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_812n0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuhu7")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s1j8")
+}],
+"loop": true,
+"name": &"inactive",
+"speed": 5.0
+}]
 
 [node name="TriggerFire" type="Area2D"]
 collision_layer = 16
@@ -13,3 +41,8 @@ script = ExtResource("1_646vv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(32, -32)
 shape = SubResource("RectangleShape2D_rlob8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, -32)
+sprite_frames = SubResource("SpriteFrames_812n0")
+animation = &"active"

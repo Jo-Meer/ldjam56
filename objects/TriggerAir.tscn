@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dg6wlvr8uyxqe"]
+
+[ext_resource type="Script" path="res://objects/scripts/trigger_air.gd" id="1_2kmp8"]
+[ext_resource type="Texture2D" uid="uid://cm2iq58qyj4r3" path="res://objects/sprites/placeholder_trigger.png" id="2_wgsyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlob8"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4vvk"]
+atlas = ExtResource("2_wgsyh")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqo5c"]
+atlas = ExtResource("2_wgsyh")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gy02t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4vvk")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqo5c")
+}],
+"loop": true,
+"name": &"inactive",
+"speed": 5.0
+}]
+
+[node name="TriggerAir" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_2kmp8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, -32)
+shape = SubResource("RectangleShape2D_rlob8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, -32)
+sprite_frames = SubResource("SpriteFrames_gy02t")
+animation = &"active"

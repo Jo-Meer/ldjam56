@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://c8kptit4jpth0"]
+[gd_scene load_steps=8 format=4 uid="uid://c8kptit4jpth0"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_xtxmx"]
 [ext_resource type="Texture2D" uid="uid://ddrp6lamkcyq3" path="res://icon.svg" id="2_u0klx"]
 [ext_resource type="PackedScene" uid="uid://cglcykaqjpxl0" path="res://objects/TriggerFire.tscn" id="3_4lfxq"]
 [ext_resource type="TileSet" uid="uid://cmgfutv0oul4w" path="res://tiles/example.tres" id="3_ioktk"]
 [ext_resource type="PackedScene" uid="uid://cmrpjxtuy1cgk" path="res://objects/Door.tscn" id="4_bvxr7"]
+[ext_resource type="PackedScene" uid="uid://dg6wlvr8uyxqe" path="res://objects/TriggerAir.tscn" id="6_5ucr2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kokif"]
 radius = 48.28
@@ -17,6 +18,7 @@ position = Vector2(-128, 0)
 collision_layer = 3
 script = ExtResource("1_xtxmx")
 JUMP_VELOCITY = -600.0
+type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("2_u0klx")
@@ -38,3 +40,6 @@ position = Vector2(320, 128)
 [node name="TriggerFire" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("3_4lfxq")]
 position = Vector2(64, 128)
 targets = [NodePath("../Door")]
+
+[node name="TriggerAir" parent="." instance=ExtResource("6_5ucr2")]
+position = Vector2(-128, 128)
