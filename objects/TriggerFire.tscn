@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cglcykaqjpxl0"]
+
+[ext_resource type="Script" path="res://objects/trigger_fire.gd" id="1_646vv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlob8"]
+size = Vector2(64, 64)
+
+[node name="TriggerFire" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_646vv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, -32)
+shape = SubResource("RectangleShape2D_rlob8")
