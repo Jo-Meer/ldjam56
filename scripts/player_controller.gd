@@ -4,8 +4,7 @@ extends CharacterBody2D
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
 
-enum Type {WATER, FIRE, AIR, EARTH, MUD, LIGHT, METAL, STEAM, ICE, SAND, AVATAR}
-@export var type: Type = Type.WATER
+@export var type: Globals.Type = Globals.Type.AVATAR
 
 
 func _physics_process(delta: float) -> void:
