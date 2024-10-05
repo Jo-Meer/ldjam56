@@ -10,6 +10,7 @@ size = Vector2(64, 64)
 collision_layer = 2
 script = ExtResource("1_35mcn")
 JUMP_VELOCITY = -600.0
+type = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_umt74")

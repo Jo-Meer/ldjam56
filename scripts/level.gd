@@ -1,116 +1,142 @@
 extends Node2D
 
-@export var avatar: Player
+@export var start_creature: Player
 @export var merge_distance: int = 50
 
-var fire: Player
-var water: Player
-var air: Player
-var earth: Player
-
-var mud: Player
-var light: Player
-var metal: Player
-var steam: Player
-var ice: Player
-var sand: Player
-
-var active_creature: Player
 
 
+var instances: Array[Player] = []
+
+var active: int = 0
+
+func active_creature() -> Player:
+	return instances[active]
 
 func _ready():
-	active_creature = avatar
-	# fire = instantiate(preload("res://creatures/avatar.tscn"))
-	# water = instantiate(preload("res://creatures/avatar.tscn"))
-	# air = instantiate(preload("res://creatures/avatar.tscn"))
-	# earth = instantiate(preload("res://creatures/avatar.tscn"))
-	#
-	# mud = instantiate(preload("res://creatures/avatar.tscn"))
-	# light = instantiate(preload("res://creatures/avatar.tscn"))
-	# metal = instantiate(preload("res://creatures/avatar.tscn"))
-	# steam = instantiate(preload("res://creatures/avatar.tscn"))
-	# ice = instantiate(preload("res://creatures/avatar.tscn"))
-	# sand = instantiate(preload("res://creatures/avatar.tscn"))
+	instances.append(start_creature)
 
 
 	pass
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("split"):
-		if active_creature == avatar:
-			fire = instantiate(preload("res://creatures/fire.tscn"), avatar.position)
-			water = instantiate(preload("res://creatures/water.tscn"), avatar.position)
-			air = instantiate(preload("res://creatures/air.tscn"), avatar.position)
-			earth = instantiate(preload("res://creatures/earth.tscn"), avatar.position)
+		if active_creature().type == Globals.Type.AVATAR:
+			var avatar = active_creature()
+			var target_pos = active_creature().position
+
+			instances.append(instantiate(preload("res://creatures/fire.tscn"), target_pos))
+			instances.append(instantiate(preload("res://creatures/water.tscn"), target_pos))
+			instances.append(instantiate(preload("res://creatures/air.tscn"), target_pos))
+			instances.append(instantiate(preload("res://creatures/earth.tscn"), target_pos))
 		
 			avatar.queue_free()
-			move_control_to(fire)
+			instances.erase(avatar)
+			active = 0
+			active_creature().activate()
+		elif active_creature().type == Globals.Type.MUD:
+			instantiate_with_split(active_creature(), preload("res://creatures/water.tscn"), preload("res://creatures/earth.tscn"))
+		elif active_creature().type == Globals.Type.LIGHT:
+			instantiate_with_split(active_creature(), preload("res://creatures/fire.tscn"), preload("res://creatures/air.tscn"))
+		elif active_creature().type == Globals.Type.METAL:
+			instantiate_with_split(active_creature(), preload("res://creatures/fire.tscn"), preload("res://creatures/earth.tscn"))
+		elif active_creature().type == Globals.Type.STEAM:
+			instantiate_with_split(active_creature(), preload("res://creatures/fire.tscn"), preload("res://creatures/water.tscn"))
+		elif active_creature().type == Globals.Type.ICE:
+			instantiate_with_split(active_creature(), preload("res://creatures/water.tscn"), preload("res://creatures/air.tscn"))
+		elif active_creature().type == Globals.Type.SAND:
+			instantiate_with_split(active_creature(), preload("res://creatures/air.tscn"), preload("res://creatures/earth.tscn"))
+
 	
 	elif Input.is_action_just_pressed("merge"):
-		if active_creature == avatar:
+		if active_creature().type == Globals.Type.AVATAR:
 			pass
 
-		elif active_creature == fire:
-			var partner = closest(fire, [water, air, earth])
+		elif active_creature().type == Globals.Type.FIRE:
+			var fire = active_creature()
+			var other = instances.duplicate()
+			other.erase(fire)
+			var partner = closest(fire, other)
 			if in_merge_range(fire, partner):
-				if partner == water:
-					steam = instantiate_with_merge(fire, water, preload("res://creatures/steam.tscn"))
-				elif partner == air:
-					light = instantiate_with_merge(fire, air, preload("res://creatures/light.tscn"))
-				elif partner == earth:
-					metal = instantiate_with_merge(fire, earth, preload("res://creatures/metal.tscn"))
+				if partner.type == Globals.Type.WATER:
+					instantiate_with_merge(fire, partner, preload("res://creatures/steam.tscn"))
+				elif partner.type == Globals.Type.AIR:
+					instantiate_with_merge(fire, partner, preload("res://creatures/light.tscn"))
+				elif partner.type == Globals.Type.EARTH:
+					instantiate_with_merge(fire, partner, preload("res://creatures/metal.tscn"))
 
-		elif active_creature == water:
-			var partner = closest(water, [fire, air, earth])
+		elif active_creature().type == Globals.Type.WATER:
+			var water = active_creature()
+			var other = instances.duplicate()
+			other.erase(water)
+			var partner = closest(water, other)
 			if in_merge_range(water, partner):
-				if partner == fire:
-					steam = instantiate_with_merge(water, fire, preload("res://creatures/steam.tscn"))
-				elif partner == air:
-					ice = instantiate_with_merge(water, air, preload("res://creatures/ice.tscn"))
-				elif partner == earth:
-					mud = instantiate_with_merge(water, earth, preload("res://creatures/mud.tscn"))
+				if partner.type == Globals.Type.FIRE:
+					instantiate_with_merge(water, partner, preload("res://creatures/steam.tscn"))
+				elif partner.type == Globals.Type.AIR:
+					instantiate_with_merge(water, partner, preload("res://creatures/ice.tscn"))
+				elif partner.type == Globals.Type.EARTH:
+					instantiate_with_merge(water, partner, preload("res://creatures/mud.tscn"))
 
-		elif active_creature == air:
-			var partner = closest(air, [fire, water, earth])
+		elif active_creature().type == Globals.Type.AIR:
+			var air = active_creature()
+			var other = instances.duplicate()
+			other.erase(air)
+			var partner = closest(air, other)
 			if in_merge_range(air, partner):
-				if partner == fire:
-					light = instantiate_with_merge(air, fire, preload("res://creatures/light.tscn"))
-				elif partner == water:
-					ice = instantiate_with_merge(air, water, preload("res://creatures/ice.tscn"))
-				elif partner == earth:
-					sand = instantiate_with_merge(air, earth, preload("res://creatures/sand.tscn"))
+				if partner.type == Globals.Type.FIRE:
+					instantiate_with_merge(air, partner, preload("res://creatures/light.tscn"))
+				if partner.type == Globals.Type.WATER:
+					instantiate_with_merge(air, partner, preload("res://creatures/ice.tscn"))
+				elif partner.type == Globals.Type.EARTH:
+					instantiate_with_merge(air, partner, preload("res://creatures/sand.tscn"))
 
-		elif active_creature == earth:
-			var partner = closest(earth, [fire, water, air])
+		elif active_creature().type == Globals.Type.EARTH:
+			var earth = active_creature()
+			var other = instances.duplicate()
+			other.erase(earth)
+			var partner = closest(earth, other)
 			if in_merge_range(earth, partner):
-				if partner == fire:
-					metal = instantiate_with_merge(earth, fire, preload("res://creatures/metal.tscn"))
-				elif partner == water:
-					mud = instantiate_with_merge(earth, water, preload("res://creatures/mud.tscn"))
-				elif partner == air:
-					sand = instantiate_with_merge(air, earth, preload("res://creatures/sand.tscn"))
+				if partner.type == Globals.Type.FIRE:
+					instantiate_with_merge(earth, partner, preload("res://creatures/metal.tscn"))
+				if partner.type == Globals.Type.WATER:
+					instantiate_with_merge(earth, partner, preload("res://creatures/mud.tscn"))
+				elif partner.type == Globals.Type.AIR:
+					instantiate_with_merge(earth, partner, preload("res://creatures/sand.tscn"))
 
 		else:
-			var other = [mud, metal, sand, ice, light, steam]
-			other.erase(active_creature)
-			var partner = closest(active_creature, other)
-			if in_merge_range(earth, partner):
-				avatar = instantiate_with_merge(active_creature, partner, preload("res://creatures/avatar.tscn"))
+			var current = active_creature()
+			var other = instances.duplicate()
+			other.erase(current)
+			if other.size() == 1:
+				var partner = closest(current, other)
+				if in_merge_range(current, partner):
+					instantiate_with_merge(current, partner, preload("res://creatures/avatar.tscn"))
 
 
 	elif Input.is_action_just_pressed("next_creature"):
-		move_control_to(get_next(active_creature))
+		switch_to(get_next())
 	elif Input.is_action_just_pressed("prev_creature"):
-		move_control_to(get_prev(active_creature))
+		switch_to(get_prev())
 			
-func instantiate_with_merge(active: Player, partner: Player, merged: PackedScene) -> Player:
-	active.queue_free()
+func instantiate_with_merge(current: Player, partner: Player, merged: PackedScene):
+	current.queue_free()
 	partner.queue_free()
-	var instance = instantiate(merged, active.position)
+	instances.erase(current)
+	instances.erase(partner)
+	var instance = instantiate(merged, current.position)
 	instance.activate()
-	active_creature = instance
-	return instance
+	instances.append(instance)
+	active = instances.size() - 1
+
+func instantiate_with_split(current: Player, first: PackedScene, second: PackedScene):
+	current.queue_free()
+	instances.erase(current)
+	var first_inst = instantiate(first, current.position)
+	first_inst.activate()
+	instances.append(first_inst)
+	active = instances.size() - 1
+	var second_inst = instantiate(second, current.position)
+	instances.append(second_inst)
 
 
 func closest(target: Player, candidates: Array[Player]) -> Player:
@@ -135,32 +161,25 @@ func in_merge_range(a: Player, b: Player) -> bool:
 
 	return a.position.distance_to(b.position) <= merge_distance
 
-func get_next(base: Player) -> Player:
-	var all: Array[Player] = [fire, water, air, earth, mud, light, metal, steam, ice, sand]
+func get_next() -> int:
+	if instances.size() == 1:
+		return 0
 
-	var active_index = all.find(base)
+	for i in range(0, instances.size()):
+		return (i + active + 1) % instances.size()
 
-	for i in range(active_index, active_index + all.size()):
-		var current = (i + 1) % all.size()
+	return 0
 
-		if all[current]:
-			return all[current]
 
-	return active_creature
+func get_prev() -> int:
+	if instances.size() == 1:
+		return 0
 
-func get_prev(base: Player) -> Player:
-	var all: Array[Player] = [fire, water, air, earth, mud, light, metal, steam, ice, sand]
-	all.reverse()
+	for i in range(0, instances.size()):
+		return (active - i - 1) % instances.size()
 
-	var active_index = all.find(base)
+	return 0
 
-	for i in range(active_index, active_index + all.size()):
-		var current = (i + 1) % all.size()
-
-		if all[current]:
-			return all[current]
-
-	return active_creature
 
 func instantiate(creature: PackedScene, target_pos: Vector2) -> Player:
 	var instance = creature.instantiate()
@@ -170,9 +189,10 @@ func instantiate(creature: PackedScene, target_pos: Vector2) -> Player:
 	return instance
 
 
-func move_control_to(player: Player):
-	if player == active_creature:
+func switch_to(creature: int):
+	if creature == active:
 		return
-	active_creature.deactivate()
-	player.activate()
-	active_creature = player
+
+	active_creature().deactivate()
+	instances[creature].activate()
+	active = creature

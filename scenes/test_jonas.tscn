@@ -6,8 +6,8 @@
 
 [node name="TestJonas" type="Node"]
 
-[node name="Base" parent="." node_paths=PackedStringArray("avatar") instance=ExtResource("1_ino6p")]
-avatar = NodePath("CharacterBody2D")
+[node name="Base" parent="." node_paths=PackedStringArray("start_creature") instance=ExtResource("1_ino6p")]
+start_creature = NodePath("CharacterBody2D")
 
 [node name="CharacterBody2D" parent="Base" instance=ExtResource("2_qmnn4")]
 
