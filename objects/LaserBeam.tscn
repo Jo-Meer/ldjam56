@@ -8,7 +8,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqr8j"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t6w5"]
 
 [node name="LaserBeam" type="Node2D" groups=["laserbeam"]]
 script = ExtResource("1_ekip3")
@@ -24,13 +24,13 @@ collision_layer = 256
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BeamArea"]
-shape = SubResource("RectangleShape2D_lqr8j")
+shape = SubResource("RectangleShape2D_5t6w5")
 debug_color = Color(0.653333, 0, 0.7, 0.419608)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 visible = false
 target_position = Vector2(0, 8000)
-collision_mask = 257
+collision_mask = 353
 
 [node name="Points" type="Node2D" parent="."]
 

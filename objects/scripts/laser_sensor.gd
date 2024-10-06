@@ -4,6 +4,7 @@ signal activated
 signal deactivated
 
 @export var is_active: bool = false;
+@export var targets:Array[Node] = [];
 
 func _process(_delta: float) -> void:
 	var overlapping_areas = get_overlapping_areas();
@@ -20,6 +21,8 @@ func activate():
 	var parent = get_parent();
 	if parent.is_in_group("activatable"):
 		parent.toggle();
+	for target in targets:
+		target.toggle();
 
 func deactivate():
 	if is_active == false:
@@ -29,6 +32,8 @@ func deactivate():
 	var parent = get_parent();
 	if parent.is_in_group("activatable"):
 		parent.toggle();
+	for target in targets:
+		target.toggle();
 
 func toggle():
 	if is_active:

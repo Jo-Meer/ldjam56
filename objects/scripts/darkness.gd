@@ -11,6 +11,9 @@ func _ready() -> void:
 	
 	color_rect.size.x = coll_shape.shape.get_rect().size.x;
 	color_rect.size.y = coll_shape.shape.get_rect().size.y;
+	
+	if not Engine.is_editor_hint():
+		color_rect.color = Color.BLACK;
 
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
