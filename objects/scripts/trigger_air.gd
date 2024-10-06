@@ -32,17 +32,11 @@ func activate():
 	if is_active:
 		return;
 	is_active = true;
-	for target in targets:
-		target.toggle();
 
 func deactivate():
 	if not is_active:
 		return
-	
 	is_active = false;
-	for target in targets:
-		target.toggle();
-
 
 func toggle():
 	if is_active:
@@ -50,6 +44,20 @@ func toggle():
 	else:
 		activate();
 
+func trigger_activate():
+	if is_active:
+		return
+	activate();
+	for target in targets:
+		target.toggle();
+
+func trigger_deactivate():
+	if is_active == false:
+		return
+	deactivate();
+	for target in targets:
+		target.toggle();
+	
 
 func _on_body_entered(body: Node2D):
 	# TODO:
@@ -57,10 +65,10 @@ func _on_body_entered(body: Node2D):
 		#return;
 	
 	if body.type == Globals.Type.AIR:
-		activate();
+		trigger_activate();
 	
 	if body.type == Globals.Type.EARTH:
-		deactivate();
+		trigger_deactivate();
 
 func _on_body_exited(_body: Node2D):
 	return
