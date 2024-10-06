@@ -5,8 +5,15 @@ extends StaticBody2D
 signal activated
 signal deactivated
 
-@export var is_active:bool = false;
 @onready var coll_shape: CollisionShape2D = $CollisionShape2D;
+@export var is_active:bool = false:
+	set(act):
+		is_active = act
+		if coll_shape:
+			if act:
+				coll_shape.set_deferred("disabled", true);
+			else:
+				coll_shape.set_deferred("disabled", false);
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -33,7 +40,6 @@ func activate():
 	if is_active:
 		return
 	is_active = true;
-	coll_shape.set_deferred("disabled", true);
 	print("open door")
 	activated.emit()
 
@@ -42,7 +48,6 @@ func deactivate():
 	if not is_active:
 		return
 	is_active = false;
-	coll_shape.set_deferred("disabled", false);
 	print("deactivate door")
 	deactivated.emit()
 
