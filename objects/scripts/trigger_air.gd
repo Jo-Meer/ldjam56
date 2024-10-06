@@ -1,3 +1,4 @@
+@tool
 extends Area2D
 
 # NEEDS A CollisionShape2D child
@@ -6,7 +7,15 @@ extends Area2D
 
 @export var targets:Array[Node] = [];
 
-@export var is_active:bool = false;
+@export var is_active:bool = false:
+	set(new_is_active):
+		is_active = new_is_active
+		if is_active:
+			animated_sprite.animation = "active";
+			animated_sprite.play("active");
+		else:
+			animated_sprite.animation = "inactive";
+			animated_sprite.play("inactive");
 
 @onready var animated_sprite = $AnimatedSprite2D;
 
@@ -23,7 +32,6 @@ func activate():
 	if is_active:
 		return;
 	is_active = true;
-	animated_sprite.animation = "active";
 	for target in targets:
 		target.toggle();
 
@@ -32,7 +40,6 @@ func deactivate():
 		return
 	
 	is_active = false;
-	animated_sprite.animation = "inactive";
 	for target in targets:
 		target.toggle();
 

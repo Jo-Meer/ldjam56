@@ -21,6 +21,8 @@ func _ready() -> void:
 			# and persist changes made by the tool script to the saved scene file.
 			coll_shape.owner = get_tree().edited_scene_root
 	else:
+		# copy collision shape to area for detection
+		
 		if is_active:
 			coll_shape.set_deferred("disabled", true);
 		else:
@@ -40,7 +42,6 @@ func deactivate():
 	is_active = false;
 	coll_shape.set_deferred("disabled", false);
 	deactivated.emit()
-
 
 func toggle():
 	if is_active:

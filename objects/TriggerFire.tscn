@@ -1,24 +1,24 @@
 [gd_scene load_steps=7 format=3 uid="uid://cglcykaqjpxl0"]
 
 [ext_resource type="Script" path="res://objects/scripts/trigger_fire.gd" id="1_646vv"]
-[ext_resource type="Texture2D" uid="uid://cm2iq58qyj4r3" path="res://objects/sprites/placeholder_trigger.png" id="2_32qn2"]
+[ext_resource type="Texture2D" uid="uid://bprgyutwn7tpu" path="res://objects/sprites/placeholder_firetrigger.png" id="2_xvr4p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlob8"]
 size = Vector2(64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uuhu7"]
-atlas = ExtResource("2_32qn2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f8nf"]
+atlas = ExtResource("2_xvr4p")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6s1j8"]
-atlas = ExtResource("2_32qn2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjtpm"]
+atlas = ExtResource("2_xvr4p")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_812n0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uuhu7")
+"texture": SubResource("AtlasTexture_7f8nf")
 }],
 "loop": true,
 "name": &"active",
@@ -26,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6s1j8")
+"texture": SubResource("AtlasTexture_sjtpm")
 }],
 "loop": true,
 "name": &"inactive",
