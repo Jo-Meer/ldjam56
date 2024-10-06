@@ -1,6 +1,6 @@
 extends "res://objects/scripts/laser_mirror.gd"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var parent = get_parent()
 	if parent != null:
 		if parent.velocity.x < 0:

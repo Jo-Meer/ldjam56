@@ -11,11 +11,13 @@ extends Area2D
 	set(new_is_active):
 		is_active = new_is_active
 		if is_active:
-			animated_sprite.animation = "active";
-			animated_sprite.play("active");
+			if animated_sprite:
+				animated_sprite.animation = "active";
+				animated_sprite.play("active");
 		else:
-			animated_sprite.animation = "inactive";
-			animated_sprite.play("inactive");
+			if animated_sprite:
+				animated_sprite.animation = "inactive";
+				animated_sprite.play("inactive");
 
 @onready var animated_sprite = $AnimatedSprite2D;
 

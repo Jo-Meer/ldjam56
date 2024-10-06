@@ -10,19 +10,18 @@ signal deactivated
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
-		if coll_shape == null:
-			coll_shape = CollisionShape2D.new();
-			coll_shape.shape = RectangleShape2D.new();
-			coll_shape.shape.size = Vector2(64, 64);
-			coll_shape.name = "CollisionShape2D";
-			coll_shape.position = Vector2(32, 32);
-			add_child(coll_shape);
-			# The line below is required to make the node visible in the Scene tree dock
-			# and persist changes made by the tool script to the saved scene file.
-			coll_shape.owner = get_tree().edited_scene_root
+		if is_inside_tree():
+			if coll_shape == null:
+				coll_shape = CollisionShape2D.new();
+				coll_shape.shape = RectangleShape2D.new();
+				coll_shape.shape.size = Vector2(64, 64);
+				coll_shape.name = "CollisionShape2D";
+				coll_shape.position = Vector2(32, 32);
+				add_child(coll_shape);
+				# The line below is required to make the node visible in the Scene tree dock
+				# and persist changes made by the tool script to the saved scene file.
+				coll_shape.owner = get_tree().edited_scene_root
 	else:
-		# copy collision shape to area for detection
-		
 		if is_active:
 			coll_shape.set_deferred("disabled", true);
 		else:
@@ -30,17 +29,21 @@ func _ready() -> void:
 
 
 func activate():
+	# open door
 	if is_active:
 		return
 	is_active = true;
 	coll_shape.set_deferred("disabled", true);
+	print("open door")
 	activated.emit()
 
 func deactivate():
+	# close door
 	if not is_active:
 		return
 	is_active = false;
 	coll_shape.set_deferred("disabled", false);
+	print("deactivate door")
 	deactivated.emit()
 
 func toggle():

@@ -3,5 +3,6 @@
 [ext_resource type="Script" path="res://objects/scripts/door.gd" id="1_ivrwk"]
 
 [node name="Door" type="StaticBody2D" groups=["activatable"]]
-collision_mask = 3
+collision_layer = 64
+collision_mask = 2
 script = ExtResource("1_ivrwk")
