@@ -60,7 +60,7 @@ func _physics_process(_delta: float) -> void:
 
 	elif Input.is_action_just_released("merge") and merge_timer and merge_timer.time_left > 0:
 		merge_timer = null
-		if active_creature().type == Globals.Type.AVATAR:
+		if active_creature().type == Globals.Type.AVATAR or instances.size() == 1:
 			pass
 
 		elif active_creature().type == Globals.Type.FIRE:

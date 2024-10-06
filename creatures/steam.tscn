@@ -10,6 +10,7 @@ size = Vector2(54, 54)
 collision_layer = 2
 collision_mask = 65
 script = ExtResource("1_4xpr4")
+max_fall_speed = 300.0
 fall_gravity_factor = 0.5
 type = 7
 

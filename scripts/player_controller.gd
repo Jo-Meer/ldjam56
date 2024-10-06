@@ -4,10 +4,14 @@ extends CharacterBody2D
 
 
 @export var SPEED = 300.0
+@export var horizontal_decel = 4000
+@export var horizontal_accel = 2000
 @export var JUMP_VELOCITY = -800.0
+@export var max_fall_speed = 800.0
 @export var jump_break_factor = 0.5
 @export var jump_gravity_factor = 2.0
 @export var fall_gravity_factor = 4.0
+@export var coyote_time = 0.1
 
 @export var type: Globals.Type = Globals.Type.AVATAR
 
@@ -20,9 +24,11 @@ signal activated
 
 var is_active = true
 
-enum State {GROUNDED, JUMPING, FALLING, MUD_STICKING, MUD_RELEASE}
+enum State {GROUNDED, JUMPING, FALLING, COYOTE_TIME_FALLING, MUD_STICKING, MUD_RELEASE}
 
 var state: State = State.GROUNDED
+
+var coyote_timer: SceneTreeTimer
 
 func _ready() -> void:
 	if type == Globals.Type.STEAM and is_on_ceiling():
@@ -34,7 +40,7 @@ func _ready() -> void:
 	
 	if mud_collider:
 		mud_collider.disabled = true
-
+	
 
 func _physics_process(delta: float) -> void:
 	if state == State.MUD_STICKING:
@@ -46,7 +52,7 @@ func _physics_process(delta: float) -> void:
 		handle_gravity(delta, fall_gravity_factor)
 
 		# break
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = calc_horizontal_velocity(velocity.x, 0, delta)
 		if velocity.y < 0:
 			velocity.y = move_toward(velocity.y, 0, SPEED)
 
@@ -58,36 +64,51 @@ func _physics_process(delta: float) -> void:
 	elif is_on_floor():
 		state = State.GROUNDED
 	elif state == State.GROUNDED:
-		state = State.FALLING
+		state = State.COYOTE_TIME_FALLING
+		coyote_timer = get_tree().create_timer(coyote_time)
 
 	if state == State.GROUNDED:
 		handle_jump()
-		handle_horizontal_movement()
+		handle_horizontal_movement(delta)
 
 		move_and_slide()
 	
 	elif state == State.JUMPING:
 		handle_gravity(delta, jump_gravity_factor)
-		handle_horizontal_movement()
+		handle_horizontal_movement(delta)
 		handle_sticking_as_mud()
 		if Input.is_action_just_released("jump"):
 			velocity.y *= jump_break_factor
 
 		move_and_slide()
 
-	elif state == State.FALLING:
-		handle_gravity(delta, fall_gravity_factor)
-		handle_horizontal_movement()
+	elif state == State.FALLING or state == State.COYOTE_TIME_FALLING:
+		if state == State.COYOTE_TIME_FALLING and coyote_timer and coyote_timer.time_left > 0:
+			if Input.is_action_just_pressed("jump") and not type == Globals.Type.STEAM:
+				velocity.y = JUMP_VELOCITY
+				state = State.JUMPING
+			else:
+				handle_gravity(delta, fall_gravity_factor)
+		else:
+			handle_gravity(delta, fall_gravity_factor)
+
+		handle_horizontal_movement(delta)
 		handle_sticking_as_mud()
 
 		move_and_slide()
+
 	elif state == State.MUD_RELEASE:
 		# Add the gravity.
 		if not is_on_floor() and not type == Globals.Type.STEAM:
 			velocity += get_gravity() * delta
+			if velocity.y > 0:
+				velocity.y = minf(velocity.y, max_fall_speed)
 		elif not is_on_ceiling() and type == Globals.Type.STEAM:
 			velocity += Vector2(0, steam_gravity) * delta
-		handle_horizontal_movement()
+			if velocity.y < 0:
+				velocity.y = maxf(velocity.y, -max_fall_speed)
+
+		handle_horizontal_movement(delta)
 		
 		move_and_slide()
 
@@ -98,11 +119,14 @@ func handle_gravity(delta: float, modifier: float):
 	if not is_on_floor() and not type == Globals.Type.STEAM:
 		velocity += get_gravity() * delta * modifier
 		if velocity.y > 0:
-			state = State.FALLING
+			if state != State.COYOTE_TIME_FALLING:
+				state = State.FALLING
+			velocity.y = minf(velocity.y, max_fall_speed)
 	elif not is_on_ceiling() and type == Globals.Type.STEAM:
 		velocity += Vector2(0, steam_gravity) * delta * modifier
 		if velocity.y < 0:
 			state = State.FALLING
+			velocity.y = maxf(velocity.y, -max_fall_speed)
 
 func handle_jump():
 	# Handle jump.
@@ -110,25 +134,20 @@ func handle_jump():
 		velocity.y = JUMP_VELOCITY
 		state = State.JUMPING
 
-func handle_horizontal_movement():
+func handle_horizontal_movement(delta: float):
 
 	# Get the input direction and handle the movement/deceleration.
-	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	var input_x = Input.get_axis("move_left", "move_right")
+	velocity.x = calc_horizontal_velocity(velocity.x, input_x, delta)
 
 func handle_sticking_as_mud():
 	if state != State.MUD_STICKING:
 		if is_on_wall_only() and type == Globals.Type.MUD:
-			print("stick")
 			state = State.MUD_STICKING
 			velocity = Vector2.ZERO
 			mud_collider.disabled = false
 			$CollisionShape2D.disabled = true
 	elif Input.is_action_just_pressed("jump"):
-		print("release")
 		state = State.MUD_RELEASE
 		mud_collider.disabled = true
 		$CollisionShape2D.disabled = false
@@ -144,3 +163,29 @@ func deactivate():
 	deactivated.emit()
 	z_index = 0
 	$Camera2D.enabled = false
+
+
+func calc_horizontal_velocity(current_x: float, input_x: float, delta):
+	var result = current_x
+	if input_x != 0:
+		if signf(input_x) != signf(current_x) and current_x != 0:
+			result = brake_horizontal(current_x, delta)
+		else:
+			if absf(result) < SPEED:
+				result = current_x + signf(input_x) * horizontal_accel * delta
+
+			result = clampf(result, -SPEED, SPEED)
+	else:
+		result = brake_horizontal(current_x, delta)
+
+	
+	return result
+
+
+func brake_horizontal(current_x: float, delta: float):
+	var result = current_x - signf(current_x) * horizontal_decel * delta
+
+	if signf(result) != signf(current_x):
+		return 0
+
+	return result
