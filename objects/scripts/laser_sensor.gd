@@ -4,6 +4,7 @@ signal activated
 signal deactivated
 
 @export var is_active: bool = false;
+@export var stays_activated: bool = false;
 @export var targets:Array[Node] = [];
 
 var loaded = 0;
@@ -19,7 +20,7 @@ func _process(delta: float) -> void:
 		
 	if loaded > LOADING_THRESHOLD:
 		activate();
-	else:
+	elif not stays_activated:
 		deactivate();
 
 func activate():
