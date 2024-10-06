@@ -1,16 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmrpjxtuy1cgk"]
+[gd_scene load_steps=2 format=3 uid="uid://cmrpjxtuy1cgk"]
 
 [ext_resource type="Script" path="res://objects/scripts/door.gd" id="1_ivrwk"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7q461"]
-size = Vector2(64, 64)
 
 [node name="Door" type="StaticBody2D" groups=["activatable"]]
 collision_layer = 64
 collision_mask = 2
 script = ExtResource("1_ivrwk")
 metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(32, 32)
-shape = SubResource("RectangleShape2D_7q461")
