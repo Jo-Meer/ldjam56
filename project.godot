@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Globals="*res://scripts/globals.gd"
 
+[global_group]
+
+creatures=""
+
 [input]
 
 move_right={

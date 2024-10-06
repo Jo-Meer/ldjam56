@@ -7,7 +7,7 @@
 radius = 48.28
 height = 125.27
 
-[node name="Avatar" type="CharacterBody2D"]
+[node name="Avatar" type="CharacterBody2D" groups=["creatures"]]
 collision_layer = 98
 collision_mask = 33
 script = ExtResource("1_gtkdd")
