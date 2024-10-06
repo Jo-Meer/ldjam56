@@ -7,7 +7,7 @@
 radius = 48.28
 height = 125.27
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Avatar" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_gtkdd")
 JUMP_VELOCITY = -600.0
