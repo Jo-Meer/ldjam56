@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var horizontal_decel = 4000
 @export var horizontal_accel = 2000
 @export var JUMP_VELOCITY = -800.0
+@export var max_fall_speed = 800.0
 @export var jump_break_factor = 0.5
 @export var jump_gravity_factor = 2.0
 @export var fall_gravity_factor = 4.0
@@ -87,8 +88,13 @@ func _physics_process(delta: float) -> void:
 		# Add the gravity.
 		if not is_on_floor() and not type == Globals.Type.STEAM:
 			velocity += get_gravity() * delta
+			if velocity.y > 0:
+				velocity.y = minf(velocity.y, max_fall_speed)
 		elif not is_on_ceiling() and type == Globals.Type.STEAM:
 			velocity += Vector2(0, steam_gravity) * delta
+			if velocity.y < 0:
+				velocity.y = maxf(velocity.y, -max_fall_speed)
+
 		handle_horizontal_movement(delta)
 		
 		move_and_slide()
@@ -101,10 +107,12 @@ func handle_gravity(delta: float, modifier: float):
 		velocity += get_gravity() * delta * modifier
 		if velocity.y > 0:
 			state = State.FALLING
+			velocity.y = minf(velocity.y, max_fall_speed)
 	elif not is_on_ceiling() and type == Globals.Type.STEAM:
 		velocity += Vector2(0, steam_gravity) * delta * modifier
 		if velocity.y < 0:
 			state = State.FALLING
+			velocity.y = maxf(velocity.y, -max_fall_speed)
 
 func handle_jump():
 	# Handle jump.
