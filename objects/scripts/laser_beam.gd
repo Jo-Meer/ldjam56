@@ -8,6 +8,8 @@ signal mirror_leave(beam_node: Node2D);
 @export var source_mirror:Node2D = null;
 
 @onready var raycast: RayCast2D = $RayCast2D;
+@onready var beam_area: Area2D = $BeamArea;
+@onready var beam_area_shape: CollisionShape2D = $BeamArea/CollisionShape2D;
 @onready var create_timer = $CreateTimer;
 @onready var path: Path2D = $Path2D;
 
@@ -17,10 +19,15 @@ var path_endpoint: Vector2 = Vector2.ZERO;
 var meets_mirror: bool = false;
 var depth = 0;
 
+var active_sensors = [];
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if source_mirror != null:
 		raycast.add_exception(source_mirror);
+	
+	# ensure each laser beam gets an individual shape!
+	beam_area_shape.shape = RectangleShape2D.new()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -38,8 +45,9 @@ func update_raycast_target():
 	if direction == raycast_direction:
 		return
 	
-	raycast.target_position = get_laser_raycast_endpoint();
-	print("raycast target pos ", raycast.target_position);
+	var end_point = get_laser_raycast_endpoint()
+	raycast.target_position = end_point;
+	
 	raycast_direction = direction;
 
 func update_laser_path():
@@ -48,13 +56,19 @@ func update_laser_path():
 		
 	var col_node = raycast.get_collider();
 	var col_point = raycast.get_collision_point();
-	var local_col_point = to_local(col_point);
-
-	update_child_laser(col_node, col_point);
+	check_mirror_hits(col_node, col_point);
 	
+	var local_col_point = to_local(col_point);
 	if local_col_point == path_endpoint:
 		return
-		
+	
+	# update beam area 2d
+	var x_size = max(abs(local_col_point.x), 2);
+	var y_size = max(abs(local_col_point.y), 2);
+	beam_area_shape.shape.size = Vector2(x_size, y_size);
+	var midpoint = local_col_point / 2;
+	beam_area_shape.position = Vector2(midpoint.x, midpoint.y);
+	
 	path_endpoint = local_col_point;
 	path.curve.clear_points();
 	path.curve.add_point(Vector2(0, 0));
@@ -66,17 +80,15 @@ func update_laser_path():
 	var points = path.curve.get_baked_points();
 	$Line2D.points = points;
 
-func update_child_laser(collided_node: Node, collision_point: Vector2):
+func check_mirror_hits(collided_node: Node, collision_point: Vector2):
 	if not collided_node.is_in_group("mirror"):
 		if meets_mirror:
-			print("leave mirror", depth);
 			mirror_leave.emit(self);
 			meets_mirror = false;
 		return
 	
 	if not meets_mirror:
 		meets_mirror = true;
-		print("enter mirror", depth);
 		mirror_enter.emit(self, collided_node, collision_point);
 
 func get_laser_raycast_endpoint():

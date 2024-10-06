@@ -21,7 +21,6 @@ func _process(_delta: float) -> void:
 func _on_laser_beam_mirror_enter(beam_node: Node2D, mirror_node: Node2D, collide_pos: Vector2):
 	var next_beam = laser_mirrors.get(beam_node.get_instance_id());
 	if next_beam == null:
-		print("add next beam ", mirror_node.direction, collide_pos)
 		next_beam = LaserBeam.instantiate(); 
 		next_beam.direction = mirror_node.direction;
 		next_beam.mirror_enter.connect(_on_laser_beam_mirror_enter);
