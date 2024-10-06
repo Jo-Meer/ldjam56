@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 
 @export var SPEED = 300.0
+@export var horizontal_decel = 4000
+@export var horizontal_accel = 2000
 @export var JUMP_VELOCITY = -800.0
 @export var jump_break_factor = 0.5
 @export var jump_gravity_factor = 2.0
@@ -46,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		handle_gravity(delta, fall_gravity_factor)
 
 		# break
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = calc_horizontal_velocity(velocity.x, 0, delta)
 		if velocity.y < 0:
 			velocity.y = move_toward(velocity.y, 0, SPEED)
 
@@ -62,13 +64,13 @@ func _physics_process(delta: float) -> void:
 
 	if state == State.GROUNDED:
 		handle_jump()
-		handle_horizontal_movement()
+		handle_horizontal_movement(delta)
 
 		move_and_slide()
 	
 	elif state == State.JUMPING:
 		handle_gravity(delta, jump_gravity_factor)
-		handle_horizontal_movement()
+		handle_horizontal_movement(delta)
 		handle_sticking_as_mud()
 		if Input.is_action_just_released("jump"):
 			velocity.y *= jump_break_factor
@@ -77,7 +79,7 @@ func _physics_process(delta: float) -> void:
 
 	elif state == State.FALLING:
 		handle_gravity(delta, fall_gravity_factor)
-		handle_horizontal_movement()
+		handle_horizontal_movement(delta)
 		handle_sticking_as_mud()
 
 		move_and_slide()
@@ -87,7 +89,7 @@ func _physics_process(delta: float) -> void:
 			velocity += get_gravity() * delta
 		elif not is_on_ceiling() and type == Globals.Type.STEAM:
 			velocity += Vector2(0, steam_gravity) * delta
-		handle_horizontal_movement()
+		handle_horizontal_movement(delta)
 		
 		move_and_slide()
 
@@ -110,14 +112,11 @@ func handle_jump():
 		velocity.y = JUMP_VELOCITY
 		state = State.JUMPING
 
-func handle_horizontal_movement():
+func handle_horizontal_movement(delta: float):
 
 	# Get the input direction and handle the movement/deceleration.
-	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	var input_x = Input.get_axis("move_left", "move_right")
+	velocity.x = calc_horizontal_velocity(velocity.x, input_x, delta)
 
 func handle_sticking_as_mud():
 	if state != State.MUD_STICKING:
@@ -144,3 +143,29 @@ func deactivate():
 	deactivated.emit()
 	z_index = 0
 	$Camera2D.enabled = false
+
+
+func calc_horizontal_velocity(current_x: float, input_x: float, delta):
+	var result = current_x
+	if input_x != 0:
+		if signf(input_x) != signf(current_x) and current_x != 0:
+			result = brake_horizontal(current_x, delta)
+		else:
+			if absf(result) < SPEED:
+				result = current_x + signf(input_x) * horizontal_accel * delta
+
+			result = clampf(result, -SPEED, SPEED)
+	else:
+		result = brake_horizontal(current_x, delta)
+
+	
+	return result
+
+
+func brake_horizontal(current_x: float, delta: float):
+	var result = current_x - signf(current_x) * horizontal_decel * delta
+
+	if signf(result) != signf(current_x):
+		return 0
+
+	return result
