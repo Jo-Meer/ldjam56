@@ -11,6 +11,7 @@ var active: int = 0
 
 var merge_timer: SceneTreeTimer
 
+var main_camera: Camera2D
 
 func active_creature() -> Player:
 	return instances[active]
@@ -23,8 +24,14 @@ func _ready():
 
 	instances[active].activate()
 
+	main_camera = Camera2D.new()
+	main_camera.position_smoothing_enabled = true
+	add_child(main_camera)
+	main_camera.make_current()
 
-	pass
+
+func _process(_delta: float) -> void:
+	main_camera.position = active_creature().position
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("split"):
@@ -213,4 +220,5 @@ func switch_to(creature: int):
 
 	active_creature().deactivate()
 	instances[creature].activate()
+	main_camera.transform.origin = Vector2.ZERO
 	active = creature

@@ -16,3 +16,4 @@ tile_set = ExtResource("3_hjcuf")
 [node name="Fire" parent="Base" instance=ExtResource("4_775tp")]
 
 [node name="Water" parent="Base" instance=ExtResource("4_u7yjt")]
+coyote_time = 0.0

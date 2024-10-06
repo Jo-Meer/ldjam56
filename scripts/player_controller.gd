@@ -156,13 +156,13 @@ func activate():
 	is_active = true
 	activated.emit()
 	z_index = 10
-	$Camera2D.enabled = true
+	# $Camera2D.enabled = true
 
 func deactivate():
 	is_active = false
 	deactivated.emit()
 	z_index = 0
-	$Camera2D.enabled = false
+	# $Camera2D.enabled = false
 
 
 func calc_horizontal_velocity(current_x: float, input_x: float, delta):
