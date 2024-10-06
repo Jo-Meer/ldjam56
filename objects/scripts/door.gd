@@ -1,15 +1,30 @@
+@tool
 extends StaticBody2D
 
 # implements activatable
+signal activated
+signal deactivated
 
 @export var is_active:bool = false;
-@onready var coll_shape = $CollisionShape2D;
+@onready var coll_shape: CollisionShape2D = $CollisionShape2D;
 
-func _ready():
-	if is_active:
-		coll_shape.set_deferred("disabled", true);
+func _ready() -> void:
+	if Engine.is_editor_hint():
+		if coll_shape == null:
+			coll_shape = CollisionShape2D.new();
+			coll_shape.shape = RectangleShape2D.new();
+			coll_shape.shape.size = Vector2(64, 64);
+			coll_shape.name = "CollisionShape2D";
+			coll_shape.position = Vector2(32, 32);
+			add_child(coll_shape);
+			# The line below is required to make the node visible in the Scene tree dock
+			# and persist changes made by the tool script to the saved scene file.
+			coll_shape.owner = get_tree().edited_scene_root
 	else:
-		coll_shape.set_deferred("disabled", false);
+		if is_active:
+			coll_shape.set_deferred("disabled", true);
+		else:
+			coll_shape.set_deferred("disabled", false);
 
 
 func activate():
@@ -17,13 +32,14 @@ func activate():
 		return
 	is_active = true;
 	coll_shape.set_deferred("disabled", true);
-
+	activated.emit()
 
 func deactivate():
 	if not is_active:
 		return
 	is_active = false;
 	coll_shape.set_deferred("disabled", false);
+	deactivated.emit()
 
 
 func toggle():
