@@ -6,12 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
 size = Vector2(64, 64)
 
-[node name="Mud" type="CharacterBody2D"]
+[node name="Mud" type="CharacterBody2D" node_paths=PackedStringArray("mud_collider")]
 collision_layer = 2
 collision_mask = 97
 script = ExtResource("1_x50nx")
 JUMP_VELOCITY = -600.0
 type = 4
+mud_collider = NodePath("StaticBody2D/CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_4yo4d")
@@ -32,3 +33,11 @@ color = Color(0.182756, 0.306403, 0.653641, 0.372549)
 offset_right = 32.0
 offset_bottom = 32.0
 color = Color(0.381272, 0.143597, 0.0149215, 0.372549)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_hog4m")
+one_way_collision_margin = 0.0
