@@ -47,18 +47,27 @@ func update_raycast_target():
 	
 	var end_point = get_laser_raycast_endpoint()
 	if end_point != null:
-		raycast.target_position  = end_point;
+		raycast.target_position = end_point;
 	
 		raycast_direction = direction;
 	else:
 		print("no end point")
 
 func update_laser_path():
+	if raycast_direction == null:
+		return
+	if raycast_direction != direction:
+		return
+		
 	if not raycast.is_colliding():
 		return
 		
 	var col_node = raycast.get_collider();
 	var col_point = raycast.get_collision_point();
+	
+	if not check_col_point_direction(col_point):
+		return false;
+		
 	check_mirror_hits(col_node, col_point);
 	
 	var local_col_point = to_local(col_point);
@@ -73,6 +82,7 @@ func update_laser_path():
 	beam_area_shape.position = Vector2(midpoint.x, midpoint.y);
 	
 	path_endpoint = local_col_point;
+	
 	path.curve.clear_points();
 	path.curve.add_point(Vector2(0, 0));
 	path.curve.add_point(Vector2(local_col_point));
@@ -104,3 +114,15 @@ func get_laser_raycast_endpoint():
 		return Vector2(8000, 0);
 	if direction == Globals.Direction.LEFT:
 		return Vector2(-8000, 0);
+
+func check_col_point_direction(col_point):
+	if col_point.y < 0 and direction == Globals.Direction.UP:
+		return true;
+	if col_point.y > 0 and direction == Globals.Direction.DOWN:
+		return true
+	if col_point.x < 0 and direction == Globals.Direction.LEFT:
+		return true;
+	if col_point.x > 0 and direction == Globals.Direction.RIGHT:
+		return true
+
+	return false;
