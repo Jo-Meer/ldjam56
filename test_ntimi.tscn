@@ -31,7 +31,7 @@ size = Vector2(256, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7j5l"]
 size = Vector2(384, 64)
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("start_creature")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("start_creature")]
 script = ExtResource("1_ea4dv")
 start_creature = NodePath("Avatar")
 
@@ -62,9 +62,6 @@ position = Vector2(768, -64)
 visible = false
 position = Vector2(128, 96)
 shape = SubResource("RectangleShape2D_po0xm")
-
-[node name="Laser" parent="." instance=ExtResource("8_xs458")]
-position = Vector2(176, -192)
 
 [node name="LaserMirror3" parent="." instance=ExtResource("9_jbgx5")]
 position = Vector2(408, -192)
@@ -129,3 +126,10 @@ deactivated_position = Vector2(-64, 256)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator3"]
 position = Vector2(192, 32)
 shape = SubResource("RectangleShape2D_l7j5l")
+
+[node name="LaserMirror" parent="." instance=ExtResource("9_jbgx5")]
+position = Vector2(-360, -224)
+
+[node name="Laser" parent="." instance=ExtResource("8_xs458")]
+position = Vector2(152, -200)
+direction = 2
