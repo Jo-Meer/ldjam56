@@ -4,7 +4,10 @@ extends CharacterBody2D
 
 
 @export var SPEED = 300.0
-@export var JUMP_VELOCITY = -400.0
+@export var JUMP_VELOCITY = -800.0
+@export var jump_break_factor = 0.5
+@export var jump_gravity_factor = 2.0
+@export var fall_gravity_factor = 4.0
 
 @export var type: Globals.Type = Globals.Type.AVATAR
 
@@ -40,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	if is_active == false:
-		handle_gravity(delta)
+		handle_gravity(delta, fall_gravity_factor)
 
 		# break
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -64,14 +67,16 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	
 	elif state == State.JUMPING:
-		handle_gravity(delta)
+		handle_gravity(delta, jump_gravity_factor)
 		handle_horizontal_movement()
 		handle_sticking_as_mud()
+		if Input.is_action_just_released("jump"):
+			velocity.y *= jump_break_factor
 
 		move_and_slide()
 
 	elif state == State.FALLING:
-		handle_gravity(delta)
+		handle_gravity(delta, fall_gravity_factor)
 		handle_horizontal_movement()
 		handle_sticking_as_mud()
 
@@ -88,14 +93,14 @@ func _physics_process(delta: float) -> void:
 
 	
 
-func handle_gravity(delta: float):
+func handle_gravity(delta: float, modifier: float):
 	# Add the gravity.
 	if not is_on_floor() and not type == Globals.Type.STEAM:
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * modifier
 		if velocity.y > 0:
 			state = State.FALLING
 	elif not is_on_ceiling() and type == Globals.Type.STEAM:
-		velocity += Vector2(0, steam_gravity) * delta
+		velocity += Vector2(0, steam_gravity) * delta * modifier
 		if velocity.y < 0:
 			state = State.FALLING
 

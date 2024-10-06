@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_i81ew"]
 [ext_resource type="Texture2D" uid="uid://b3q0xs2d8ar2" path="res://creatures/placeholder_element.png" id="2_56fyo"]
-[ext_resource type="PackedScene" uid="uid://010dbqlsa3an" path="res://objects/LaserMirror.tscn" id="3_4ljfe"]
+[ext_resource type="PackedScene" path="res://objects/LaserMirror.tscn" id="3_4ljfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
 size = Vector2(64, 64)
@@ -11,7 +11,6 @@ size = Vector2(64, 64)
 collision_layer = 2
 collision_mask = 97
 script = ExtResource("1_i81ew")
-JUMP_VELOCITY = -600.0
 type = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
