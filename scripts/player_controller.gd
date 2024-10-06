@@ -22,7 +22,6 @@ func _physics_process(delta: float) -> void:
 	elif not is_on_ceiling() and type == Globals.Type.STEAM:
 		velocity += Vector2(0, steam_gravity) * delta
 	
-	
 
 	if is_active == false:
 		# break and handle gravity

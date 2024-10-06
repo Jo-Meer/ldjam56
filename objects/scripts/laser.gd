@@ -6,8 +6,6 @@ extends Node2D
 @onready var beam = $LaserBeam;
 var LaserBeam = preload("res://objects/LaserBeam.tscn");
 
-var laser_mirrors = {};
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	beam.mirror_enter.connect(_on_laser_beam_mirror_enter);
@@ -19,17 +17,23 @@ func _process(_delta: float) -> void:
 		beam.direction = direction;
 
 func _on_laser_beam_mirror_enter(beam_node: Node2D, mirror_node: Node2D, collide_pos: Vector2):
-	var next_beam = laser_mirrors.get(beam_node.get_instance_id());
+	var next_beam = null;
+	
+	for child in beam_node.get_children():
+		if child.is_in_group("laserbeam"):
+			next_beam = child;
+	
 	if next_beam == null:
 		next_beam = LaserBeam.instantiate(); 
-		next_beam.direction = mirror_node.direction;
 		next_beam.mirror_enter.connect(_on_laser_beam_mirror_enter);
 		next_beam.mirror_leave.connect(_on_laser_beam_mirror_leave);
+		next_beam.direction = mirror_node.direction;
 		next_beam.source_mirror = mirror_node;
 		next_beam.depth = beam_node.depth + 1;
 		beam_node.add_child(next_beam);
-		next_beam.global_position = collide_pos;
-		laser_mirrors[beam_node.get_instance_id()] = next_beam;
+	
+	next_beam.direction = mirror_node.direction;
+	next_beam.global_position = collide_pos;
 	
 func _on_laser_beam_mirror_leave(beam_node):
 	var child_beams = beam_node.get_children();

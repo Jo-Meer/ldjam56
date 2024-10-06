@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm3vv1df0vabd"]
+[gd_scene load_steps=6 format=3 uid="uid://bm3vv1df0vabd"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_3k5g3"]
 [ext_resource type="Texture2D" uid="uid://b3q0xs2d8ar2" path="res://creatures/placeholder_element.png" id="2_aql8o"]
+[ext_resource type="PackedScene" uid="uid://010dbqlsa3an" path="res://objects/LaserMirror.tscn" id="3_kcqgq"]
+[ext_resource type="Script" path="res://objects/scripts/metal_laser_mirror.gd" id="4_iutr1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
 size = Vector2(64, 64)
 
 [node name="Metal" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 33
 script = ExtResource("1_3k5g3")
 JUMP_VELOCITY = -600.0
 type = 6
@@ -31,3 +34,10 @@ color = Color(0.620842, 0.102524, 0.0730088, 0.372549)
 offset_right = 32.0
 offset_bottom = 32.0
 color = Color(0.419607, 0.196168, 1.44392e-07, 0.372549)
+
+[node name="LaserMirror" parent="." instance=ExtResource("3_kcqgq")]
+visible = false
+position = Vector2(-29, -29)
+scale = Vector2(0.9, 0.9)
+script = ExtResource("4_iutr1")
+direction = 3

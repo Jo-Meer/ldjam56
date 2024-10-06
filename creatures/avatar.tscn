@@ -9,6 +9,7 @@ height = 125.27
 
 [node name="Avatar" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 33
 script = ExtResource("1_gtkdd")
 JUMP_VELOCITY = -600.0
 

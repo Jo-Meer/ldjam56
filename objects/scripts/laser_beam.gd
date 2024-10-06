@@ -33,8 +33,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	update_raycast_target();
 
-	if not create_timer.is_stopped():
-		return
+	#if not create_timer.is_stopped():
+		#return
 	
 	update_laser_path();
 
@@ -46,9 +46,12 @@ func update_raycast_target():
 		return
 	
 	var end_point = get_laser_raycast_endpoint()
-	raycast.target_position = end_point;
+	if end_point != null:
+		raycast.target_position  = end_point;
 	
-	raycast_direction = direction;
+		raycast_direction = direction;
+	else:
+		print("no end point")
 
 func update_laser_path():
 	if not raycast.is_colliding():
@@ -89,7 +92,8 @@ func check_mirror_hits(collided_node: Node, collision_point: Vector2):
 	
 	if not meets_mirror:
 		meets_mirror = true;
-		mirror_enter.emit(self, collided_node, collision_point);
+	
+	mirror_enter.emit(self, collided_node, collision_point);
 
 func get_laser_raycast_endpoint():
 	if direction == Globals.Direction.UP:
@@ -98,5 +102,5 @@ func get_laser_raycast_endpoint():
 		return Vector2(0, 8000);
 	if direction == Globals.Direction.RIGHT:
 		return Vector2(8000, 0);
-	if direction == Globals.Direction.DOWN:
+	if direction == Globals.Direction.LEFT:
 		return Vector2(-8000, 0);

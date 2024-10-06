@@ -1,19 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkpwt4qfwt5tm"]
+[gd_scene load_steps=3 format=3 uid="uid://dkpwt4qfwt5tm"]
 
 [ext_resource type="Texture2D" uid="uid://o5kh08h81ywv" path="res://objects/sprites/placeholder_grid.png" id="1_dpodb"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_di48o"]
+size = Vector2(64, 64)
+
 [node name="GridTile" type="StaticBody2D"]
-collision_layer = 4096
+collision_layer = 32
+collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(32, -32)
+position = Vector2(32, 32)
 texture = ExtResource("1_dpodb")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 8.0
-offset_top = -56.0
-offset_right = 64.0
-offset_bottom = -7.0
-text = "TODO:
-MASK ELS EXEPT SAND & FOG COL LAYER 13"
-clip_text = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_di48o")

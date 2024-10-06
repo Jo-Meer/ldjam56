@@ -68,6 +68,12 @@ merge={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="map"
+2d_physics/layer_2="elements"
+2d_physics/layer_6="grid-colliding elements"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
