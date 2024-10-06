@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvqq04l6sq178"]
+[gd_scene load_steps=5 format=3 uid="uid://bvqq04l6sq178"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_x50nx"]
 [ext_resource type="Texture2D" uid="uid://b3q0xs2d8ar2" path="res://creatures/placeholder_element.png" id="2_4yo4d"]
+[ext_resource type="SpriteFrames" uid="uid://mlx2guqjyu0t" path="res://creatures/sprites/steam.tres" id="3_whrnw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
 size = Vector2(54, 54)
@@ -38,3 +39,8 @@ collision_mask = 0
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_hog4m")
 one_way_collision_margin = 0.0
+
+[node name="Fusion" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_whrnw")
+animation = &"fusion"
+frame_progress = 1.0
