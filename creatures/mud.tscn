@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3q0xs2d8ar2" path="res://creatures/placeholder_element.png" id="2_4yo4d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
-size = Vector2(64, 64)
+size = Vector2(54, 54)
 
 [node name="Mud" type="CharacterBody2D" node_paths=PackedStringArray("mud_collider") groups=["creatures"]]
 collision_layer = 2
@@ -38,5 +38,6 @@ collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_hog4m")
 one_way_collision_margin = 0.0

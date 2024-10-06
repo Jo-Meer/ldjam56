@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kokif"]
 radius = 48.28
-height = 125.27
+height = 121.35
 
 [node name="Avatar" type="CharacterBody2D" groups=["creatures"]]
 collision_layer = 98
@@ -16,6 +16,7 @@ script = ExtResource("1_gtkdd")
 texture = ExtResource("2_tbc4v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_kokif")
 one_way_collision_margin = 0.0
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3q0xs2d8ar2" path="res://creatures/placeholder_element.png" id="2_wepon"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
-size = Vector2(64, 64)
+size = Vector2(54, 54)
 
 [node name="Steam" type="CharacterBody2D" groups=["creatures"]]
 collision_layer = 2
@@ -17,6 +17,7 @@ type = 7
 texture = ExtResource("2_wepon")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_hog4m")
 one_way_collision_margin = 0.0
 
