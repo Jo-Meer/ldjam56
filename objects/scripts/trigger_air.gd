@@ -10,6 +10,8 @@ extends Area2D
 @export var is_active:bool = false:
 	set(new_is_active):
 		is_active = new_is_active
+		if animated_sprite==null:
+			return
 		if is_active:
 			animated_sprite.animation = "active";
 			animated_sprite.play("active");
