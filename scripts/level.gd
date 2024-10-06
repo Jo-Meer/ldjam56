@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var start_creature: Player
 @export var merge_distance: int = 50
 @export var avatar_merge_time: float = 2
 
@@ -17,7 +16,12 @@ func active_creature() -> Player:
 	return instances[active]
 
 func _ready():
-	instances.append(start_creature)
+	instances.assign(get_tree().get_nodes_in_group("creatures"))
+
+	for instance in instances:
+		instance.deactivate()
+
+	instances[active].activate()
 
 
 	pass
