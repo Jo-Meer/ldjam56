@@ -3,13 +3,16 @@ extends Node2D
 
 @export var direction: Globals.Direction = Globals.Direction.DOWN;
 
+@export var is_active: bool = true;
+
 @onready var beam = $LaserBeam;
 var LaserBeam = preload("res://objects/LaserBeam.tscn");
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	beam.mirror_enter.connect(_on_laser_beam_mirror_enter);
-	beam.mirror_leave.connect(_on_laser_beam_mirror_leave);
+	if beam:
+		beam.mirror_enter.connect(_on_laser_beam_mirror_enter);
+		beam.mirror_leave.connect(_on_laser_beam_mirror_leave);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -45,3 +48,41 @@ func get_child_beams():
 	var children = get_children();
 	# TODO filter by type
 	return children;
+
+func create_beam():
+	if beam != null:
+		return;
+	beam = LaserBeam.instantiate();
+	beam.mirror_enter.connect(_on_laser_beam_mirror_enter);
+	beam.mirror_leave.connect(_on_laser_beam_mirror_leave);
+	beam.direction = direction;
+	call_deferred("add_child", beam);
+	beam.direction = direction;
+
+func remove_beam():
+	var b = beam;
+	beam = null;
+	if b != null:
+		b.queue_free();
+
+func activate():
+	# open door
+	if is_active:
+		return
+	is_active = true;
+	if beam == null:
+		create_beam();
+
+func deactivate():
+	# close door
+	if not is_active:
+		return
+	is_active = false;
+	if beam != null:
+		remove_beam();
+
+func toggle():
+	if is_active:
+		deactivate();
+	else:
+		activate();
