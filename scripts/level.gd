@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var start_creature: Player
 @export var merge_distance: int = 50
+@export var avatar_merge_time: float = 2
 
 
 
@@ -9,11 +9,19 @@ var instances: Array[Player] = []
 
 var active: int = 0
 
+var merge_timer: SceneTreeTimer
+
+
 func active_creature() -> Player:
 	return instances[active]
 
 func _ready():
-	instances.append(start_creature)
+	instances.assign(get_tree().get_nodes_in_group("creatures"))
+
+	for instance in instances:
+		instance.deactivate()
+
+	instances[active].activate()
 
 
 	pass
@@ -48,6 +56,10 @@ func _physics_process(_delta: float) -> void:
 
 	
 	elif Input.is_action_just_pressed("merge"):
+		merge_timer = get_tree().create_timer(avatar_merge_time)
+
+	elif Input.is_action_just_released("merge") and merge_timer and merge_timer.time_left > 0:
+		merge_timer = null
 		if active_creature().type == Globals.Type.AVATAR:
 			pass
 
@@ -103,14 +115,20 @@ func _physics_process(_delta: float) -> void:
 				elif partner.type == Globals.Type.AIR:
 					instantiate_with_merge(earth, partner, preload("res://creatures/sand.tscn"))
 
-		else:
-			var current = active_creature()
-			var other = instances.duplicate()
-			other.erase(current)
-			if other.size() == 1:
-				var partner = closest(current, other)
-				if in_merge_range(current, partner):
-					instantiate_with_merge(current, partner, preload("res://creatures/avatar.tscn"))
+	elif merge_timer && merge_timer.time_left == 0:
+		merge_timer = null
+		var current = active_creature()
+		var others = instances.duplicate()
+		others.erase(current)
+		if others.size() == 3:
+			if others.all(func(partner): return in_merge_range(current, partner)):
+				for instance in instances:
+					instance.queue_free()
+				instances.clear()
+				var instance = instantiate(preload("res://creatures/avatar.tscn"), current.position)
+				instance.activate()
+				instances.append(instance)
+				active = 0
 
 
 	elif Input.is_action_just_pressed("next_creature"):

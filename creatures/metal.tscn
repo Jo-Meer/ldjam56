@@ -2,17 +2,16 @@
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_3k5g3"]
 [ext_resource type="Texture2D" uid="uid://b3q0xs2d8ar2" path="res://creatures/placeholder_element.png" id="2_aql8o"]
-[ext_resource type="PackedScene" uid="uid://010dbqlsa3an" path="res://objects/LaserMirror.tscn" id="3_kcqgq"]
+[ext_resource type="PackedScene" path="res://objects/LaserMirror.tscn" id="3_kcqgq"]
 [ext_resource type="Script" path="res://objects/scripts/metal_laser_mirror.gd" id="4_iutr1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
 size = Vector2(64, 64)
 
-[node name="Metal" type="CharacterBody2D"]
+[node name="Metal" type="CharacterBody2D" groups=["creatures"]]
 collision_layer = 2
 collision_mask = 97
 script = ExtResource("1_3k5g3")
-JUMP_VELOCITY = -600.0
 type = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

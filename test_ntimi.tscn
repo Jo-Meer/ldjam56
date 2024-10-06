@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://de74m1nu5kftq" path="res://objects/Darkness.tscn" id="7_7dw0g"]
 [ext_resource type="PackedScene" uid="uid://c5tqajgscdup3" path="res://objects/Laser.tscn" id="8_xs458"]
 [ext_resource type="PackedScene" uid="uid://010dbqlsa3an" path="res://objects/LaserMirror.tscn" id="9_jbgx5"]
-[ext_resource type="PackedScene" uid="uid://dcvvfuyiuml3m" path="res://objects/LaserSensor.tscn" id="10_1r7jb"]
+[ext_resource type="PackedScene" uid="uid://dcvvfuyiuml3m" path="res://objects/TriggerLaserSensor.tscn" id="10_1r7jb"]
 [ext_resource type="PackedScene" uid="uid://dkpwt4qfwt5tm" path="res://objects/GridTile.tscn" id="11_sbtia"]
 [ext_resource type="PackedScene" uid="uid://x5xxk5juxypj" path="res://objects/Elevator.tscn" id="12_q6cfd"]
 
