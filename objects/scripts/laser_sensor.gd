@@ -6,9 +6,18 @@ signal deactivated
 @export var is_active: bool = false;
 @export var targets:Array[Node] = [];
 
-func _process(_delta: float) -> void:
+var loaded = 0;
+var LOADING_THRESHOLD = 2.5;
+var LOADING_MAX = 3;
+
+func _process(delta: float) -> void:
 	var overlapping_areas = get_overlapping_areas();
 	if overlapping_areas.size() > 0:
+		loaded = min(loaded + delta, LOADING_MAX);
+	else:
+		loaded = max(loaded - delta, 0);
+		
+	if loaded > LOADING_THRESHOLD:
 		activate();
 	else:
 		deactivate();
