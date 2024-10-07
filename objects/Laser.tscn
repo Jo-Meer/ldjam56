@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5tqajgscdup3"]
 
 [ext_resource type="Script" path="res://objects/scripts/laser.gd" id="1_u2vs3"]
-[ext_resource type="Texture2D" uid="uid://bak3yngvurc13" path="res://objects/sprites/placeholder_laser.png" id="3_nesso"]
+[ext_resource type="Texture2D" uid="uid://bak3yngvurc13" path="res://objects/placeholder_sprites/placeholder_laser.png" id="3_nesso"]
 
 [node name="Laser" type="Node2D"]
 script = ExtResource("1_u2vs3")

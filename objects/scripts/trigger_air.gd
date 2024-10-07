@@ -9,15 +9,16 @@ extends Area2D
 
 @export var is_active:bool = false:
 	set(new_is_active):
+		if is_active != new_is_active:
+			if new_is_active:
+				if animated_sprite:
+					animated_sprite.stop();
+					animated_sprite.play("activate");
+			else:
+				if animated_sprite:
+					animated_sprite.stop();
+					animated_sprite.play("deactivate");
 		is_active = new_is_active
-		if animated_sprite==null:
-			return
-		if is_active:
-			animated_sprite.animation = "active";
-			animated_sprite.play("active");
-		else:
-			animated_sprite.animation = "inactive";
-			animated_sprite.play("inactive");
 
 @export var auto_reset: bool = false;
 
@@ -77,3 +78,10 @@ func _on_body_entered(body: Node2D):
 
 func _on_body_exited(_body: Node2D):
 	return
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation == "deactivate":
+		animated_sprite.play("inactive");
+	if animated_sprite.animation == "activate":
+		animated_sprite.play("active");

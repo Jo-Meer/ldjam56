@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o5kh08h81ywv"
-path="res://.godot/imported/placeholder_grid.png-e4c95bd1a893cc00d9c3e3a9a8dec503.ctex"
+uid="uid://cj0fma22eptjj"
+path="res://.godot/imported/placeholder_mirror.png-d2f16ec3cc37bc25265a70ec8ecb4810.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/sprites/placeholder_grid.png"
-dest_files=["res://.godot/imported/placeholder_grid.png-e4c95bd1a893cc00d9c3e3a9a8dec503.ctex"]
+source_file="res://objects/placeholder_sprites/placeholder_mirror.png"
+dest_files=["res://.godot/imported/placeholder_mirror.png-d2f16ec3cc37bc25265a70ec8ecb4810.ctex"]
 
 [params]
 

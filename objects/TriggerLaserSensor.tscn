@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcvvfuyiuml3m"]
 
 [ext_resource type="Script" path="res://objects/scripts/laser_sensor.gd" id="1_f1tcb"]
-[ext_resource type="Texture2D" uid="uid://b6tbueauaxs0y" path="res://objects/sprites/placeholder_lasersensor.png" id="2_curif"]
+[ext_resource type="Texture2D" uid="uid://b6tbueauaxs0y" path="res://objects/placeholder_sprites/placeholder_lasersensor.png" id="2_curif"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0aydg"]
 size = Vector2(64, 64)

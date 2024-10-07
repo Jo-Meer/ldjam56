@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnjjefvrharna"
-path="res://.godot/imported/placeholder_glass.png-01321417384166fb5585d1d0ee53de32.ctex"
+uid="uid://c0wbpipgoswow"
+path="res://.godot/imported/green_to_brown.png-840b4a9d2a292b819372fe662acb91f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/sprites/placeholder_glass.png"
-dest_files=["res://.godot/imported/placeholder_glass.png-01321417384166fb5585d1d0ee53de32.ctex"]
+source_file="res://objects/sprites/green_to_brown.png"
+dest_files=["res://.godot/imported/green_to_brown.png-840b4a9d2a292b819372fe662acb91f8.ctex"]
 
 [params]
 

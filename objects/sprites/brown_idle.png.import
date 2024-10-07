@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj0fma22eptjj"
-path="res://.godot/imported/placeholder_mirror.png-ab7928eea3fe74868d6ffb08cddefcb1.ctex"
+uid="uid://gitukih1y3u6"
+path="res://.godot/imported/brown_idle.png-b472bd70eeacc9ad5b70d1f06a9ecd42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/sprites/placeholder_mirror.png"
-dest_files=["res://.godot/imported/placeholder_mirror.png-ab7928eea3fe74868d6ffb08cddefcb1.ctex"]
+source_file="res://objects/sprites/brown_idle.png"
+dest_files=["res://.godot/imported/brown_idle.png-b472bd70eeacc9ad5b70d1f06a9ecd42.ctex"]
 
 [params]
 

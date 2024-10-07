@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6tbueauaxs0y"
-path="res://.godot/imported/placeholder_lasersensor.png-862858b9038192c82667210562601808.ctex"
+uid="uid://xgc1dwrgbwi5"
+path="res://.godot/imported/red_to_blue.png-15e442661a4630bd43046117cc741911.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/sprites/placeholder_lasersensor.png"
-dest_files=["res://.godot/imported/placeholder_lasersensor.png-862858b9038192c82667210562601808.ctex"]
+source_file="res://objects/sprites/red_to_blue.png"
+dest_files=["res://.godot/imported/red_to_blue.png-15e442661a4630bd43046117cc741911.ctex"]
 
 [params]
 

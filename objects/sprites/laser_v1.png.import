@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bprgyutwn7tpu"
-path="res://.godot/imported/placeholder_firetrigger.png-fad31ea68c798ac32f6da2578c63374f.ctex"
+uid="uid://jckks2fpx48r"
+path="res://.godot/imported/laser_v1.png-25c59a1bf682ee0c70b896ac29bfc9a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/sprites/placeholder_firetrigger.png"
-dest_files=["res://.godot/imported/placeholder_firetrigger.png-fad31ea68c798ac32f6da2578c63374f.ctex"]
+source_file="res://objects/sprites/laser_v1.png"
+dest_files=["res://.godot/imported/laser_v1.png-25c59a1bf682ee0c70b896ac29bfc9a9.ctex"]
 
 [params]
 

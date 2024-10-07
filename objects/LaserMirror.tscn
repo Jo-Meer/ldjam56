@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://010dbqlsa3an"]
 
 [ext_resource type="Script" path="res://objects/scripts/laser_mirror.gd" id="1_nylql"]
-[ext_resource type="Texture2D" uid="uid://cj0fma22eptjj" path="res://objects/sprites/placeholder_mirror.png" id="2_3ij5t"]
+[ext_resource type="Texture2D" uid="uid://cj0fma22eptjj" path="res://objects/placeholder_sprites/placeholder_mirror.png" id="2_3ij5t"]
 
 [node name="LaserMirror" type="StaticBody2D" groups=["mirror"]]
 collision_layer = 256

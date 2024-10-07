@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0t4rwo7akn3e"
-path="res://.godot/imported/placeholder_airtrigger.png-8edb125b65d4adee487adbe369ede6dd.ctex"
+uid="uid://o5kh08h81ywv"
+path="res://.godot/imported/placeholder_grid.png-d77b739deef5fae09b0954f48916f6cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/sprites/placeholder_airtrigger.png"
-dest_files=["res://.godot/imported/placeholder_airtrigger.png-8edb125b65d4adee487adbe369ede6dd.ctex"]
+source_file="res://objects/placeholder_sprites/placeholder_grid.png"
+dest_files=["res://.godot/imported/placeholder_grid.png-d77b739deef5fae09b0954f48916f6cd.ctex"]
 
 [params]
 
