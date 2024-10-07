@@ -1,27 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://bljut2rijnhk"]
+[gd_scene load_steps=6 format=3 uid="uid://bljut2rijnhk"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_gtkdd"]
-[ext_resource type="Texture2D" uid="uid://ddrp6lamkcyq3" path="res://icon.svg" id="2_tbc4v"]
+[ext_resource type="SpriteFrames" uid="uid://con5vk0o21x6s" path="res://creatures/sprites/avatar.tres" id="3_1koxq"]
 [ext_resource type="SpriteFrames" uid="uid://mlx2guqjyu0t" path="res://creatures/sprites/steam.tres" id="4_1hlmy"]
+[ext_resource type="Script" path="res://scripts/rotate.gd" id="4_n52nu"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kokif"]
-radius = 48.28
-height = 121.35
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgxxo"]
+size = Vector2(54, 118)
 
 [node name="Avatar" type="CharacterBody2D" groups=["creatures", "element"]]
 collision_layer = 98
 collision_mask = 161
 script = ExtResource("1_gtkdd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_tbc4v")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-shape = SubResource("CapsuleShape2D_kokif")
+position = Vector2(0, -27)
+shape = SubResource("RectangleShape2D_lgxxo")
 one_way_collision_margin = 0.0
 
 [node name="Fusion" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("4_1hlmy")
 animation = &"fusion"
 frame_progress = 1.0
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -160)
+sprite_frames = ExtResource("3_1koxq")
+animation = &"fall"
+frame = 1
+frame_progress = 0.760086
+script = ExtResource("4_n52nu")
