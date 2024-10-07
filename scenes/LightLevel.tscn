@@ -617,6 +617,10 @@ position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_glf3v")
 disabled = true
 
+[node name="Sprite2D" type="Sprite2D" parent="Schleuse"]
+position = Vector2(32, 32)
+texture = ExtResource("8_kct1o")
+
 [node name="Connectdoor" parent="." instance=ExtResource("13_n7tdh")]
 position = Vector2(1088, 1344)
 
