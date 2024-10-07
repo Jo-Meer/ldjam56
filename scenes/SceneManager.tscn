@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://v28u3skw4b1l"]
+[gd_scene load_steps=6 format=3 uid="uid://v28u3skw4b1l"]
 
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_u3gbc"]
 [ext_resource type="PackedScene" uid="uid://emq8j57gcuht" path="res://scenes/Tutorial.tscn" id="2_ldm8h"]
 [ext_resource type="PackedScene" uid="uid://dkmmu11yno7bi" path="res://scenes/Tower.tscn" id="3_7wd7f"]
-[ext_resource type="PackedScene" uid="uid://je66w3wi6a26" path="res://scenes/LightLevel.tscn" id="4_6rpv8"]
+[ext_resource type="PackedScene" uid="uid://dh7rkjxbppmf5" path="res://scenes/LightLevel.tscn" id="4_6rpv8"]
+[ext_resource type="PackedScene" uid="uid://bg6ta7dj5ghwp" path="res://scenes/Credits.tscn" id="5_akanq"]
 
 [node name="SceneManager" type="Node2D"]
 script = ExtResource("1_u3gbc")
-scenes = Array[PackedScene]([ExtResource("2_ldm8h"), ExtResource("3_7wd7f"), ExtResource("4_6rpv8")])
+scenes = Array[PackedScene]([ExtResource("2_ldm8h"), ExtResource("3_7wd7f"), ExtResource("4_6rpv8"), ExtResource("5_akanq")])
