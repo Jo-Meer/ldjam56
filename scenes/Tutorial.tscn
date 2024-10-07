@@ -42,7 +42,7 @@ size = Vector2(128, 128)
 size = Vector2(128, 512)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkw21"]
-size = Vector2(256, 128)
+size = Vector2(512, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlwt7"]
 size = Vector2(128, 64)
@@ -435,6 +435,27 @@ on the environment"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Text7"]
 position = Vector2(-128, 32)
+shape = SubResource("RectangleShape2D_mkw21")
+
+[node name="Text8" parent="Level1" instance=ExtResource("20_ps3gt")]
+position = Vector2(5120, -3424)
+
+[node name="Label" type="Label" parent="Level1/Text8"]
+offset_left = -496.0
+offset_top = -272.0
+offset_right = -222.0
+offset_bottom = 45.0
+theme = ExtResource("21_61ykh")
+theme_override_font_sizes/font_size = 21
+text = "to gather the crystal
+fuse all 4 creatures
+
+place on the same postion and Hold:
+Keys: t
+Controller: xbox-Y"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Text8"]
+position = Vector2(-256, 32)
 shape = SubResource("RectangleShape2D_mkw21")
 
 [node name="Level2" type="Node2D" parent="."]
