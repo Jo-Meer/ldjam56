@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckjcbmk3ig3dt"]
+[gd_scene load_steps=6 format=3 uid="uid://ckjcbmk3ig3dt"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_i81ew"]
 [ext_resource type="Texture2D" uid="uid://b3q0xs2d8ar2" path="res://creatures/placeholder_element.png" id="2_56fyo"]
 [ext_resource type="PackedScene" uid="uid://010dbqlsa3an" path="res://objects/LaserMirror.tscn" id="3_4ljfe"]
+[ext_resource type="SpriteFrames" uid="uid://mlx2guqjyu0t" path="res://creatures/sprites/steam.tres" id="4_ayc4q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
 size = Vector2(54, 118)
@@ -34,3 +35,8 @@ color = Color(0.0668379, 0.231298, 0.584751, 0.372549)
 [node name="LaserMirror" parent="." instance=ExtResource("3_4ljfe")]
 visible = false
 position = Vector2(-32, -32)
+
+[node name="Fusion" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("4_ayc4q")
+animation = &"fusion"
+frame_progress = 1.0

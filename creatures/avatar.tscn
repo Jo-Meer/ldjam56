@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bljut2rijnhk"]
+[gd_scene load_steps=5 format=3 uid="uid://bljut2rijnhk"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_gtkdd"]
 [ext_resource type="Texture2D" uid="uid://ddrp6lamkcyq3" path="res://icon.svg" id="2_tbc4v"]
+[ext_resource type="SpriteFrames" uid="uid://mlx2guqjyu0t" path="res://creatures/sprites/steam.tres" id="4_1hlmy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kokif"]
 radius = 48.28
@@ -19,3 +20,8 @@ texture = ExtResource("2_tbc4v")
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_kokif")
 one_way_collision_margin = 0.0
+
+[node name="Fusion" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("4_1hlmy")
+animation = &"fusion"
+frame_progress = 1.0

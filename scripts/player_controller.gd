@@ -24,6 +24,11 @@ signal activated
 
 var is_active = true
 
+var is_created = false
+
+@onready var fusion_anim: AnimatedSprite2D = get_node("Fusion")
+@onready var animation: Sprite2D = get_node("Sprite2D")
+
 enum State {GROUNDED, JUMPING, FALLING, COYOTE_TIME_FALLING, MUD_STICKING, MUD_RELEASE}
 
 var state: State = State.GROUNDED
@@ -61,7 +66,7 @@ func _physics_process(delta: float) -> void:
 
 	if type == Globals.Type.STEAM and is_on_ceiling():
 		state = State.GROUNDED
-	elif is_on_floor():
+	elif type != Globals.Type.STEAM and is_on_floor():
 		state = State.GROUNDED
 	elif state == State.GROUNDED:
 		state = State.COYOTE_TIME_FALLING
@@ -156,14 +161,28 @@ func activate():
 	is_active = true
 	activated.emit()
 	z_index = 10
-	# $Camera2D.enabled = true
 
 func deactivate():
 	is_active = false
 	deactivated.emit()
 	z_index = 0
-	# $Camera2D.enabled = false
 
+func activate_by_fusion(current_active: Player, partners: Array[Player]):
+	var tween = get_tree().create_tween()
+	is_active = false
+	z_index = 10
+	animation.hide()
+	fusion_anim.play("fusion")
+	for partner in partners:
+		tween.parallel().tween_property(partner, "position", current_active.position, 0.1).set_ease(Tween.EaseType.EASE_IN)
+		tween.parallel().tween_callback(partner.queue_free)
+	tween.tween_callback(current_active.queue_free)
+	tween.tween_callback(animation.show).set_delay(0.5)
+
+	tween.tween_callback(fusion_anim.hide).set_delay(0.5)
+	tween.tween_callback(activate)
+
+	
 
 func calc_horizontal_velocity(current_x: float, input_x: float, delta):
 	var result = current_x
