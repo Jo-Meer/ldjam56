@@ -29,6 +29,11 @@ func _ready():
 	add_child(main_camera)
 	main_camera.make_current()
 
+	var initial_modulate = modulate
+	modulate = Color.BLACK
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "modulate", initial_modulate, 2)
+
 
 func _process(_delta: float) -> void:
 	main_camera.position = active_creature().position
