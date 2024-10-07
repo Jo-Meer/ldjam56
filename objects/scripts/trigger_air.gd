@@ -39,6 +39,7 @@ func activate():
 		return;
 	is_active = true;
 	
+	SoundsManager.play_snd("snd_activate_crystal");
 	if auto_reset:
 		get_tree().create_timer(3).timeout.connect(reset);
 	
@@ -50,6 +51,7 @@ func deactivate():
 		return
 	is_active = false;
 	
+	SoundsManager.play_snd("snd_activate_crystal");
 	if auto_reset:
 		get_tree().create_timer(3).timeout.connect(reset);
 	

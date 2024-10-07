@@ -768,25 +768,31 @@ collision_mask = 2
 script = ExtResource("1_ci4wm")
 
 [node name="LaserSensor2" parent="." instance=ExtResource("2_1xhse")]
+visible = false
 stays_activated = true
 
 [node name="LaserSensor3" parent="." instance=ExtResource("2_1xhse")]
+visible = false
 position = Vector2(64, 0)
 stays_activated = true
 
 [node name="LaserSensor4" parent="." instance=ExtResource("2_1xhse")]
+visible = false
 position = Vector2(128, 0)
 stays_activated = true
 
 [node name="LaserSensor6" parent="." instance=ExtResource("2_1xhse")]
+visible = false
 position = Vector2(0, 64)
 stays_activated = true
 
 [node name="LaserSensor7" parent="." instance=ExtResource("2_1xhse")]
+visible = false
 position = Vector2(64, 64)
 stays_activated = true
 
 [node name="LaserSensor8" parent="." instance=ExtResource("2_1xhse")]
+visible = false
 position = Vector2(128, 64)
 stays_activated = true
 

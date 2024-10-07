@@ -145,13 +145,13 @@ position = Vector2(704, 0)
 targets = [NodePath("../Laser")]
 
 [node name="Earth" parent="." instance=ExtResource("14_8yprm")]
-position = Vector2(24, -56)
+position = Vector2(2880, 248)
 
 [node name="Air" parent="." instance=ExtResource("15_pxq5s")]
-position = Vector2(96, -72)
+position = Vector2(2952, 232)
 
 [node name="EndCristal" parent="." instance=ExtResource("16_uoqbv")]
-position = Vector2(576, 320)
+position = Vector2(2720, 384)
 
 [node name="Laser2" parent="." instance=ExtResource("8_xs458")]
 position = Vector2(2336, 96)
@@ -165,7 +165,7 @@ position = Vector2(2760, 64)
 direction = 1
 
 [node name="LaserMirror5" parent="." instance=ExtResource("9_jbgx5")]
-position = Vector2(2720, 480)
+position = Vector2(3280, 264)
 direction = 2
 
 [node name="LaserMirror6" parent="." instance=ExtResource("9_jbgx5")]

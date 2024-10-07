@@ -138,6 +138,8 @@ func switch_to_falling():
 	animation.play("fall")
 
 func switch_to_jumping():
+	if not state == State.JUMPING:
+		SoundsManager.play_snd("snd_jump", 0.1);
 	state = State.JUMPING
 	animation.play("jump")
 
@@ -203,6 +205,8 @@ func activate_by_fusion(to_be_merged: Array[Player]):
 	for partner in to_be_merged:
 		tween.parallel().tween_property(partner, "position", fusion_anim.global_position, 0.25).set_ease(Tween.EaseType.EASE_IN)
 		tween.parallel().tween_callback(partner.queue_free).set_delay(0.2666)
+		
+	SoundsManager.play_snd("snd_fusion");
 
 	tween.parallel().tween_callback(activate).set_delay(0.9333)
 	tween.parallel().tween_callback(fusion_anim.hide).set_delay(1.4)

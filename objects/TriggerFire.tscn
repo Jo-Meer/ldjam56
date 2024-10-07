@@ -885,6 +885,6 @@ shape = SubResource("RectangleShape2D_rlob8")
 position = Vector2(32, -32)
 sprite_frames = SubResource("SpriteFrames_812n0")
 animation = &"inactive"
-frame_progress = 0.101339
+frame_progress = 0.718493
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

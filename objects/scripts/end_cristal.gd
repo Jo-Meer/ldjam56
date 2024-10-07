@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 	print("avatar found");
 	avatar_loaded = min(avatar_loaded + delta, AVATAR_LOADED_MAX);
 	if avatar_loaded >= 2:
+		SoundsManager.play_snd("snd_activate_end_2");
 		print("next scene!");
 		# send avatar to avatar state
 		# animate moving into summon mode
@@ -37,6 +38,7 @@ func activate():
 	print("end crystal activated");
 	is_active = true;
 	animated_sprite.play("activate");
+	SoundsManager.play_snd("snd_activate_end");
 
 func deactivate():
 	if not is_active:
