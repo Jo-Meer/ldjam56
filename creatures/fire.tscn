@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/rotate.gd" id="4_anpte"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
-size = Vector2(54, 54)
+size = Vector2(40, 40)
 
 [node name="Fire" type="CharacterBody2D" groups=["creatures"]]
 collision_layer = 2
@@ -15,17 +15,19 @@ script = ExtResource("1_84frp")
 type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_hog4m")
 one_way_collision_margin = 0.0
 
 [node name="Fusion" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = ExtResource("3_ax2vj")
 animation = &"fusion"
 frame_progress = 1.0
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -66)
+modulate = Color(0.84, 0.3087, 0.2604, 1)
+position = Vector2(0, -53)
+scale = Vector2(0.75, 0.75)
 sprite_frames = ExtResource("3_j76lp")
 animation = &"idle"
 script = ExtResource("4_anpte")

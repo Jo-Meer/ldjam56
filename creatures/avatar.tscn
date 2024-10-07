@@ -26,7 +26,5 @@ frame_progress = 1.0
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -160)
 sprite_frames = ExtResource("3_1koxq")
-animation = &"fall"
-frame = 1
-frame_progress = 0.760086
+animation = &"jump"
 script = ExtResource("4_n52nu")
