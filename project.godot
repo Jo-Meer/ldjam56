@@ -22,6 +22,12 @@ SceneManager="*res://scenes/SceneManager.tscn"
 MusicManager="*res://music/MusicManager.tscn"
 SoundsManager="*res://sounds/SoundsManager.tscn"
 
+[display]
+
+window/size/viewport_width=1440
+window/size/viewport_height=810
+window/stretch/mode="viewport"
+
 [global_group]
 
 creatures=""
