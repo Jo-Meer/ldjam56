@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://con5vk0o21x6s"]
+[gd_resource type="SpriteFrames" load_steps=27 format=3 uid="uid://con5vk0o21x6s"]
 
 [ext_resource type="Texture2D" uid="uid://bsludgg6flf4k" path="res://creatures/sprites/avatar_spritesheet.png" id="2_qijmu"]
 
@@ -90,6 +90,18 @@ region = Rect2(1280, 384, 320, 384)
 atlas = ExtResource("2_qijmu")
 region = Rect2(1600, 384, 320, 384)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7se2"]
+atlas = ExtResource("2_qijmu")
+region = Rect2(0, 768, 320, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0d8"]
+atlas = ExtResource("2_qijmu")
+region = Rect2(320, 768, 320, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfs8m"]
+atlas = ExtResource("2_qijmu")
+region = Rect2(640, 768, 320, 384)
+
 [resource]
 animations = [{
 "frames": [{
@@ -176,5 +188,19 @@ animations = [{
 }],
 "loop": false,
 "name": &"move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7se2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0d8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfs8m")
+}],
+"loop": false,
+"name": &"victory",
 "speed": 5.0
 }]

@@ -15,6 +15,7 @@ extends CharacterBody2D
 @export var fusion_start_scale = Vector2.ONE * 0.3
 @export var fusion_ease = Tween.EaseType.EASE_OUT
 @export var fusion_trans = Tween.TransitionType.TRANS_EXPO
+@export var victory_scale = 1.75
 
 @export var type: Globals.Type = Globals.Type.AVATAR
 
@@ -28,6 +29,7 @@ signal activated
 var is_active = true
 
 var is_created = false
+var in_victory_pose = false
 
 @onready var fusion_anim: AnimatedSprite2D = get_node("Fusion")
 @onready var animation: AnimatedSprite2D = get_node("Animation")
@@ -242,3 +244,15 @@ func brake_horizontal(current_x: float, delta: float):
 		return 0
 
 	return result
+
+func victory_pose():
+	if type == Globals.Type.AVATAR and not in_victory_pose:
+		in_victory_pose = true
+		set_physics_process(false)
+		animation.play("victory")
+		var tween = get_tree().create_tween()
+		tween.parallel().tween_property(animation, "scale", animation.scale * victory_scale, 2)
+		var root = get_tree().current_scene
+		tween.parallel().tween_property(root, "modulate", Color.BLACK, 2)
+		tween.tween_callback(SceneManager.next)
+		

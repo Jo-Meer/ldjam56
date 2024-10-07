@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		print("next scene!");
 		# send avatar to avatar state
 		# animate moving into summon mode
-		SceneManager.next();
+		avatar.victory_pose()
 
 func get_overlapping_avatar():
 	for body in get_overlapping_bodies():
