@@ -1,26 +1,34 @@
-[gd_scene load_steps=39 format=4 uid="uid://emq8j57gcuht"]
+[gd_scene load_steps=47 format=4 uid="uid://emq8j57gcuht"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_e1x54"]
 [ext_resource type="PackedScene" uid="uid://dt1gd1075nq3c" path="res://deco/Background.tscn" id="2_3j2ff"]
 [ext_resource type="PackedScene" uid="uid://d0a6um5afvhie" path="res://creatures/fire.tscn" id="2_shne1"]
 [ext_resource type="PackedScene" uid="uid://1a0j5pp3n1m7" path="res://creatures/water.tscn" id="2_veiht"]
+[ext_resource type="Texture2D" uid="uid://5vb3v6imo73x" path="res://deco/decoration/Deko_02.png" id="3_jusde"]
 [ext_resource type="PackedScene" uid="uid://drysl1numdpp5" path="res://creatures/air.tscn" id="3_pgk5l"]
 [ext_resource type="TileSet" uid="uid://bmhk4rsadl00o" path="res://tiles/tileset.tres" id="3_v37qk"]
 [ext_resource type="PackedScene" uid="uid://cmrpjxtuy1cgk" path="res://objects/Door.tscn" id="4_02dor"]
 [ext_resource type="PackedScene" uid="uid://cglcykaqjpxl0" path="res://objects/TriggerFire.tscn" id="5_cbvn1"]
 [ext_resource type="PackedScene" uid="uid://culn18m3r0ju2" path="res://creatures/earth.tscn" id="5_t4djg"]
+[ext_resource type="Texture2D" uid="uid://cpo5bc5lshlxk" path="res://deco/decoration/Deko_05.png" id="5_ym87y"]
+[ext_resource type="Texture2D" uid="uid://cmqxll6en6le5" path="res://deco/decoration/Deko_08.png" id="6_le57y"]
 [ext_resource type="PackedScene" uid="uid://x5xxk5juxypj" path="res://objects/Elevator.tscn" id="7_6l5ol"]
+[ext_resource type="Texture2D" uid="uid://blpvnehdcujqy" path="res://deco/decoration/Deko_04.png" id="7_oycc4"]
 [ext_resource type="PackedScene" uid="uid://dg6wlvr8uyxqe" path="res://objects/TriggerAir.tscn" id="8_im8gh"]
 [ext_resource type="PackedScene" uid="uid://dkpwt4qfwt5tm" path="res://objects/GridTile.tscn" id="8_s4a0i"]
+[ext_resource type="Texture2D" uid="uid://cn32kq3700mve" path="res://deco/decoration/Deko_07.png" id="8_x00t2"]
 [ext_resource type="Texture2D" uid="uid://crvqdoiio4mf0" path="res://deco/obstacles/2x1.png" id="9_6sqir"]
+[ext_resource type="Texture2D" uid="uid://c71drdda3e43i" path="res://deco/decoration/Deko_06.png" id="9_twjbk"]
 [ext_resource type="PackedScene" uid="uid://010dbqlsa3an" path="res://objects/LaserMirror.tscn" id="9_xr4ty"]
 [ext_resource type="PackedScene" uid="uid://dcvvfuyiuml3m" path="res://objects/TriggerLaserSensor.tscn" id="10_3fxdc"]
 [ext_resource type="PackedScene" uid="uid://c5tqajgscdup3" path="res://objects/Laser.tscn" id="10_xatfn"]
+[ext_resource type="Texture2D" uid="uid://mxhubktcw44s" path="res://deco/decoration/Deko_03.png" id="10_xgblq"]
 [ext_resource type="Texture2D" uid="uid://dv7jfa3vyw764" path="res://deco/obstacles/1x4.png" id="11_dvbqn"]
 [ext_resource type="Texture2D" uid="uid://bfhaj85vb6pcd" path="res://deco/obstacles/3x1.png" id="14_lf80o"]
 [ext_resource type="PackedScene" uid="uid://b44e2j15qwf2e" path="res://objects/EndCristal.tscn" id="16_xlguu"]
 [ext_resource type="Texture2D" uid="uid://onvc401t1dlo" path="res://deco/obstacles/5x1.png" id="19_h8wdo"]
 [ext_resource type="Texture2D" uid="uid://b8okm5b5gkh0t" path="res://deco/obstacles/1x5.png" id="19_ptjxm"]
+[ext_resource type="Texture2D" uid="uid://dttai05mosrub" path="res://deco/decoration/Deko_01.png" id="21_b15ab"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_urfen"]
 size = Vector2(128, 128)
@@ -78,6 +86,72 @@ script = ExtResource("1_e1x54")
 
 [node name="Background" parent="." instance=ExtResource("2_3j2ff")]
 position = Vector2(37, -104)
+
+[node name="Decorations" type="Node2D" parent="."]
+
+[node name="Deko02" type="Sprite2D" parent="Decorations"]
+position = Vector2(2056, -144)
+texture = ExtResource("3_jusde")
+
+[node name="Deko01" type="Sprite2D" parent="Decorations"]
+position = Vector2(736, -112)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("21_b15ab")
+
+[node name="Deko05" type="Sprite2D" parent="Decorations"]
+position = Vector2(192, -600)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_ym87y")
+
+[node name="Deko08" type="Sprite2D" parent="Decorations"]
+position = Vector2(1192, -1360)
+rotation = -3.08225
+texture = ExtResource("6_le57y")
+
+[node name="Deko04" type="Sprite2D" parent="Decorations"]
+position = Vector2(2632, 1008)
+texture = ExtResource("7_oycc4")
+
+[node name="Deko07" type="Sprite2D" parent="Decorations"]
+position = Vector2(4880, -2760)
+texture = ExtResource("8_x00t2")
+
+[node name="Deko09" type="Sprite2D" parent="Decorations"]
+position = Vector2(3688, -2112)
+texture = ExtResource("6_le57y")
+
+[node name="Deko10" type="Sprite2D" parent="Decorations"]
+position = Vector2(2944, -1768)
+rotation = 0.000555158
+scale = Vector2(-1.33146, 1.33146)
+texture = ExtResource("6_le57y")
+
+[node name="Deko06" type="Sprite2D" parent="Decorations"]
+position = Vector2(2968, 680)
+texture = ExtResource("5_ym87y")
+
+[node name="Deko11" type="Sprite2D" parent="Decorations"]
+position = Vector2(3440, -2680)
+scale = Vector2(0.613209, 0.613209)
+texture = ExtResource("9_twjbk")
+
+[node name="Deko03" type="Sprite2D" parent="Decorations"]
+position = Vector2(4408, -3912)
+texture = ExtResource("10_xgblq")
+
+[node name="Deko14" type="Sprite2D" parent="Decorations"]
+position = Vector2(3672, -3592)
+rotation = -3.13745
+texture = ExtResource("6_le57y")
+
+[node name="Deko12" type="Sprite2D" parent="Decorations"]
+position = Vector2(2744, -4672)
+scale = Vector2(1.21886, 1.21886)
+texture = ExtResource("3_jusde")
+
+[node name="Deko13" type="Sprite2D" parent="Decorations"]
+position = Vector2(1984, -4952)
+texture = ExtResource("5_ym87y")
 
 [node name="Fire" parent="." instance=ExtResource("2_shne1")]
 position = Vector2(40, -136)
