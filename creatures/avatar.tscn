@@ -6,7 +6,7 @@
 [ext_resource type="SpriteFrames" uid="uid://1n4xcg314eph" path="res://creatures/sprites/fusion_animation.tres" id="4_q15hs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgxxo"]
-size = Vector2(54, 118)
+size = Vector2(54, 264)
 
 [node name="Avatar" type="CharacterBody2D" groups=["creatures", "element"]]
 collision_layer = 2
@@ -14,7 +14,7 @@ collision_mask = 225
 script = ExtResource("1_gtkdd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -27)
+position = Vector2(0, -100)
 shape = SubResource("RectangleShape2D_lgxxo")
 one_way_collision_margin = 0.0
 

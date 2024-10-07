@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=4 uid="uid://emq8j57gcuht"]
+[gd_scene load_steps=35 format=4 uid="uid://emq8j57gcuht"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_e1x54"]
+[ext_resource type="PackedScene" uid="uid://dt1gd1075nq3c" path="res://deco/Background.tscn" id="2_3j2ff"]
 [ext_resource type="PackedScene" uid="uid://d0a6um5afvhie" path="res://creatures/fire.tscn" id="2_shne1"]
 [ext_resource type="PackedScene" uid="uid://1a0j5pp3n1m7" path="res://creatures/water.tscn" id="2_veiht"]
 [ext_resource type="PackedScene" uid="uid://drysl1numdpp5" path="res://creatures/air.tscn" id="3_pgk5l"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" path="res://objects/LaserMirror.tscn" id="9_xr4ty"]
 [ext_resource type="PackedScene" uid="uid://dcvvfuyiuml3m" path="res://objects/TriggerLaserSensor.tscn" id="10_3fxdc"]
 [ext_resource type="PackedScene" path="res://objects/Laser.tscn" id="10_xatfn"]
+[ext_resource type="PackedScene" uid="uid://b44e2j15qwf2e" path="res://objects/EndCristal.tscn" id="16_xlguu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_urfen"]
 size = Vector2(128, 128)
@@ -30,17 +32,26 @@ size = Vector2(128, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tp6m5"]
 size = Vector2(384, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gdei"]
+size = Vector2(64, 64)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fws7c"]
 size = Vector2(256, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_osr25"]
 size = Vector2(192, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6rsv"]
+size = Vector2(64, 64)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb1b3"]
 size = Vector2(384, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gncyo"]
 size = Vector2(384, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72xuw"]
+size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pm4y"]
 size = Vector2(448, 320)
@@ -57,8 +68,14 @@ size = Vector2(320, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfso2"]
 size = Vector2(320, 64)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q8uh"]
+size = Vector2(64, 64)
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_e1x54")
+
+[node name="Background" parent="." instance=ExtResource("2_3j2ff")]
+position = Vector2(1711, 73)
 
 [node name="Fire" parent="." instance=ExtResource("2_shne1")]
 position = Vector2(40, -136)
@@ -113,8 +130,8 @@ targets = [NodePath("../Level1_MovingWall")]
 
 [node name="TriggerFire3" parent="Level2" node_paths=PackedStringArray("targets") instance=ExtResource("5_cbvn1")]
 position = Vector2(2752, 64)
-targets = [NodePath("../Door"), NodePath("../Door2"), NodePath("../Door3"), NodePath("../Door4"), NodePath("../Door5"), NodePath("../Door6"), NodePath("../Door7")]
 is_active = true
+targets = [NodePath("../Door"), NodePath("../Door2"), NodePath("../Door3"), NodePath("../Door4"), NodePath("../Door5"), NodePath("../Door6"), NodePath("../Door7")]
 
 [node name="Door" parent="Level2" instance=ExtResource("4_02dor")]
 position = Vector2(3200, -768)
@@ -266,8 +283,8 @@ position = Vector2(3520, -1664)
 
 [node name="TriggerFire" parent="Level3" node_paths=PackedStringArray("targets") instance=ExtResource("5_cbvn1")]
 position = Vector2(2112, 384)
-targets = [NodePath("../Elevator")]
 is_active = true
+targets = [NodePath("../Elevator")]
 
 [node name="Elevator" parent="Level3" instance=ExtResource("7_6l5ol")]
 position = Vector2(2752, 704)
@@ -288,15 +305,31 @@ direction = 1
 position = Vector2(5248, -4160)
 direction = 2
 
-[node name="Door" parent="Level4" instance=ExtResource("4_02dor")]
-position = Vector2(4736, -3840)
+[node name="Elevator9" parent="Level4" instance=ExtResource("7_6l5ol")]
+position = Vector2(4832, -3808)
+activated_position = Vector2(4824, -3248)
+deactivated_position = Vector2(4832, -3808)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level4/Door"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level4/Elevator9"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_3gdei")
+
+[node name="Door" parent="Level4/Elevator9" instance=ExtResource("4_02dor")]
+position = Vector2(-96, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level4/Elevator9/Door"]
 position = Vector2(128, 64)
 shape = SubResource("RectangleShape2D_fws7c")
 
-[node name="LaserSensor" parent="Level4/Door" instance=ExtResource("10_3fxdc")]
-position = Vector2(96, 32)
+[node name="LaserSensor" parent="Level4/Elevator9/Door" node_paths=PackedStringArray("targets") instance=ExtResource("10_3fxdc")]
+position = Vector2(32, -24)
+stays_activated = true
+targets = [NodePath("../..")]
+
+[node name="LaserSensor2" parent="Level4/Elevator9/Door" node_paths=PackedStringArray("targets") instance=ExtResource("10_3fxdc")]
+position = Vector2(96, -24)
+stays_activated = true
+targets = [NodePath("../..")]
 
 [node name="GridTile3" parent="Level4" instance=ExtResource("8_s4a0i")]
 position = Vector2(3968, -4288)
@@ -341,6 +374,18 @@ position = Vector2(5568, -3968)
 position = Vector2(96, 64)
 shape = SubResource("RectangleShape2D_osr25")
 
+[node name="Elevator8" parent="Level4" instance=ExtResource("7_6l5ol")]
+position = Vector2(2401, -4544)
+activated_position = Vector2(2400, -4840)
+deactivated_position = Vector2(2401, -4544)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level4/Elevator8"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_v6rsv")
+
+[node name="TriggerAir" parent="Level4/Elevator8" node_paths=PackedStringArray("targets") instance=ExtResource("8_im8gh")]
+targets = [NodePath("../../Elevator"), NodePath("..")]
+
 [node name="Elevator" parent="Level4" instance=ExtResource("7_6l5ol")]
 position = Vector2(2240, -4544)
 activated_position = Vector2(2240, -4928)
@@ -349,10 +394,6 @@ deactivated_position = Vector2(2240, -4544)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level4/Elevator"]
 position = Vector2(192, 64)
 shape = SubResource("RectangleShape2D_bb1b3")
-
-[node name="TriggerAir" parent="Level4/Elevator" node_paths=PackedStringArray("targets") instance=ExtResource("8_im8gh")]
-position = Vector2(160, 0)
-targets = [NodePath("..")]
 
 [node name="Elevator2" parent="Level4" instance=ExtResource("7_6l5ol")]
 position = Vector2(2240, -5888)
@@ -376,9 +417,17 @@ direction = 3
 position = Vector2(3104, -5248)
 direction = 1
 
-[node name="TriggerAir" parent="Level4" node_paths=PackedStringArray("targets") instance=ExtResource("8_im8gh")]
+[node name="Elevator7" parent="Level4" instance=ExtResource("7_6l5ol")]
 position = Vector2(3200, -4416)
-targets = [NodePath("../Elevator3")]
+activated_position = Vector2(3200, -4325)
+deactivated_position = Vector2(3200, -4416)
+
+[node name="TriggerAir" parent="Level4/Elevator7" node_paths=PackedStringArray("targets") instance=ExtResource("8_im8gh")]
+targets = [NodePath("../../Elevator3"), NodePath(".."), NodePath("../../../Door")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level4/Elevator7"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_72xuw")
 
 [node name="Elevator3" parent="Level4" instance=ExtResource("7_6l5ol")]
 position = Vector2(3520, -4864)
@@ -421,8 +470,8 @@ targets = [NodePath(".."), NodePath("../../Elevator6")]
 [node name="TriggerFire2" parent="Level4" node_paths=PackedStringArray("targets") instance=ExtResource("5_cbvn1")]
 position = Vector2(4736, -2944)
 rotation = 0.000859173
-targets = [NodePath("../Door3")]
 is_active = true
+targets = [NodePath("../Door3")]
 
 [node name="Door3" parent="Level4" instance=ExtResource("4_02dor")]
 position = Vector2(4544, -2688)
@@ -464,3 +513,13 @@ shape = SubResource("RectangleShape2D_xfso2")
 [node name="TriggerFire" parent="Level4/Elevator6" node_paths=PackedStringArray("targets") instance=ExtResource("5_cbvn1")]
 position = Vector2(192, 0)
 targets = [NodePath("../../Door4"), NodePath("../../Elevator5/TriggerAir")]
+
+[node name="EndCristal" parent="Level4" instance=ExtResource("16_xlguu")]
+position = Vector2(4744, -3456)
+
+[node name="Door" parent="." instance=ExtResource("4_02dor")]
+position = Vector2(3520, -4480)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_2q8uh")

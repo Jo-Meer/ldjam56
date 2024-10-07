@@ -1,14 +1,14 @@
-[gd_scene load_steps=46 format=4 uid="uid://dh7rkjxbppmf5"]
+[gd_scene load_steps=47 format=4 uid="uid://je66w3wi6a26"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_cwkfm"]
 [ext_resource type="PackedScene" uid="uid://bljut2rijnhk" path="res://creatures/avatar.tscn" id="2_qoq4v"]
 [ext_resource type="PackedScene" uid="uid://dt1gd1075nq3c" path="res://deco/Background.tscn" id="2_rays7"]
 [ext_resource type="TileSet" uid="uid://bmhk4rsadl00o" path="res://tiles/tileset.tres" id="3_ry7iv"]
-[ext_resource type="PackedScene" uid="uid://c5tqajgscdup3" path="res://objects/Laser.tscn" id="4_deuvf"]
+[ext_resource type="PackedScene" path="res://objects/Laser.tscn" id="4_deuvf"]
 [ext_resource type="PackedScene" uid="uid://dcvvfuyiuml3m" path="res://objects/TriggerLaserSensor.tscn" id="5_sr0qr"]
 [ext_resource type="PackedScene" uid="uid://b0dmum8hj8awy" path="res://objects/Glass.tscn" id="6_jvge3"]
-[ext_resource type="PackedScene" uid="uid://x5xxk5juxypj" path="res://objects/Elevator.tscn" id="7_8tpti"]
-[ext_resource type="PackedScene" uid="uid://010dbqlsa3an" path="res://objects/LaserMirror.tscn" id="8_onl2b"]
+[ext_resource type="PackedScene" path="res://objects/Elevator.tscn" id="7_8tpti"]
+[ext_resource type="PackedScene" path="res://objects/LaserMirror.tscn" id="8_onl2b"]
 [ext_resource type="PackedScene" uid="uid://dg6wlvr8uyxqe" path="res://objects/TriggerAir.tscn" id="9_kt835"]
 [ext_resource type="PackedScene" uid="uid://dkpwt4qfwt5tm" path="res://objects/GridTile.tscn" id="10_gcqow"]
 [ext_resource type="PackedScene" uid="uid://cglcykaqjpxl0" path="res://objects/TriggerFire.tscn" id="11_ftbli"]
@@ -96,6 +96,9 @@ size = Vector2(64, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_neckd"]
 size = Vector2(64, 64)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp18r"]
+size = Vector2(64, 64)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glf3v"]
 size = Vector2(64, 64)
 
@@ -112,7 +115,7 @@ size = Vector2(64, 192)
 script = ExtResource("1_cwkfm")
 
 [node name="Background" parent="." instance=ExtResource("2_rays7")]
-position = Vector2(-8, 0)
+position = Vector2(-8, 219)
 
 [node name="Avatar" parent="." instance=ExtResource("2_qoq4v")]
 position = Vector2(-8, -8)
@@ -570,7 +573,14 @@ position = Vector2(1280, 1088)
 
 [node name="TriggerAir" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("9_kt835")]
 position = Vector2(832, 1152)
-targets = [NodePath("../E1")]
+targets = [NodePath("../E1"), NodePath("../Door")]
+
+[node name="Door" parent="." instance=ExtResource("13_n7tdh")]
+position = Vector2(832, 1152)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_fp18r")
 
 [node name="TriggerAir2" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("9_kt835")]
 position = Vector2(960, 1200)
