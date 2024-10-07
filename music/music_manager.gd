@@ -13,3 +13,7 @@ func play_music():
 func stop_music():
 	if player.playing:
 		player.stop();
+
+
+func _on_audio_stream_player_finished() -> void:
+	player.play(0);
