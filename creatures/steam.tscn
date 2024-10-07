@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://d2xq74x7cls3v"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_4xpr4"]
+[ext_resource type="SpriteFrames" uid="uid://1n4xcg314eph" path="res://creatures/sprites/fusion_animation.tres" id="2_8p77u"]
 [ext_resource type="SpriteFrames" uid="uid://d3tcqmoh5b2k7" path="res://creatures/sprites/fusion_steam.tres" id="3_60vjp"]
-[ext_resource type="SpriteFrames" uid="uid://mlx2guqjyu0t" path="res://creatures/sprites/steam.tres" id="3_kp8tc"]
 [ext_resource type="Script" path="res://scripts/rotate.gd" id="4_aord2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
@@ -21,14 +21,16 @@ position = Vector2(0, -27)
 shape = SubResource("RectangleShape2D_hog4m")
 one_way_collision_margin = 0.0
 
-[node name="Fusion" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("3_kp8tc")
-animation = &"fusion"
-frame_progress = 1.0
-
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.78, 0.4914, 0.64532, 1)
-position = Vector2(0, -160)
+position = Vector2(0, -40)
 sprite_frames = ExtResource("3_60vjp")
 animation = &"fall"
+offset = Vector2(0, -120)
 script = ExtResource("4_aord2")
+
+[node name="Fusion" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -39)
+sprite_frames = ExtResource("2_8p77u")
+animation = &"steam"

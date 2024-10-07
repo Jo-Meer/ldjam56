@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://1a0j5pp3n1m7"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_j0si4"]
-[ext_resource type="SpriteFrames" uid="uid://mlx2guqjyu0t" path="res://creatures/sprites/steam.tres" id="3_bm8eu"]
 [ext_resource type="SpriteFrames" uid="uid://dixubywbjkrvj" path="res://creatures/sprites/small.tres" id="3_fc24i"]
 [ext_resource type="Script" path="res://scripts/rotate.gd" id="4_vjsm5"]
+[ext_resource type="SpriteFrames" uid="uid://1n4xcg314eph" path="res://creatures/sprites/fusion_animation.tres" id="86_xmk0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
 size = Vector2(40, 40)
@@ -21,14 +21,13 @@ one_way_collision_margin = 0.0
 
 [node name="Fusion" type="AnimatedSprite2D" parent="."]
 visible = false
-sprite_frames = ExtResource("3_bm8eu")
-animation = &"fusion"
-frame_progress = 1.0
+sprite_frames = ExtResource("86_xmk0m")
+animation = &"avatar"
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.2752, 0.440893, 0.86, 1)
 position = Vector2(0, -41)
 scale = Vector2(0.75, 0.75)
 sprite_frames = ExtResource("3_fc24i")
-animation = &"idle"
+animation = &"fall"
 script = ExtResource("4_vjsm5")

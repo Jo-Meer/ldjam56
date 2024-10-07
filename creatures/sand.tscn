@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bt4nx7vm2ttdj"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_vhatq"]
-[ext_resource type="SpriteFrames" uid="uid://mlx2guqjyu0t" path="res://creatures/sprites/steam.tres" id="3_tgotj"]
 [ext_resource type="SpriteFrames" uid="uid://6ttj5kk7d553" path="res://creatures/sprites/fusion.tres" id="3_wddbt"]
+[ext_resource type="SpriteFrames" uid="uid://1n4xcg314eph" path="res://creatures/sprites/fusion_animation.tres" id="4_de6op"]
 [ext_resource type="Script" path="res://scripts/rotate.gd" id="4_wloxi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
@@ -12,6 +12,7 @@ size = Vector2(54, 118)
 collision_layer = 2
 collision_mask = 193
 script = ExtResource("1_vhatq")
+fusion_start_scale = Vector2(0.43, 0.43)
 type = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -19,14 +20,16 @@ position = Vector2(0, -27)
 shape = SubResource("RectangleShape2D_hog4m")
 one_way_collision_margin = 0.0
 
-[node name="Fusion" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("3_tgotj")
-animation = &"fusion"
-frame_progress = 1.0
-
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.78, 0.63609, 0.4602, 1)
-position = Vector2(0, -160)
+position = Vector2(0, -40)
 sprite_frames = ExtResource("3_wddbt")
 animation = &"idle"
+offset = Vector2(0, -120)
 script = ExtResource("4_wloxi")
+
+[node name="Fusion" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -39)
+sprite_frames = ExtResource("4_de6op")
+animation = &"sand"

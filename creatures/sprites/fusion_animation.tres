@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://1n4xcg314eph"]
+[gd_resource type="SpriteFrames" load_steps=149 format=3 uid="uid://1n4xcg314eph"]
 
 [ext_resource type="Texture2D" uid="uid://dmnxwx1jwd71f" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00011.png" id="1_fu0d4"]
 [ext_resource type="Texture2D" uid="uid://ccdju1b74sxcj" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00012.png" id="2_evw8e"]
@@ -21,6 +21,133 @@
 [ext_resource type="Texture2D" uid="uid://l5h75cbgc2d" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00029.png" id="19_iosr1"]
 [ext_resource type="Texture2D" uid="uid://4f3u78atrm7" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00030.png" id="20_rfjj2"]
 [ext_resource type="Texture2D" uid="uid://b0k8pjjoca1ha" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00031.png" id="21_m4xgt"]
+[ext_resource type="Texture2D" uid="uid://dhpmml0vi3lxd" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00011.png" id="22_b7lgy"]
+[ext_resource type="Texture2D" uid="uid://bdegdyghjd16m" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00011.png" id="22_cwr54"]
+[ext_resource type="Texture2D" uid="uid://07eb67y3cnbo" path="res://creatures/sprites/fusions/light/Fusion_Licht_00011.png" id="22_nluxh"]
+[ext_resource type="Texture2D" uid="uid://bn6vrw3bjf6f2" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00011.png" id="22_qc1xc"]
+[ext_resource type="Texture2D" uid="uid://cnasvteqpjbn4" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00012.png" id="23_1ri4d"]
+[ext_resource type="Texture2D" uid="uid://ckk7f6bg6qhpb" path="res://creatures/sprites/fusions/light/Fusion_Licht_00012.png" id="23_81ahc"]
+[ext_resource type="Texture2D" uid="uid://bup5uydumw5ct" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00012.png" id="23_t2vyy"]
+[ext_resource type="Texture2D" uid="uid://48fn3gclxnsp" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00012.png" id="23_tbc28"]
+[ext_resource type="Texture2D" uid="uid://bn7cahshhsw22" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00013.png" id="24_2vqvw"]
+[ext_resource type="Texture2D" uid="uid://c34g3xnvcelbd" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00013.png" id="24_3y17f"]
+[ext_resource type="Texture2D" uid="uid://dncklyjwfb5jg" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00013.png" id="24_5oiym"]
+[ext_resource type="Texture2D" uid="uid://dp347186ntap6" path="res://creatures/sprites/fusions/light/Fusion_Licht_00013.png" id="24_ttsoo"]
+[ext_resource type="Texture2D" uid="uid://dl2qpdppt0k1x" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00014.png" id="25_3m7ri"]
+[ext_resource type="Texture2D" uid="uid://c1gwrbouayyf4" path="res://creatures/sprites/fusions/light/Fusion_Licht_00014.png" id="25_6k8vg"]
+[ext_resource type="Texture2D" uid="uid://dwpko5lxd2wpb" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00014.png" id="25_231m7"]
+[ext_resource type="Texture2D" uid="uid://ceq0tg384vwty" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00014.png" id="25_w1g83"]
+[ext_resource type="Texture2D" uid="uid://cmt101g0glf03" path="res://creatures/sprites/fusions/light/Fusion_Licht_00015.png" id="26_2t4e5"]
+[ext_resource type="Texture2D" uid="uid://btuwcwq0gjqj6" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00015.png" id="26_3ydlr"]
+[ext_resource type="Texture2D" uid="uid://cknfmawluwfca" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00015.png" id="26_7qbr1"]
+[ext_resource type="Texture2D" uid="uid://d2ghhxpmu16fh" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00015.png" id="26_m7rt0"]
+[ext_resource type="Texture2D" uid="uid://4w5t5a5rqvjn" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00016.png" id="27_1ijbw"]
+[ext_resource type="Texture2D" uid="uid://cj2b5whd85ua2" path="res://creatures/sprites/fusions/light/Fusion_Licht_00016.png" id="27_qhrph"]
+[ext_resource type="Texture2D" uid="uid://ct23vrxq58ffw" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00016.png" id="27_sfln8"]
+[ext_resource type="Texture2D" uid="uid://b04nu4oudwmta" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00016.png" id="27_ybgeu"]
+[ext_resource type="Texture2D" uid="uid://cew17876hanq5" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00017.png" id="28_27j1i"]
+[ext_resource type="Texture2D" uid="uid://bvlaqxstu801y" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00017.png" id="28_b0w8h"]
+[ext_resource type="Texture2D" uid="uid://dalce33o3x2mg" path="res://creatures/sprites/fusions/light/Fusion_Licht_00017.png" id="28_hkb2p"]
+[ext_resource type="Texture2D" uid="uid://8k6qbiqvqy26" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00017.png" id="28_p20ji"]
+[ext_resource type="Texture2D" uid="uid://bsjdsml4lbtjc" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00018.png" id="29_1ecmr"]
+[ext_resource type="Texture2D" uid="uid://yniweujhow2c" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00018.png" id="29_67ebf"]
+[ext_resource type="Texture2D" uid="uid://b5kxtmfnny35u" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00018.png" id="29_omb3v"]
+[ext_resource type="Texture2D" uid="uid://dsfdj3b8rr6q1" path="res://creatures/sprites/fusions/light/Fusion_Licht_00018.png" id="29_qpvh8"]
+[ext_resource type="Texture2D" uid="uid://bk281ywlqfdxo" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00019.png" id="30_i3fc4"]
+[ext_resource type="Texture2D" uid="uid://b2t53jfe2vbt0" path="res://creatures/sprites/fusions/light/Fusion_Licht_00019.png" id="30_od8fr"]
+[ext_resource type="Texture2D" uid="uid://bte44u4rtiwer" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00019.png" id="30_tuy43"]
+[ext_resource type="Texture2D" uid="uid://bntyoqkxsrysh" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00019.png" id="30_yeneh"]
+[ext_resource type="Texture2D" uid="uid://cu8bpcfwu68mn" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00020.png" id="31_3cicn"]
+[ext_resource type="Texture2D" uid="uid://cw7rw1o8eq8nf" path="res://creatures/sprites/fusions/light/Fusion_Licht_00020.png" id="31_ivs8v"]
+[ext_resource type="Texture2D" uid="uid://dbau5uwf3lpc1" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00020.png" id="31_rx4kl"]
+[ext_resource type="Texture2D" uid="uid://b6lva1hvhnvhg" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00020.png" id="31_su002"]
+[ext_resource type="Texture2D" uid="uid://curovdiygk2fx" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00021.png" id="32_0mfy1"]
+[ext_resource type="Texture2D" uid="uid://dn27fd7kmyi3" path="res://creatures/sprites/fusions/light/Fusion_Licht_00021.png" id="32_acxi4"]
+[ext_resource type="Texture2D" uid="uid://dai8fw8847hsk" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00021.png" id="32_afea3"]
+[ext_resource type="Texture2D" uid="uid://dk56mo24ew5v7" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00021.png" id="32_mxyg1"]
+[ext_resource type="Texture2D" uid="uid://c5dwwpejt8dfx" path="res://creatures/sprites/fusions/light/Fusion_Licht_00022.png" id="33_4sg4q"]
+[ext_resource type="Texture2D" uid="uid://bdot1f28hug4e" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00022.png" id="33_jrde2"]
+[ext_resource type="Texture2D" uid="uid://crixtamif7pgk" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00022.png" id="33_pvl5r"]
+[ext_resource type="Texture2D" uid="uid://gsxsq8a3jr6o" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00022.png" id="33_vgcai"]
+[ext_resource type="Texture2D" uid="uid://dt8d8eaoshbpe" path="res://creatures/sprites/fusions/light/Fusion_Licht_00023.png" id="34_0mmmi"]
+[ext_resource type="Texture2D" uid="uid://cfy2oqw8x0jws" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00023.png" id="34_60kyw"]
+[ext_resource type="Texture2D" uid="uid://bw4yc22yg4jpg" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00023.png" id="34_bqbdn"]
+[ext_resource type="Texture2D" uid="uid://dwghr2iumkhtu" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00023.png" id="34_trnod"]
+[ext_resource type="Texture2D" uid="uid://pep74v8r2k31" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00024.png" id="35_6a6el"]
+[ext_resource type="Texture2D" uid="uid://dxiwjnttm8e7d" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00024.png" id="35_7hjav"]
+[ext_resource type="Texture2D" uid="uid://ueg02q2j2aiu" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00024.png" id="35_008g1"]
+[ext_resource type="Texture2D" uid="uid://cu1rwbbfwf2nn" path="res://creatures/sprites/fusions/light/Fusion_Licht_00024.png" id="35_plac3"]
+[ext_resource type="Texture2D" uid="uid://dreyxk2sewm0w" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00025.png" id="36_g282k"]
+[ext_resource type="Texture2D" uid="uid://b00jd1il4eu0t" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00025.png" id="36_lbbt7"]
+[ext_resource type="Texture2D" uid="uid://cfy6c8j7tl88p" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00025.png" id="36_r2mcj"]
+[ext_resource type="Texture2D" uid="uid://ddphl2xscgu72" path="res://creatures/sprites/fusions/light/Fusion_Licht_00025.png" id="36_tu67p"]
+[ext_resource type="Texture2D" uid="uid://xedxvphnqku" path="res://creatures/sprites/fusions/light/Fusion_Licht_00026.png" id="37_2al8q"]
+[ext_resource type="Texture2D" uid="uid://3kh7hig5wwbi" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00026.png" id="37_cto2v"]
+[ext_resource type="Texture2D" uid="uid://cjdtbpr5oqjqa" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00026.png" id="37_g4spo"]
+[ext_resource type="Texture2D" uid="uid://b0etkg17qon1w" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00026.png" id="37_v61kf"]
+[ext_resource type="Texture2D" uid="uid://coa0ppxf8bcsj" path="res://creatures/sprites/fusions/light/Fusion_Licht_00027.png" id="38_cohe8"]
+[ext_resource type="Texture2D" uid="uid://c3g8myuvdwuty" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00027.png" id="38_cxuxn"]
+[ext_resource type="Texture2D" uid="uid://cohn5tk01ea6o" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00027.png" id="38_h1v4s"]
+[ext_resource type="Texture2D" uid="uid://cogxcojfv7uxt" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00027.png" id="38_kw4x7"]
+[ext_resource type="Texture2D" uid="uid://i6umo8urbwc5" path="res://creatures/sprites/fusions/light/Fusion_Licht_00028.png" id="39_6q8qa"]
+[ext_resource type="Texture2D" uid="uid://cix2tm82xpm6c" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00028.png" id="39_f1scb"]
+[ext_resource type="Texture2D" uid="uid://mg3slamnieic" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00028.png" id="39_t7hed"]
+[ext_resource type="Texture2D" uid="uid://mx36nb38fqwf" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00028.png" id="39_x3jgi"]
+[ext_resource type="Texture2D" uid="uid://csi8cj4agiv45" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00029.png" id="40_5sij4"]
+[ext_resource type="Texture2D" uid="uid://c6nl26vpfukps" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00029.png" id="40_27unk"]
+[ext_resource type="Texture2D" uid="uid://b1v8nnw5ri1h2" path="res://creatures/sprites/fusions/light/Fusion_Licht_00029.png" id="40_77ha5"]
+[ext_resource type="Texture2D" uid="uid://chdvqoqveqnqx" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00029.png" id="40_xenim"]
+[ext_resource type="Texture2D" uid="uid://bl8vtpdbfqnu7" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00030.png" id="41_1bs0g"]
+[ext_resource type="Texture2D" uid="uid://ctf5x8mqgifu" path="res://creatures/sprites/fusions/light/Fusion_Licht_00030.png" id="41_5ufmk"]
+[ext_resource type="Texture2D" uid="uid://dafwc6twdus63" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00030.png" id="41_j5l2g"]
+[ext_resource type="Texture2D" uid="uid://dgb74ue4ucer4" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00030.png" id="41_mcpbt"]
+[ext_resource type="Texture2D" uid="uid://ptdfeh6ynsqg" path="res://creatures/sprites/fusions/metal/Fusion_Metall_00031.png" id="42_cyhpb"]
+[ext_resource type="Texture2D" uid="uid://ucdckfphqnhg" path="res://creatures/sprites/fusions/sand/Fusion_Sand_00031.png" id="42_mofmr"]
+[ext_resource type="Texture2D" uid="uid://cc3d6onti2knx" path="res://creatures/sprites/fusions/ice/Fusion_Eis_00031.png" id="42_qg1vx"]
+[ext_resource type="Texture2D" uid="uid://btebnu4ivassl" path="res://creatures/sprites/fusions/light/Fusion_Licht_00031.png" id="42_ty5ff"]
+[ext_resource type="Texture2D" uid="uid://cjpw6ef2v877f" path="res://creatures/sprites/fusions/light/Fusion_Licht_00032.png" id="43_imv16"]
+[ext_resource type="Texture2D" uid="uid://dh3gmh1ck67bk" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00011.png" id="43_mhhyh"]
+[ext_resource type="Texture2D" uid="uid://c7niraq2d45uf" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00012.png" id="44_732fy"]
+[ext_resource type="Texture2D" uid="uid://hafahdeyje2n" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00013.png" id="45_sn3x3"]
+[ext_resource type="Texture2D" uid="uid://dy2l2fjs73o0d" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00014.png" id="46_4ppfr"]
+[ext_resource type="Texture2D" uid="uid://c4t2gfhoje10q" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00015.png" id="47_v7sh5"]
+[ext_resource type="Texture2D" uid="uid://cwk3mykok50xo" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00016.png" id="48_di3we"]
+[ext_resource type="Texture2D" uid="uid://bxr48ut7sho2q" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00017.png" id="49_ev0bl"]
+[ext_resource type="Texture2D" uid="uid://bp6t2x0f1m233" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00018.png" id="50_fnwp5"]
+[ext_resource type="Texture2D" uid="uid://c5662valirdn5" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00019.png" id="51_kt5n8"]
+[ext_resource type="Texture2D" uid="uid://2rd3tx5u83kq" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00020.png" id="52_xrkau"]
+[ext_resource type="Texture2D" uid="uid://gvr4fd26lou" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00021.png" id="53_t7bup"]
+[ext_resource type="Texture2D" uid="uid://blwyom0jvk25y" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00022.png" id="54_84doa"]
+[ext_resource type="Texture2D" uid="uid://q5xbhquvx7rp" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00023.png" id="55_efkr7"]
+[ext_resource type="Texture2D" uid="uid://bj1t8333dye2u" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00024.png" id="56_4glpv"]
+[ext_resource type="Texture2D" uid="uid://djl0bhaune25p" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00025.png" id="57_2qrk7"]
+[ext_resource type="Texture2D" uid="uid://dv4mqfoe3sxr0" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00026.png" id="58_q2x4k"]
+[ext_resource type="Texture2D" uid="uid://bqgpevov46ws4" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00027.png" id="59_c25yh"]
+[ext_resource type="Texture2D" uid="uid://bhm6m7kj2o7hp" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00028.png" id="60_2ymul"]
+[ext_resource type="Texture2D" uid="uid://b4y3h31bklag" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00029.png" id="61_1xj70"]
+[ext_resource type="Texture2D" uid="uid://bepywm0mcl8kq" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00030.png" id="62_1axec"]
+[ext_resource type="Texture2D" uid="uid://c7xa5hggocvfr" path="res://creatures/sprites/fusions/mud/Fusion_Matsch_00031.png" id="63_w0xeb"]
+[ext_resource type="Texture2D" uid="uid://com2elag3ijxl" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00011.png" id="128_upx1t"]
+[ext_resource type="Texture2D" uid="uid://chpng7yqps7u4" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00012.png" id="129_osfhf"]
+[ext_resource type="Texture2D" uid="uid://xqqdlx7o617i" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00013.png" id="130_s6jsd"]
+[ext_resource type="Texture2D" uid="uid://i31dhm4ppifc" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00014.png" id="131_c3kv7"]
+[ext_resource type="Texture2D" uid="uid://fr4p12c561d0" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00015.png" id="132_u1ipf"]
+[ext_resource type="Texture2D" uid="uid://6rquq3i2hq0p" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00016.png" id="133_2gdkn"]
+[ext_resource type="Texture2D" uid="uid://csqpjysptdx0g" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00017.png" id="134_5jetv"]
+[ext_resource type="Texture2D" uid="uid://bb6xdk50pkfei" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00018.png" id="135_t5l4n"]
+[ext_resource type="Texture2D" uid="uid://dnj6mabi2sn85" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00019.png" id="136_ki7y0"]
+[ext_resource type="Texture2D" uid="uid://d1xvomj3ac5qe" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00020.png" id="137_v6af5"]
+[ext_resource type="Texture2D" uid="uid://bcwd2uj7q1b34" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00021.png" id="138_68nl6"]
+[ext_resource type="Texture2D" uid="uid://d30iwul4u7bpq" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00022.png" id="139_flo5k"]
+[ext_resource type="Texture2D" uid="uid://b0ea5r02yb3o2" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00023.png" id="140_vwwph"]
+[ext_resource type="Texture2D" uid="uid://c51jhs7co8ajl" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00024.png" id="141_bblp3"]
+[ext_resource type="Texture2D" uid="uid://dc48s5vlwcw2y" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00025.png" id="142_e0jq6"]
+[ext_resource type="Texture2D" uid="uid://ca15ioeqpe0cs" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00026.png" id="143_1mcop"]
+[ext_resource type="Texture2D" uid="uid://ddjfahprxj4gt" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00027.png" id="144_8qpwr"]
+[ext_resource type="Texture2D" uid="uid://c1gfgek7h2eey" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00028.png" id="145_n827w"]
+[ext_resource type="Texture2D" uid="uid://btkf7pv56vde3" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00029.png" id="146_dthff"]
+[ext_resource type="Texture2D" uid="uid://c4274ps1iyk2h" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00030.png" id="147_m7bj2"]
+[ext_resource type="Texture2D" uid="uid://5h6edc2gut3h" path="res://creatures/sprites/fusions/steam/Fusion_Dampf_00031.png" id="148_8saxc"]
 
 [resource]
 animations = [{
@@ -90,5 +217,416 @@ animations = [{
 }],
 "loop": false,
 "name": &"avatar",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_b7lgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_tbc28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_3y17f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_3m7ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_7qbr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1ijbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_b0w8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1ecmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_yeneh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_3cicn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_afea3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_vgcai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_60kyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_6a6el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_lbbt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_g4spo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_kw4x7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_t7hed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_xenim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_j5l2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_qg1vx")
+}],
+"loop": false,
+"name": &"ice",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_nluxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_81ahc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ttsoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6k8vg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_2t4e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qhrph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_hkb2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_qpvh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_od8fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ivs8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_acxi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_4sg4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_0mmmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_plac3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_tu67p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_2al8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_cohe8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_6q8qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_77ha5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_5ufmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ty5ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_imv16")
+}],
+"loop": false,
+"name": &"light",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_qc1xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_t2vyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_5oiym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_w1g83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_m7rt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ybgeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_p20ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_67ebf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_tuy43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_su002")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_mxyg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_jrde2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_trnod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_7hjav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_g282k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_v61kf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_cxuxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_f1scb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_27unk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_1bs0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_cyhpb")
+}],
+"loop": false,
+"name": &"metal",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_mhhyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_732fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_sn3x3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_4ppfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_v7sh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_di3we")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ev0bl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_fnwp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_kt5n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_xrkau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_t7bup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_84doa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_efkr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_4glpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_2qrk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_q2x4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_c25yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_2ymul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_1xj70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_1axec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_w0xeb")
+}],
+"loop": false,
+"name": &"mud",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_cwr54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1ri4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_2vqvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_231m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3ydlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_sfln8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_27j1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_omb3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_i3fc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_rx4kl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_0mfy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_pvl5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_bqbdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_008g1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_r2mcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_cto2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_h1v4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_x3jgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_5sij4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_mcpbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_mofmr")
+}],
+"loop": false,
+"name": &"sand",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("128_upx1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_osfhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_s6jsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_c3kv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_u1ipf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_2gdkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_5jetv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_t5l4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_ki7y0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_v6af5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_68nl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_flo5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_vwwph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_bblp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_e0jq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_1mcop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_8qpwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_n827w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_dthff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_m7bj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_8saxc")
+}],
+"loop": false,
+"name": &"steam",
 "speed": 15.0
 }]

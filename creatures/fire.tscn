@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0a6um5afvhie"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_84frp"]
-[ext_resource type="SpriteFrames" uid="uid://mlx2guqjyu0t" path="res://creatures/sprites/steam.tres" id="3_ax2vj"]
+[ext_resource type="SpriteFrames" uid="uid://1n4xcg314eph" path="res://creatures/sprites/fusion_animation.tres" id="2_ojw2k"]
 [ext_resource type="SpriteFrames" uid="uid://dixubywbjkrvj" path="res://creatures/sprites/small.tres" id="3_j76lp"]
 [ext_resource type="Script" path="res://scripts/rotate.gd" id="4_anpte"]
 
@@ -21,9 +21,8 @@ one_way_collision_margin = 0.0
 
 [node name="Fusion" type="AnimatedSprite2D" parent="."]
 visible = false
-sprite_frames = ExtResource("3_ax2vj")
-animation = &"fusion"
-frame_progress = 1.0
+sprite_frames = ExtResource("2_ojw2k")
+animation = &"avatar"
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.84, 0.3087, 0.2604, 1)

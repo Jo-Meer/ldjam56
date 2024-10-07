@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_5hvq2"]
 [ext_resource type="SpriteFrames" uid="uid://6ttj5kk7d553" path="res://creatures/sprites/fusion.tres" id="3_a0mdn"]
-[ext_resource type="SpriteFrames" uid="uid://mlx2guqjyu0t" path="res://creatures/sprites/steam.tres" id="3_nuecf"]
 [ext_resource type="Script" path="res://scripts/rotate.gd" id="4_t8obs"]
+[ext_resource type="SpriteFrames" uid="uid://1n4xcg314eph" path="res://creatures/sprites/fusion_animation.tres" id="4_yfm66"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
 size = Vector2(54, 118)
@@ -20,14 +20,16 @@ position = Vector2(0, -27)
 shape = SubResource("RectangleShape2D_hog4m")
 one_way_collision_margin = 0.0
 
-[node name="Fusion" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("3_nuecf")
-animation = &"fusion"
-frame_progress = 1.0
-
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.96, 0.91392, 0.6528, 1)
-position = Vector2(0, -160)
+position = Vector2(0, -40)
 sprite_frames = ExtResource("3_a0mdn")
 animation = &"idle"
+offset = Vector2(0, -120)
 script = ExtResource("4_t8obs")
+
+[node name="Fusion" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -39)
+sprite_frames = ExtResource("4_yfm66")
+animation = &"light"

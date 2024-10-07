@@ -19,12 +19,14 @@ shape = SubResource("RectangleShape2D_lgxxo")
 one_way_collision_margin = 0.0
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -160)
+position = Vector2(0, -120)
 sprite_frames = ExtResource("3_1koxq")
 animation = &"idle"
+offset = Vector2(0, -40)
 script = ExtResource("4_n52nu")
 
 [node name="Fusion" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(0, -121)
 sprite_frames = ExtResource("4_q15hs")
 animation = &"avatar"
