@@ -5,6 +5,8 @@ var is_active: bool = false;
 var avatar_loaded = 0;
 var AVATAR_LOADED_MAX = 2;
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D;
+
 func _process(delta: float) -> void:
 	if not is_active:
 		return
@@ -32,14 +34,16 @@ func get_overlapping_avatar():
 func activate():
 	if is_active:
 		return;
-	print("end crystal activated")
+	print("end crystal activated");
 	is_active = true;
+	animated_sprite.play("activate");
 
 func deactivate():
 	if not is_active:
 		return
 	print("end crystal deactivated")
 	is_active = false;
+	animated_sprite.play("inactive");
 
 func toggle():
 	activate();
@@ -47,3 +51,7 @@ func toggle():
 		#deactivate()
 	#else:
 		#activate()
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation == "activate":
+		animated_sprite.play("active");

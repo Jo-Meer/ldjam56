@@ -12,6 +12,9 @@ signal mirror_leave(beam_node: Node2D);
 @onready var beam_area_shape: CollisionShape2D = $BeamArea/CollisionShape2D;
 @onready var create_timer = $CreateTimer;
 @onready var path: Path2D = $Path2D;
+@onready var ray_mask: ColorRect = $Rays;
+@onready var vvv: Node2D = $Rays/VVV;
+@onready var hhh: Node2D = $Rays/HHH;
 
 var raycast_direction = null;
 var path_endpoint: Vector2 = Vector2.ZERO;
@@ -25,6 +28,12 @@ var active_sensors = [];
 func _ready() -> void:
 	if source_mirror != null:
 		raycast.add_exception(source_mirror);
+	
+	if not Engine.is_editor_hint():
+		for sprite in hhh.get_children():
+			sprite.play();
+		for sprite in vvv.get_children():
+			sprite.play();
 	
 	# ensure each laser beam gets an individual shape!
 	beam_area_shape.shape = RectangleShape2D.new()
@@ -76,24 +85,47 @@ func update_laser_path():
 	if local_col_point == path_endpoint:
 		return
 	
+	var vertical = local_col_point.y != 0;
+	var horizontal = local_col_point.x != 0;
+	
 	# update beam area 2d
 	var x_size = max(abs(local_col_point.x), 2);
 	var y_size = max(abs(local_col_point.y), 2);
 	beam_area_shape.shape.size = Vector2(x_size, y_size);
+	
+	ray_mask.size = Vector2(max(x_size, 10), max(y_size, 10));
+	if horizontal:
+		ray_mask.size.y = 96;
+		hhh.show();
+		vvv.hide();
+		hhh.position = ray_mask.size / 2;
+		if local_col_point.x < 0:
+			ray_mask.position.x = local_col_point.x;
+		else:
+			ray_mask.position.x = 0;
+		ray_mask.position.y = -ray_mask.size.y/2;
+	if vertical:
+		ray_mask.size.x = 96;
+		hhh.hide();
+		vvv.show();
+		vvv.position = ray_mask.size / 2;
+	
+		if local_col_point.y < 0:
+			ray_mask.position.y = local_col_point.y;
+		else:
+			ray_mask.position.y = 0;
+		ray_mask.position.x = -ray_mask.size.x /2;
+	
 	var midpoint = local_col_point / 2;
 	beam_area_shape.position = Vector2(midpoint.x, midpoint.y);
-	
 	path_endpoint = local_col_point;
 	
 	path.curve.clear_points();
 	path.curve.add_point(Vector2(0, 0));
 	path.curve.add_point(Vector2(local_col_point));
 	
-	#var points_container = $Points;
-	#for child in points_container.get_children():
-		#child.queue_free();
-	var points = path.curve.get_baked_points();
-	$Line2D.points = points;
+	#var points = path.curve.get_baked_points();
+	#$Line2D.points = points;
 
 func check_mirror_hits(collided_node: Node, collision_point: Vector2):
 	if collided_node == null:
