@@ -12,6 +12,8 @@ extends CharacterBody2D
 @export var jump_gravity_factor = 2.0
 @export var fall_gravity_factor = 4.0
 @export var coyote_time = 0.1
+@export var fusion_start_scale = Vector2.ONE * 0.3
+@export var fusion_start_position = Vector2(0, -126)
 
 @export var type: Globals.Type = Globals.Type.AVATAR
 
@@ -190,20 +192,26 @@ func deactivate():
 	deactivated.emit()
 	z_index = 0
 
-func activate_by_fusion(current_active: Player, partners: Array[Player]):
+func activate_by_fusion(to_be_merged: Array[Player]):
 	var tween = get_tree().create_tween()
 	is_active = false
 	z_index = 10
 	animation.hide()
-	fusion_anim.play("fusion")
-	for partner in partners:
-		tween.parallel().tween_property(partner, "position", current_active.position, 0.1).set_ease(Tween.EaseType.EASE_IN)
-		tween.parallel().tween_callback(partner.queue_free)
-	tween.tween_callback(current_active.queue_free)
-	tween.tween_callback(animation.show).set_delay(0.5)
+	fusion_anim.play("")
+	for partner in to_be_merged:
+		tween.parallel().tween_property(partner, "position", fusion_anim.global_position, 0.25).set_ease(Tween.EaseType.EASE_IN)
+		tween.parallel().tween_callback(partner.queue_free).set_delay(0.2666)
 
-	tween.tween_callback(fusion_anim.hide).set_delay(0.5)
-	tween.tween_callback(activate)
+	tween.parallel().tween_callback(activate).set_delay(0.9333)
+	tween.parallel().tween_callback(fusion_anim.hide).set_delay(1.4)
+
+	tween.parallel().tween_callback(animation.show).set_delay(0.2666)
+	var original_scale = animation.scale
+	animation.scale = fusion_start_scale
+	var original_position = animation.position
+	animation.position = fusion_start_position
+	tween.parallel().tween_property(animation, "scale", original_scale, 0.1).set_ease(Tween.EaseType.EASE_OUT).set_delay(0.2666)
+	tween.parallel().tween_property(animation, "position", original_position, 0.1).set_ease(Tween.EaseType.EASE_OUT).set_delay(0.2666)
 
 	
 

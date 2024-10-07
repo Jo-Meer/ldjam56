@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=4 uid="uid://bqti0huii8fac"]
+[gd_scene load_steps=7 format=4 uid="uid://bqti0huii8fac"]
 
 [ext_resource type="PackedScene" uid="uid://cjpvetl63rgkb" path="res://scenes/base.tscn" id="1_erfbk"]
+[ext_resource type="PackedScene" uid="uid://drysl1numdpp5" path="res://creatures/air.tscn" id="3_dltcy"]
 [ext_resource type="TileSet" uid="uid://cmgfutv0oul4w" path="res://tiles/example.tres" id="3_hjcuf"]
-[ext_resource type="PackedScene" uid="uid://bljut2rijnhk" path="res://creatures/avatar.tscn" id="3_lvw5b"]
+[ext_resource type="PackedScene" uid="uid://culn18m3r0ju2" path="res://creatures/earth.tscn" id="4_13ydu"]
+[ext_resource type="PackedScene" uid="uid://d0a6um5afvhie" path="res://creatures/fire.tscn" id="5_gx57d"]
+[ext_resource type="PackedScene" uid="uid://1a0j5pp3n1m7" path="res://creatures/water.tscn" id="6_t4tr7"]
 
 [node name="TestJonas" type="Node"]
 
@@ -12,4 +15,10 @@
 tile_map_data = PackedByteArray("AAD8/wIAAQAGAAAAAAD9/wIAAQAGAAAAAAD+/wIAAQAGAAAAAAD//wIAAQAGAAAAAAAAAAIAAQAGAAAAAAABAAIAAQAGAAAAAAACAAIAAQAGAAAAAAADAAIAAQAGAAAAAAAEAAIAAQAGAAAAAAAFAAIAAQAGAAAAAAAGAAIAAQAGAAAAAAAHAAIAAQAGAAAAAAAIAAIAAQACAAAAAAAIAAEAAQACAAAAAAAIAAAAAQABAAAAAAAJAAAAAQACAAAAAAAKAAAAAQACAAAAAAALAAAAAQADAAAAAAALAAEAAQACAAAAAAALAAIAAQACAAAAAAAMAAIAAQACAAAAAAANAAIAAQACAAAAAAAOAAIAAQACAAAAAAAPAAIAAQACAAAAAAAQAAIAAQACAAAAAAD5//f/AQAGAAAAAAD6//f/AQAGAAAAAAD7//f/AQAGAAAAAAD8//f/AQAGAAAAAAD8//b/AQAGAAAAAAD9//b/AQAGAAAAAAD+//b/AQAGAAAAAAD///b/AQAGAAAAAAAAAPb/AQAGAAAAAAABAPb/AQAGAAAAAAACAPb/AQAGAAAAAAADAPb/AQAGAAAAAAAEAPb/AQAGAAAAAAAFAPb/AQAGAAAAAAAGAPb/AQAGAAAAAAAHAPb/AQAGAAAAAAAHAPf/AQAGAAAAAAAIAPf/AQAGAAAAAAA=")
 tile_set = ExtResource("3_hjcuf")
 
-[node name="Avatar" parent="Base" instance=ExtResource("3_lvw5b")]
+[node name="Air" parent="Base" instance=ExtResource("3_dltcy")]
+
+[node name="Earth" parent="Base" instance=ExtResource("4_13ydu")]
+
+[node name="Fire" parent="Base" instance=ExtResource("5_gx57d")]
+
+[node name="Water" parent="Base" instance=ExtResource("6_t4tr7")]

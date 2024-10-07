@@ -129,9 +129,9 @@ func _physics_process(_delta: float) -> void:
 		others.erase(current)
 		if others.size() == 3:
 			if others.all(func(partner): return in_merge_range(current, partner)):
-				instances.clear()
 				var instance = instantiate(preload("res://creatures/avatar.tscn"), current.position)
-				instance.activate_by_fusion(current, others)
+				instance.activate_by_fusion(instances)
+				instances.clear()
 				instances.append(instance)
 				active = 0
 
@@ -144,9 +144,8 @@ func _physics_process(_delta: float) -> void:
 func instantiate_with_merge(current: Player, partner: Player, merged: PackedScene):
 	instances.erase(current)
 	instances.erase(partner)
-	partner.deactivate()
 	var instance = instantiate(merged, current.position)
-	instance.activate_by_fusion(current, [partner])
+	instance.activate_by_fusion([current, partner])
 	instances.append(instance)
 	active = instances.size() - 1
 

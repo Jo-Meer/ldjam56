@@ -27,6 +27,7 @@ animation = &"fusion"
 frame_progress = 1.0
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.78, 0.4914, 0.64532, 1)
 position = Vector2(0, -160)
 sprite_frames = ExtResource("3_60vjp")
 animation = &"fall"
