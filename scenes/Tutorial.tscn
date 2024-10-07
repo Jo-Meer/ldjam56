@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://emq8j57gcuht"]
+[gd_scene load_steps=50 format=4 uid="uid://emq8j57gcuht"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_e1x54"]
 [ext_resource type="PackedScene" uid="uid://dt1gd1075nq3c" path="res://deco/Background.tscn" id="2_3j2ff"]
@@ -12,22 +12,24 @@
 [ext_resource type="PackedScene" uid="uid://culn18m3r0ju2" path="res://creatures/earth.tscn" id="5_t4djg"]
 [ext_resource type="Texture2D" uid="uid://cpo5bc5lshlxk" path="res://deco/decoration/Deko_05.png" id="5_ym87y"]
 [ext_resource type="Texture2D" uid="uid://cmqxll6en6le5" path="res://deco/decoration/Deko_08.png" id="6_le57y"]
-[ext_resource type="PackedScene" uid="uid://x5xxk5juxypj" path="res://objects/Elevator.tscn" id="7_6l5ol"]
+[ext_resource type="PackedScene" path="res://objects/Elevator.tscn" id="7_6l5ol"]
 [ext_resource type="Texture2D" uid="uid://blpvnehdcujqy" path="res://deco/decoration/Deko_04.png" id="7_oycc4"]
 [ext_resource type="PackedScene" uid="uid://dg6wlvr8uyxqe" path="res://objects/TriggerAir.tscn" id="8_im8gh"]
 [ext_resource type="PackedScene" uid="uid://dkpwt4qfwt5tm" path="res://objects/GridTile.tscn" id="8_s4a0i"]
 [ext_resource type="Texture2D" uid="uid://cn32kq3700mve" path="res://deco/decoration/Deko_07.png" id="8_x00t2"]
 [ext_resource type="Texture2D" uid="uid://crvqdoiio4mf0" path="res://deco/obstacles/2x1.png" id="9_6sqir"]
 [ext_resource type="Texture2D" uid="uid://c71drdda3e43i" path="res://deco/decoration/Deko_06.png" id="9_twjbk"]
-[ext_resource type="PackedScene" uid="uid://010dbqlsa3an" path="res://objects/LaserMirror.tscn" id="9_xr4ty"]
+[ext_resource type="PackedScene" path="res://objects/LaserMirror.tscn" id="9_xr4ty"]
 [ext_resource type="PackedScene" uid="uid://dcvvfuyiuml3m" path="res://objects/TriggerLaserSensor.tscn" id="10_3fxdc"]
-[ext_resource type="PackedScene" uid="uid://c5tqajgscdup3" path="res://objects/Laser.tscn" id="10_xatfn"]
+[ext_resource type="PackedScene" path="res://objects/Laser.tscn" id="10_xatfn"]
 [ext_resource type="Texture2D" uid="uid://mxhubktcw44s" path="res://deco/decoration/Deko_03.png" id="10_xgblq"]
 [ext_resource type="Texture2D" uid="uid://dv7jfa3vyw764" path="res://deco/obstacles/1x4.png" id="11_dvbqn"]
 [ext_resource type="Texture2D" uid="uid://bfhaj85vb6pcd" path="res://deco/obstacles/3x1.png" id="14_lf80o"]
 [ext_resource type="PackedScene" uid="uid://b44e2j15qwf2e" path="res://objects/EndCristal.tscn" id="16_xlguu"]
 [ext_resource type="Texture2D" uid="uid://onvc401t1dlo" path="res://deco/obstacles/5x1.png" id="19_h8wdo"]
 [ext_resource type="Texture2D" uid="uid://b8okm5b5gkh0t" path="res://deco/obstacles/1x5.png" id="19_ptjxm"]
+[ext_resource type="PackedScene" uid="uid://dfrcslee5lpk5" path="res://objects/text/Text.tscn" id="20_ps3gt"]
+[ext_resource type="Theme" uid="uid://d31aee7wprr0v" path="res://scenes/sprites/new_theme.tres" id="21_61ykh"]
 [ext_resource type="Texture2D" uid="uid://dttai05mosrub" path="res://deco/decoration/Deko_01.png" id="21_b15ab"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_urfen"]
@@ -38,6 +40,9 @@ size = Vector2(128, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nylnw"]
 size = Vector2(128, 512)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkw21"]
+size = Vector2(448, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlwt7"]
 size = Vector2(128, 64)
@@ -287,6 +292,48 @@ targets = [NodePath("../Level1_FloorBlock1"), NodePath("../Level1_FloorBlock2")]
 [node name="TriggerFire2" parent="Level1" node_paths=PackedStringArray("targets") instance=ExtResource("5_cbvn1")]
 position = Vector2(1536, 64)
 targets = [NodePath("../Level1_MovingWall")]
+
+[node name="Text" parent="Level1" instance=ExtResource("20_ps3gt")]
+position = Vector2(254, -147)
+
+[node name="Label" type="Label" parent="Level1/Text"]
+offset_left = -382.0
+offset_top = -213.0
+offset_right = 130.0
+offset_bottom = 104.0
+theme = ExtResource("21_61ykh")
+theme_override_font_sizes/font_size = 21
+text = "Move:
+
+Keys: WASD
+Controller: 
+D-Pad/Left-Stick
+
+Jump:
+
+Keys: Space
+Controller: Xbox-A"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Text"]
+position = Vector2(-286, 147)
+shape = SubResource("RectangleShape2D_mkw21")
+
+[node name="Text2" parent="Level1" instance=ExtResource("20_ps3gt")]
+position = Vector2(376, -792)
+
+[node name="Label" type="Label" parent="Level1/Text2"]
+offset_left = -504.0
+offset_top = -40.0
+offset_right = -274.0
+offset_bottom = 277.0
+theme = ExtResource("21_61ykh")
+theme_override_font_sizes/font_size = 21
+text = "Activate crystals 
+by touching"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Text2"]
+position = Vector2(-344, 152)
+shape = SubResource("RectangleShape2D_mkw21")
 
 [node name="Level2" type="Node2D" parent="."]
 
