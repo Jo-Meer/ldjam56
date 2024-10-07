@@ -5,14 +5,20 @@ extends Node2D
 
 @export var is_active: bool = true;
 
-@onready var beam = $LaserBeam;
+var beam = null;
 var LaserBeam = preload("res://objects/LaserBeam.tscn");
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if has_node("LaserBeam"):
+		beam = $LaserBeam;
 	if beam:
 		beam.mirror_enter.connect(_on_laser_beam_mirror_enter);
 		beam.mirror_leave.connect(_on_laser_beam_mirror_leave);
+	
+	if not Engine.is_editor_hint():
+		if is_active:
+			create_beam();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

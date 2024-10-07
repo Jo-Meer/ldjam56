@@ -4,9 +4,6 @@ extends Area2D
 # NEEDS A CollisionShape2D child
 
 # implements activatable
-
-@export var targets:Array[Node] = [];
-
 @export var is_active:bool = false:
 	set(new_is_active):
 		is_active = new_is_active
@@ -18,8 +15,14 @@ extends Area2D
 			if animated_sprite:
 				animated_sprite.animation = "inactive";
 				animated_sprite.play("inactive");
+				
+@export var targets:Array[Node] = [];
+@export var auto_reset: bool = false;
 
 @onready var animated_sprite = $AnimatedSprite2D;
+
+
+@onready var default_state: bool = is_active;
 
 func _ready() -> void:
 	if is_active:
@@ -33,14 +36,22 @@ func _ready() -> void:
 func activate():
 	if is_active:
 		return;
+		
 	is_active = true;
+	if auto_reset:
+		get_tree().create_timer(3).timeout.connect(reset);
+	
 	for target in targets:
 		target.toggle();
 
 func deactivate():
 	if not is_active:
 		return
+		
 	is_active = false;
+	if auto_reset:
+		get_tree().create_timer(3).timeout.connect(reset);
+	
 	for target in targets:
 		target.toggle();
 
@@ -51,6 +62,9 @@ func toggle():
 	else:
 		activate();
 
+
+func reset():
+	is_active = default_state;
 
 func _on_body_entered(body: Node2D):
 	# TODO:

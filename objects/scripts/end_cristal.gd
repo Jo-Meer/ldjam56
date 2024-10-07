@@ -11,17 +11,16 @@ func _process(delta: float) -> void:
 	
 	var avatar = get_overlapping_avatar();
 	if avatar == null:
-		print("no avatar");
 		avatar_loaded = max(0, avatar_loaded - delta);
 		return
-	else:
-		print("avatar found");
-		avatar_loaded = min(avatar_loaded + delta, AVATAR_LOADED_MAX);
-		if avatar_loaded >= 2:
-			print("next scene!");
-			# send avatar to avatar state
-			# animate moving into summon mode
-			SceneManager.next();
+	
+	print("avatar found");
+	avatar_loaded = min(avatar_loaded + delta, AVATAR_LOADED_MAX);
+	if avatar_loaded >= 2:
+		print("next scene!");
+		# send avatar to avatar state
+		# animate moving into summon mode
+		SceneManager.next();
 
 func get_overlapping_avatar():
 	for body in get_overlapping_bodies():

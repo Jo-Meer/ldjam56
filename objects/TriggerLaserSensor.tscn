@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcvvfuyiuml3m"]
+[gd_scene load_steps=5 format=3 uid="uid://dcvvfuyiuml3m"]
 
 [ext_resource type="Script" path="res://objects/scripts/laser_sensor.gd" id="1_f1tcb"]
 [ext_resource type="Texture2D" uid="uid://b6tbueauaxs0y" path="res://objects/sprites/placeholder_lasersensor.png" id="2_curif"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0aydg"]
 size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0ykk"]
+size = Vector2(48, 48)
 
 [node name="LaserSensor" type="Area2D"]
 collision_layer = 16
@@ -18,3 +21,11 @@ shape = SubResource("RectangleShape2D_0aydg")
 [node name="PlaceholderLasersensor" type="Sprite2D" parent="."]
 position = Vector2(32, 32)
 texture = ExtResource("2_curif")
+
+[node name="LightBlocker" type="StaticBody2D" parent="."]
+collision_layer = 16384
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightBlocker"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_o0ykk")

@@ -19,7 +19,10 @@ extends Area2D
 			animated_sprite.animation = "inactive";
 			animated_sprite.play("inactive");
 
+@export var auto_reset: bool = false;
+
 @onready var animated_sprite = $AnimatedSprite2D;
+@onready var default_state: bool = is_active;
 
 func _ready() -> void:
 	if is_active:
@@ -34,11 +37,23 @@ func activate():
 	if is_active:
 		return;
 	is_active = true;
+	
+	if auto_reset:
+		get_tree().create_timer(3).timeout.connect(reset);
+	
+	for target in targets:
+		target.toggle();
 
 func deactivate():
 	if not is_active:
 		return
 	is_active = false;
+	
+	if auto_reset:
+		get_tree().create_timer(3).timeout.connect(reset);
+	
+	for target in targets:
+		target.toggle();
 
 func toggle():
 	if is_active:
@@ -46,20 +61,8 @@ func toggle():
 	else:
 		activate();
 
-func trigger_activate():
-	if is_active:
-		return
-	activate();
-	for target in targets:
-		target.toggle();
-
-func trigger_deactivate():
-	if is_active == false:
-		return
-	deactivate();
-	for target in targets:
-		target.toggle();
-	
+func reset():
+	is_active = default_state;
 
 func _on_body_entered(body: Node2D):
 	# TODO:
@@ -67,10 +70,10 @@ func _on_body_entered(body: Node2D):
 		#return;
 	
 	if body.type == Globals.Type.AIR:
-		trigger_activate();
+		activate();
 	
 	if body.type == Globals.Type.EARTH:
-		trigger_deactivate();
+		deactivate();
 
 func _on_body_exited(_body: Node2D):
 	return

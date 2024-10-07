@@ -7,17 +7,18 @@ signal deactivated
 @export var stays_activated: bool = false;
 @export var targets:Array[Node] = [];
 
+@export var LOADING_THRESHOLD:float = 2.5;
 var loaded = 0;
-var LOADING_THRESHOLD = 2.5;
-var LOADING_MAX = 3;
 
 func _process(delta: float) -> void:
+	var LOADING_MAX = LOADING_THRESHOLD + 0.5;
 	var overlapping_areas = get_overlapping_areas();
 	if overlapping_areas.size() > 0:
-		loaded = min(loaded + delta, LOADING_MAX);
+		if loaded < LOADING_MAX:
+			loaded = min(loaded + delta, LOADING_MAX);
 	else:
 		loaded = max(loaded - delta, 0);
-		
+	
 	if loaded > LOADING_THRESHOLD:
 		activate();
 	elif not stays_activated:
@@ -27,6 +28,7 @@ func activate():
 	if is_active:
 		return
 	is_active = true
+	print("activating laser!");
 	activated.emit()
 	var parent = get_parent();
 	if parent.is_in_group("activatable"):

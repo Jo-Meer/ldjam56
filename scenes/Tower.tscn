@@ -131,8 +131,8 @@ shape = SubResource("RectangleShape2D_wotfg")
 
 [node name="TriggerFire" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("7_1cjfs")]
 position = Vector2(-512, -128)
-targets = [NodePath("../Backdoor")]
 is_active = true
+targets = [NodePath("../Backdoor")]
 
 [node name="TriggerFire3" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("7_1cjfs")]
 position = Vector2(1344, 256)
@@ -187,8 +187,8 @@ deactivated_position = Vector2(3456, 576)
 
 [node name="TriggerFire4" parent="Elevator6" node_paths=PackedStringArray("targets") instance=ExtResource("7_1cjfs")]
 position = Vector2(-192, -192)
-targets = [NodePath("../../Elevator4"), NodePath("../../Elevator5"), NodePath("..")]
 is_active = true
+targets = [NodePath("../../Elevator4"), NodePath("../../Elevator5"), NodePath("..")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator6"]
 position = Vector2(32, 32)

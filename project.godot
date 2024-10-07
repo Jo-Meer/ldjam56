@@ -25,6 +25,7 @@ SceneManager="*res://scenes/SceneManager.tscn"
 creatures=""
 activatable=""
 element=""
+elevator=""
 
 [input]
 

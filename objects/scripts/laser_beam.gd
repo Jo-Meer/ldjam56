@@ -96,6 +96,9 @@ func update_laser_path():
 	$Line2D.points = points;
 
 func check_mirror_hits(collided_node: Node, collision_point: Vector2):
+	if collided_node == null:
+		return
+		
 	if not collided_node.is_in_group("mirror"):
 		if meets_mirror:
 			mirror_leave.emit(self);
