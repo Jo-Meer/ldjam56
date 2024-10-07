@@ -39,10 +39,21 @@ func _physics_process(_delta: float) -> void:
 			var avatar = active_creature()
 			var target_pos = active_creature().position
 
-			instances.append(instantiate(preload("res://creatures/fire.tscn"), target_pos))
-			instances.append(instantiate(preload("res://creatures/water.tscn"), target_pos))
-			instances.append(instantiate(preload("res://creatures/air.tscn"), target_pos))
-			instances.append(instantiate(preload("res://creatures/earth.tscn"), target_pos))
+			var fire = instantiate(preload("res://creatures/fire.tscn"), target_pos)
+			fire.velocity = Vector2(-500,0)
+			instances.append(fire)
+
+			var water = instantiate(preload("res://creatures/water.tscn"), target_pos)
+			water.velocity = Vector2(-350, 0)
+			instances.append(water)
+
+			var air = instantiate(preload("res://creatures/air.tscn"), target_pos)
+			air.velocity = Vector2(350, 0)
+			instances.append(air)
+
+			var earth = instantiate(preload("res://creatures/earth.tscn"), target_pos)
+			earth.velocity = Vector2(500, 0)
+			instances.append(earth)
 		
 			avatar.queue_free()
 			instances.erase(avatar)
@@ -155,8 +166,10 @@ func instantiate_with_split(current: Player, first: PackedScene, second: PackedS
 	var first_inst = instantiate(first, current.position)
 	first_inst.activate()
 	instances.append(first_inst)
+	first_inst.velocity = Vector2(-350, 0)
 	active = instances.size() - 1
 	var second_inst = instantiate(second, current.position)
+	second_inst.velocity = Vector2(350, 0)
 	instances.append(second_inst)
 
 
