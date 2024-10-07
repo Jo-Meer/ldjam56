@@ -1,17 +1,25 @@
-[gd_scene load_steps=49 format=4 uid="uid://dh7rkjxbppmf5"]
+[gd_scene load_steps=57 format=4 uid="uid://dh7rkjxbppmf5"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_cwkfm"]
 [ext_resource type="PackedScene" uid="uid://bljut2rijnhk" path="res://creatures/avatar.tscn" id="2_qoq4v"]
 [ext_resource type="PackedScene" uid="uid://dt1gd1075nq3c" path="res://deco/Background.tscn" id="2_rays7"]
+[ext_resource type="Texture2D" uid="uid://dttai05mosrub" path="res://deco/decoration/Deko_01.png" id="3_ha0lj"]
 [ext_resource type="TileSet" uid="uid://bmhk4rsadl00o" path="res://tiles/tileset.tres" id="3_ry7iv"]
+[ext_resource type="Texture2D" uid="uid://5vb3v6imo73x" path="res://deco/decoration/Deko_02.png" id="4_bejg6"]
 [ext_resource type="PackedScene" uid="uid://c5tqajgscdup3" path="res://objects/Laser.tscn" id="4_deuvf"]
 [ext_resource type="PackedScene" uid="uid://dcvvfuyiuml3m" path="res://objects/TriggerLaserSensor.tscn" id="5_sr0qr"]
+[ext_resource type="Texture2D" uid="uid://mxhubktcw44s" path="res://deco/decoration/Deko_03.png" id="5_v5cd8"]
+[ext_resource type="Texture2D" uid="uid://blpvnehdcujqy" path="res://deco/decoration/Deko_04.png" id="6_ecr8y"]
 [ext_resource type="PackedScene" uid="uid://b0dmum8hj8awy" path="res://objects/Glass.tscn" id="6_jvge3"]
 [ext_resource type="PackedScene" uid="uid://x5xxk5juxypj" path="res://objects/Elevator.tscn" id="7_8tpti"]
+[ext_resource type="Texture2D" uid="uid://cpo5bc5lshlxk" path="res://deco/decoration/Deko_05.png" id="7_vitqa"]
+[ext_resource type="Texture2D" uid="uid://c71drdda3e43i" path="res://deco/decoration/Deko_06.png" id="8_bhyes"]
 [ext_resource type="Texture2D" uid="uid://d10u6lse2pqbn" path="res://deco/obstacles/1x1.png" id="8_kct1o"]
 [ext_resource type="PackedScene" uid="uid://010dbqlsa3an" path="res://objects/LaserMirror.tscn" id="8_onl2b"]
+[ext_resource type="Texture2D" uid="uid://cn32kq3700mve" path="res://deco/decoration/Deko_07.png" id="9_2n63f"]
 [ext_resource type="PackedScene" uid="uid://dg6wlvr8uyxqe" path="res://objects/TriggerAir.tscn" id="9_kt835"]
 [ext_resource type="PackedScene" uid="uid://dkpwt4qfwt5tm" path="res://objects/GridTile.tscn" id="10_gcqow"]
+[ext_resource type="Texture2D" uid="uid://cmqxll6en6le5" path="res://deco/decoration/Deko_08.png" id="10_u4fyj"]
 [ext_resource type="PackedScene" uid="uid://cglcykaqjpxl0" path="res://objects/TriggerFire.tscn" id="11_ftbli"]
 [ext_resource type="PackedScene" uid="uid://b44e2j15qwf2e" path="res://objects/EndCristal.tscn" id="12_dshdl"]
 [ext_resource type="Texture2D" uid="uid://onvc401t1dlo" path="res://deco/obstacles/5x1.png" id="13_bgbav"]
@@ -114,6 +122,113 @@ script = ExtResource("1_cwkfm")
 
 [node name="Background" parent="." instance=ExtResource("2_rays7")]
 position = Vector2(-8, 219)
+
+[node name="BG ASSETS" type="Node2D" parent="."]
+
+[node name="Deko01" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(-866.75, -1636.5)
+scale = Vector2(1.48588, 1.3652)
+texture = ExtResource("3_ha0lj")
+
+[node name="Sprite2D" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(184, -1592)
+scale = Vector2(1.1786, 1.12041)
+texture = ExtResource("4_bejg6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(72, -24)
+texture = ExtResource("5_v5cd8")
+
+[node name="Sprite2D18" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(1088, 824)
+texture = ExtResource("5_v5cd8")
+flip_h = true
+
+[node name="Sprite2D19" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(1120, -176)
+rotation = -3.13576
+texture = ExtResource("5_v5cd8")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(184, 344)
+scale = Vector2(1.49726, 1.49726)
+texture = ExtResource("6_ecr8y")
+
+[node name="Sprite2D21" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(1824, -128)
+rotation = -1.2487
+scale = Vector2(1.49726, 1.49726)
+texture = ExtResource("6_ecr8y")
+
+[node name="Sprite2D4" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(568, 1512)
+texture = ExtResource("7_vitqa")
+
+[node name="Sprite2D5" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(1824, 1632)
+scale = Vector2(3.07269, 3.07269)
+texture = ExtResource("7_vitqa")
+
+[node name="Sprite2D20" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(1064, 1640)
+rotation = 0.284774
+scale = Vector2(3.07269, 3.07269)
+texture = ExtResource("7_vitqa")
+
+[node name="Sprite2D6" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(1416, -1752)
+texture = ExtResource("8_bhyes")
+
+[node name="Sprite2D7" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(1400, -1288)
+texture = ExtResource("8_bhyes")
+
+[node name="Sprite2D8" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(1320, -1072)
+texture = ExtResource("8_bhyes")
+
+[node name="Sprite2D10" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(1208, -608)
+texture = ExtResource("8_bhyes")
+
+[node name="Sprite2D11" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(1152, -488)
+texture = ExtResource("8_bhyes")
+
+[node name="Sprite2D9" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(1272, -840)
+texture = ExtResource("8_bhyes")
+
+[node name="Sprite2D12" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(1656, -80)
+texture = ExtResource("9_2n63f")
+flip_h = true
+
+[node name="Sprite2D13" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(-432, -560)
+rotation = 2.40462
+texture = ExtResource("10_u4fyj")
+
+[node name="Sprite2D14" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(-624, 144)
+rotation = 1.29882
+texture = ExtResource("10_u4fyj")
+
+[node name="Sprite2D15" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(-712, -1888)
+rotation = 2.40623
+texture = ExtResource("10_u4fyj")
+
+[node name="Sprite2D16" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(568, -1976)
+rotation = 4.05433
+texture = ExtResource("10_u4fyj")
+
+[node name="Sprite2D17" type="Sprite2D" parent="BG ASSETS"]
+position = Vector2(-376, -1424)
+rotation = 7.13807
+texture = ExtResource("10_u4fyj")
 
 [node name="Avatar" parent="." instance=ExtResource("2_qoq4v")]
 position = Vector2(-8, -8)
