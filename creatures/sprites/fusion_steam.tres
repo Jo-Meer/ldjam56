@@ -1,0 +1,74 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://d3tcqmoh5b2k7"]
+
+[ext_resource type="Texture2D" uid="uid://dsiwdp7rompg8" path="res://creatures/sprites/fusion_spritesheet.png" id="1_5ehxa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btdy6"]
+atlas = ExtResource("1_5ehxa")
+region = Rect2(320, 384, 320, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcv8c"]
+atlas = ExtResource("1_5ehxa")
+region = Rect2(640, 384, 320, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vh5o"]
+atlas = ExtResource("1_5ehxa")
+region = Rect2(960, 384, 320, 384)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btdy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcv8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vh5o")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btdy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcv8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vh5o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btdy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcv8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vh5o")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btdy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcv8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vh5o")
+}],
+"loop": true,
+"name": &"move",
+"speed": 15.0
+}]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://culn18m3r0ju2"]
+[gd_scene load_steps=6 format=3 uid="uid://culn18m3r0ju2"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_35mcn"]
-[ext_resource type="Texture2D" uid="uid://b3q0xs2d8ar2" path="res://creatures/placeholder_element.png" id="2_umt74"]
+[ext_resource type="SpriteFrames" uid="uid://dixubywbjkrvj" path="res://creatures/sprites/small.tres" id="3_ld4cd"]
 [ext_resource type="SpriteFrames" uid="uid://mlx2guqjyu0t" path="res://creatures/sprites/steam.tres" id="3_uk4vl"]
+[ext_resource type="Script" path="res://scripts/rotate.gd" id="4_6ro36"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
 size = Vector2(54, 54)
@@ -13,22 +14,18 @@ collision_mask = 225
 script = ExtResource("1_35mcn")
 type = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_umt74")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_hog4m")
 one_way_collision_margin = 0.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-color = Color(0.381272, 0.143597, 0.0149215, 0.372549)
-
 [node name="Fusion" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("3_uk4vl")
 animation = &"fusion"
 frame_progress = 1.0
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -66)
+sprite_frames = ExtResource("3_ld4cd")
+animation = &"idle"
+script = ExtResource("4_6ro36")
