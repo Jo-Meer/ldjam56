@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://ckjcbmk3ig3dt"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_i81ew"]
-[ext_resource type="PackedScene" path="res://objects/LaserMirror.tscn" id="3_4ljfe"]
+[ext_resource type="PackedScene" uid="uid://010dbqlsa3an" path="res://objects/LaserMirror.tscn" id="3_4ljfe"]
 [ext_resource type="SpriteFrames" uid="uid://1n4xcg314eph" path="res://creatures/sprites/fusion_animation.tres" id="4_ayc4q"]
-[ext_resource type="SpriteFrames" uid="uid://6ttj5kk7d553" path="res://creatures/sprites/fusion.tres" id="4_rbmge"]
+[ext_resource type="SpriteFrames" uid="uid://c50qjc6ha7071" path="res://creatures/sprites/fusion.tres" id="4_rbmge"]
 [ext_resource type="Script" path="res://scripts/rotate.gd" id="5_lahom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]

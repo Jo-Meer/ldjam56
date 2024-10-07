@@ -36,7 +36,7 @@ func _ready():
 
 
 func _process(_delta: float) -> void:
-	main_camera.position = active_creature().position
+	main_camera.position = active_creature().position - Vector2(0, 100);
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("split"):

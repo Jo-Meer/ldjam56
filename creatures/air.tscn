@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_4i7co"]
 [ext_resource type="SpriteFrames" uid="uid://1n4xcg314eph" path="res://creatures/sprites/fusion_animation.tres" id="2_bkvsa"]
-[ext_resource type="SpriteFrames" uid="uid://dixubywbjkrvj" path="res://creatures/sprites/small.tres" id="3_sjhkj"]
+[ext_resource type="SpriteFrames" uid="uid://dhsone74gilax" path="res://creatures/sprites/small.tres" id="3_sjhkj"]
 [ext_resource type="Script" path="res://scripts/rotate.gd" id="4_33mvr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
