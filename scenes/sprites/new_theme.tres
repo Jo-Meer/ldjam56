@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://d31aee7wprr0v"]
+
+[ext_resource type="FontFile" uid="uid://dks3r8jhcmhvf" path="res://scenes/sprites/Bungee-Regular.ttf" id="1_xo0i2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5w71"]
+bg_color = Color(0, 0, 0, 0.701961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xl5dj"]
+content_margin_left = 40.0
+content_margin_right = 40.0
+bg_color = Color(0, 0, 0, 0.356863)
+
+[resource]
+default_font = ExtResource("1_xo0i2")
+default_font_size = 40
+Button/styles/hover = SubResource("StyleBoxFlat_t5w71")
+Button/styles/normal = SubResource("StyleBoxFlat_xl5dj")
