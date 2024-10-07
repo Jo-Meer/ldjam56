@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg6ta7dj5ghwp"]
+[gd_scene load_steps=4 format=3 uid="uid://bg6ta7dj5ghwp"]
 
+[ext_resource type="Script" path="res://scenes/credits.gd" id="1_casjy"]
 [ext_resource type="PackedScene" uid="uid://dt1gd1075nq3c" path="res://deco/Background.tscn" id="1_twe1a"]
 [ext_resource type="Theme" uid="uid://d31aee7wprr0v" path="res://scenes/sprites/new_theme.tres" id="2_7pkkn"]
 
 [node name="Credits" type="Node2D"]
+script = ExtResource("1_casjy")
 
 [node name="Background" parent="." instance=ExtResource("1_twe1a")]
 position = Vector2(696, 408)
@@ -21,12 +23,14 @@ text = "YOU SAVED THE ELEMENTS!"
 horizontal_alignment = 1
 
 [node name="SKILLS" type="Label" parent="ENDTEXT"]
-offset_left = 231.0
+layout_mode = 0
+offset_left = 167.0
 offset_top = 136.0
-offset_right = 983.0
-offset_bottom = 245.0
+offset_right = 1047.0
+offset_bottom = 271.0
 theme = ExtResource("2_7pkkn")
 theme_override_colors/font_color = Color(0.6712, 0.8, 0.616, 1)
+theme_override_font_sizes/font_size = 50
 text = "THANKS TO YOUR QUEST, MAGIC CAN RETURN TO THE LANDs"
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -40,6 +44,7 @@ offset_right = 40.0
 offset_bottom = 712.0
 
 [node name="THANKS" type="Label" parent="SCROLLER"]
+layout_mode = 0
 offset_left = 129.0
 offset_top = -328.0
 offset_right = 1296.0
@@ -50,6 +55,7 @@ text = "THANK YOU FOR PLAYING!"
 horizontal_alignment = 1
 
 [node name="ALEX FELSKI" type="Label" parent="SCROLLER"]
+layout_mode = 0
 offset_left = 568.0
 offset_top = 176.0
 offset_right = 848.0
@@ -59,6 +65,7 @@ text = "Alex Felski
 "
 
 [node name="SKILLS" type="Label" parent="SCROLLER/ALEX FELSKI"]
+layout_mode = 0
 offset_left = -439.0
 offset_top = 63.0
 offset_right = 728.0
@@ -69,6 +76,7 @@ text = "ENVIRONMENT ART   |   LEVEL DESIGN"
 horizontal_alignment = 1
 
 [node name="JONAS MEER" type="Label" parent="SCROLLER"]
+layout_mode = 0
 offset_left = 568.0
 offset_top = 384.0
 offset_right = 848.0
@@ -78,6 +86,7 @@ text = "JONAS MEER"
 horizontal_alignment = 1
 
 [node name="SKILLS" type="Label" parent="SCROLLER/JONAS MEER"]
+layout_mode = 0
 offset_left = -439.0
 offset_top = 64.0
 offset_right = 728.0
@@ -88,6 +97,7 @@ text = "CODE  |  QA"
 horizontal_alignment = 1
 
 [node name="NTIMI SCHNÜTGEN" type="Label" parent="SCROLLER"]
+layout_mode = 0
 offset_left = 504.0
 offset_top = 600.0
 offset_right = 904.0
@@ -97,6 +107,7 @@ text = "NTIMI SCHNÜTGEN"
 horizontal_alignment = 1
 
 [node name="SKILLS" type="Label" parent="SCROLLER/NTIMI SCHNÜTGEN"]
+layout_mode = 0
 offset_left = -184.0
 offset_top = 56.0
 offset_right = 601.0
@@ -107,6 +118,7 @@ text = "CODE  |  GAME ART"
 horizontal_alignment = 1
 
 [node name="FELIX KERN" type="Label" parent="SCROLLER"]
+layout_mode = 0
 offset_left = 504.0
 offset_top = 1032.0
 offset_right = 904.0
@@ -116,6 +128,7 @@ text = "FELIX KERN"
 horizontal_alignment = 1
 
 [node name="SKILLS" type="Label" parent="SCROLLER/FELIX KERN"]
+layout_mode = 0
 offset_left = -184.0
 offset_top = 72.0
 offset_right = 601.0
@@ -126,6 +139,7 @@ text = "GAME ART  |  ANIMATIONS  |  SOUNDS"
 horizontal_alignment = 1
 
 [node name="STEFAN HOFER" type="Label" parent="SCROLLER"]
+layout_mode = 0
 offset_left = 504.0
 offset_top = 1248.0
 offset_right = 904.0
@@ -135,6 +149,7 @@ text = "STEFAN HOFER"
 horizontal_alignment = 1
 
 [node name="SKILLS" type="Label" parent="SCROLLER/STEFAN HOFER"]
+layout_mode = 0
 offset_left = -184.0
 offset_top = 64.0
 offset_right = 601.0
@@ -145,6 +160,7 @@ text = "MUSIC"
 horizontal_alignment = 1
 
 [node name="HENDRIK SCHNÜTGEN" type="Label" parent="SCROLLER"]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 808.0
 offset_right = 941.0
@@ -153,6 +169,7 @@ theme = ExtResource("2_7pkkn")
 text = "HENDRIK SCHNÜTGEN"
 
 [node name="SKILLS" type="Label" parent="SCROLLER/HENDRIK SCHNÜTGEN"]
+layout_mode = 0
 offset_left = -160.0
 offset_top = 64.0
 offset_right = 625.0
@@ -161,3 +178,29 @@ theme = ExtResource("2_7pkkn")
 theme_override_colors/font_color = Color(0.6712, 0.8, 0.616, 1)
 text = "CHARACTER DESIGN & ANIMATION"
 horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -101.0
+offset_top = -108.0
+offset_right = 1615.0
+offset_bottom = 922.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1008.0
+offset_top = 24.0
+offset_right = 1408.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_7pkkn")
+text = "BACK TO START"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
