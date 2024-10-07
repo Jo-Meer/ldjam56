@@ -11,6 +11,7 @@ func do_credits():
 	$Button.modulate = Color.TRANSPARENT;
 	$ENDTEXT.modulate = Color.TRANSPARENT;
 	$SCROLLER.modulate = Color.TRANSPARENT;
+	$Logo.modulate = Color.TRANSPARENT;
 	
 	var fade_tween = create_tween();
 	fade_tween.tween_property($ColorRect, "modulate", Color.TRANSPARENT, 2);
@@ -40,9 +41,14 @@ func do_credits():
 	await get_tree().create_timer(2).timeout;
 	
 	var scoll_tween = create_tween();
-	scoll_tween.tween_property($SCROLLER, "position", $SCROLLER.position - Vector2(0, 3000), 40);
+	scoll_tween.tween_property($SCROLLER, "position", $SCROLLER.position - Vector2(0, 2400), 40);
 	await scoll_tween.finished;
 	
+	$Logo.show();
+	
+	var logo_tween = create_tween();
+	logo_tween.tween_property($Logo, "modulate", Color.WHITE, 2);
+	await logo_tween.finished;
 
 
 func _on_button_pressed() -> void:

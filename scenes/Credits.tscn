@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bg6ta7dj5ghwp"]
+[gd_scene load_steps=5 format=3 uid="uid://bg6ta7dj5ghwp"]
 
 [ext_resource type="Script" path="res://scenes/credits.gd" id="1_casjy"]
 [ext_resource type="PackedScene" uid="uid://dt1gd1075nq3c" path="res://deco/Background.tscn" id="1_twe1a"]
 [ext_resource type="Theme" uid="uid://d31aee7wprr0v" path="res://scenes/sprites/new_theme.tres" id="2_7pkkn"]
+[ext_resource type="Texture2D" uid="uid://blbmhhatr7mq4" path="res://scenes/sprites/logo.png" id="4_4lscl"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_casjy")
@@ -187,6 +188,12 @@ offset_right = 1615.0
 offset_bottom = 922.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(720, 408)
+scale = Vector2(0.768519, 0.768518)
+texture = ExtResource("4_4lscl")
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = 7
