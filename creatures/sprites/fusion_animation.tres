@@ -1,0 +1,94 @@
+[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://1n4xcg314eph"]
+
+[ext_resource type="Texture2D" uid="uid://dmnxwx1jwd71f" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00011.png" id="1_fu0d4"]
+[ext_resource type="Texture2D" uid="uid://ccdju1b74sxcj" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00012.png" id="2_evw8e"]
+[ext_resource type="Texture2D" uid="uid://4u6qwyx5jtgp" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00013.png" id="3_mlal7"]
+[ext_resource type="Texture2D" uid="uid://nsptvs23ob8" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00014.png" id="4_3txnw"]
+[ext_resource type="Texture2D" uid="uid://dojwyggoag0gt" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00015.png" id="5_owwlm"]
+[ext_resource type="Texture2D" uid="uid://xm73id1qortm" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00016.png" id="6_c01yr"]
+[ext_resource type="Texture2D" uid="uid://dvkm5cx66cll3" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00017.png" id="7_hp4bw"]
+[ext_resource type="Texture2D" uid="uid://d2q3brfcavg0l" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00018.png" id="8_cqk1r"]
+[ext_resource type="Texture2D" uid="uid://omqp8rgecm41" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00019.png" id="9_7w4m5"]
+[ext_resource type="Texture2D" uid="uid://d3xlagbprc8o0" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00020.png" id="10_svwj4"]
+[ext_resource type="Texture2D" uid="uid://xraorl4l4j4t" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00021.png" id="11_gowjn"]
+[ext_resource type="Texture2D" uid="uid://d4j6si2d8pt10" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00022.png" id="12_t5iov"]
+[ext_resource type="Texture2D" uid="uid://ftwffroit5jw" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00023.png" id="13_7s8oi"]
+[ext_resource type="Texture2D" uid="uid://bad208d4jngse" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00024.png" id="14_kb0od"]
+[ext_resource type="Texture2D" uid="uid://coonivf6mcfvc" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00025.png" id="15_506su"]
+[ext_resource type="Texture2D" uid="uid://th5aoeidhhah" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00026.png" id="16_nhql8"]
+[ext_resource type="Texture2D" uid="uid://yf85m8msm51d" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00027.png" id="17_lg5g7"]
+[ext_resource type="Texture2D" uid="uid://djg25so8efl6g" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00028.png" id="18_4kmxm"]
+[ext_resource type="Texture2D" uid="uid://l5h75cbgc2d" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00029.png" id="19_iosr1"]
+[ext_resource type="Texture2D" uid="uid://4f3u78atrm7" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00030.png" id="20_rfjj2"]
+[ext_resource type="Texture2D" uid="uid://b0k8pjjoca1ha" path="res://creatures/sprites/fusions/avatar/Fusion_Avatar_00031.png" id="21_m4xgt"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fu0d4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_evw8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mlal7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3txnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_owwlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c01yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hp4bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cqk1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7w4m5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_svwj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gowjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t5iov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7s8oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kb0od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_506su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_nhql8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lg5g7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4kmxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_iosr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_rfjj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_m4xgt")
+}],
+"loop": false,
+"name": &"avatar",
+"speed": 15.0
+}]

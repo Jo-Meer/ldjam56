@@ -190,16 +190,15 @@ func deactivate():
 	deactivated.emit()
 	z_index = 0
 
-func activate_by_fusion(current_active: Player, partners: Array[Player]):
+func activate_by_fusion(to_be_merged: Array[Player]):
 	var tween = get_tree().create_tween()
 	is_active = false
 	z_index = 10
 	animation.hide()
-	fusion_anim.play("fusion")
-	for partner in partners:
-		tween.parallel().tween_property(partner, "position", current_active.position, 0.1).set_ease(Tween.EaseType.EASE_IN)
+	fusion_anim.play("")
+	for partner in to_be_merged:
+		tween.parallel().tween_property(partner, "position", fusion_anim.position, 0.1).set_ease(Tween.EaseType.EASE_IN)
 		tween.parallel().tween_callback(partner.queue_free)
-	tween.tween_callback(current_active.queue_free)
 	tween.tween_callback(animation.show).set_delay(0.5)
 
 	tween.tween_callback(fusion_anim.hide).set_delay(0.5)

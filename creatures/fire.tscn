@@ -15,6 +15,7 @@ script = ExtResource("1_84frp")
 type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_hog4m")
 one_way_collision_margin = 0.0
 
@@ -26,7 +27,7 @@ frame_progress = 1.0
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.84, 0.3087, 0.2604, 1)
-position = Vector2(0, -53)
+position = Vector2(0, -41)
 scale = Vector2(0.75, 0.75)
 sprite_frames = ExtResource("3_j76lp")
 animation = &"idle"
