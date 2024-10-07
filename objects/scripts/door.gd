@@ -9,6 +9,21 @@ signal deactivated
 @export var is_active:bool = false:
 	set(act):
 		is_active = act
+		
+		if not Engine.is_editor_hint():
+			if is_inside_tree():
+				var tween = create_tween();
+				if is_active == true:
+					# open
+					tween.tween_property(self, "modulate", Color.TRANSPARENT, 1);
+				else:
+					tween.tween_property(self, "modulate", Color.WHITE, 1);
+			else:
+				if is_active:
+					modulate = Color.TRANSPARENT;
+				else:
+					modulate = Color.WHITE;
+		
 		if coll_shape:
 			if act:
 				coll_shape.set_deferred("disabled", true);
@@ -16,19 +31,20 @@ signal deactivated
 				coll_shape.set_deferred("disabled", false);
 
 func _ready() -> void:
-	if Engine.is_editor_hint():
-		if is_inside_tree():
-			if coll_shape == null:
-				coll_shape = CollisionShape2D.new();
-				coll_shape.shape = RectangleShape2D.new();
-				coll_shape.shape.size = Vector2(64, 64);
-				coll_shape.name = "CollisionShape2D";
-				coll_shape.position = Vector2(32, 32);
-				add_child(coll_shape);
-				# The line below is required to make the node visible in the Scene tree dock
-				# and persist changes made by the tool script to the saved scene file.
-				coll_shape.owner = get_tree().edited_scene_root
-	else:
+	#if Engine.is_editor_hint():
+		#if is_inside_tree():
+			#if coll_shape == null:
+				#coll_shape = CollisionShape2D.new();
+				#coll_shape.shape = RectangleShape2D.new();
+				#coll_shape.shape.size = Vector2(64, 64);
+				#coll_shape.name = "CollisionShape2D";
+				#coll_shape.position = Vector2(32, 32);
+				#add_child(coll_shape);
+				## The line below is required to make the node visible in the Scene tree dock
+				## and persist changes made by the tool script to the saved scene file.
+				#coll_shape.owner = get_tree().edited_scene_root
+				
+	if not Engine.is_editor_hint():
 		if is_active:
 			coll_shape.set_deferred("disabled", true);
 		else:

@@ -10,7 +10,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sx2iy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvsfe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbfpq"]
 atlas = ExtResource("2_wfcqg")
@@ -253,7 +253,7 @@ collision_layer = 256
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BeamArea"]
-shape = SubResource("RectangleShape2D_sx2iy")
+shape = SubResource("RectangleShape2D_bvsfe")
 debug_color = Color(0.653333, 0, 0.7, 0.419608)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -318,6 +318,98 @@ sprite_frames = SubResource("SpriteFrames_s088k")
 position = Vector2(0, 864)
 sprite_frames = SubResource("SpriteFrames_s088k")
 
+[node name="Vertical38" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 960)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical39" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 1056)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical40" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 1152)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical41" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 1248)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical42" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 1344)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical43" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 1440)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical44" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 1536)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical45" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 1632)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical46" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 1728)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical47" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 1824)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical48" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 1920)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical49" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 2016)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical50" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 2112)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical51" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 2208)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical52" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 2304)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical53" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 2400)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical54" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 2496)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical55" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 2592)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical56" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 2688)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical57" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 2784)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical58" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 2880)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical59" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 2976)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical60" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, 3072)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
 [node name="Vertical2" type="AnimatedSprite2D" parent="Rays/VVV"]
 position = Vector2(0, -96)
 sprite_frames = SubResource("SpriteFrames_s088k")
@@ -352,6 +444,78 @@ sprite_frames = SubResource("SpriteFrames_s088k")
 
 [node name="Vertical19" type="AnimatedSprite2D" parent="Rays/VVV"]
 position = Vector2(0, -864)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical20" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -960)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical21" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -1056)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical22" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -1152)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical23" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -1248)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical24" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -1344)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical25" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -1440)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical26" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -1536)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical27" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -1632)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical28" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -1728)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical29" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -1824)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical30" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -1920)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical31" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -2016)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical32" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -2112)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical33" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -2208)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical34" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -2304)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical35" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -2400)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical36" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -2496)
+sprite_frames = SubResource("SpriteFrames_s088k")
+
+[node name="Vertical37" type="AnimatedSprite2D" parent="Rays/VVV"]
+position = Vector2(0, -2592)
 sprite_frames = SubResource("SpriteFrames_s088k")
 
 [node name="HHH" type="Node2D" parent="Rays"]
@@ -409,6 +573,50 @@ sprite_frames = SubResource("SpriteFrames_d2p4w")
 position = Vector2(-1144, 0)
 sprite_frames = SubResource("SpriteFrames_d2p4w")
 
+[node name="Horizontal40" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(-1240, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal41" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(-1336, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal42" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(-1432, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal43" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(-1528, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal44" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(-1624, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal45" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(-1720, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal46" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(-1816, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal47" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(-1912, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal48" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(-2008, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal49" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(-2104, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal50" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(-2200, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
 [node name="Horizontal2" type="AnimatedSprite2D" parent="Rays/HHH"]
 position = Vector2(104, 0)
 sprite_frames = SubResource("SpriteFrames_d2p4w")
@@ -455,4 +663,60 @@ sprite_frames = SubResource("SpriteFrames_d2p4w")
 
 [node name="Horizontal13" type="AnimatedSprite2D" parent="Rays/HHH"]
 position = Vector2(1160, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal26" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(1256, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal27" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(1352, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal28" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(1448, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal29" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(1544, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal30" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(1640, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal31" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(1736, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal32" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(1832, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal33" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(1928, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal34" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(2024, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal35" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(2120, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal36" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(2216, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal37" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(2312, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal38" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(2408, 0)
+sprite_frames = SubResource("SpriteFrames_d2p4w")
+
+[node name="Horizontal39" type="AnimatedSprite2D" parent="Rays/HHH"]
+position = Vector2(2504, 0)
 sprite_frames = SubResource("SpriteFrames_d2p4w")
