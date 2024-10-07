@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://di5cfvgmlregr"]
+
+[ext_resource type="Script" path="res://sounds/sounds_manager.gd" id="1_g1vj5"]
+[ext_resource type="AudioStream" uid="uid://d3mci1pn3de13" path="res://sounds/Charakter/Energie aufgefüllt/EnergieAufgefüllt-01.wav" id="2_kgegw"]
+[ext_resource type="AudioStream" uid="uid://e6n812w1ik4e" path="res://sounds/Charakter/Fallen/Fallen-01.wav" id="3_ve1db"]
+[ext_resource type="AudioStream" uid="uid://dvlkstmktbtl4" path="res://sounds/Charakter/Großer Kristall Aktivieren/Großer_Kristall_aktivieren-01.wav" id="4_nafcb"]
+[ext_resource type="AudioStream" uid="uid://bj5uvpxnyqaua" path="res://sounds/Charakter/Großer Kristall Aktivieren/Großer_Kristall_aktivieren-02.wav" id="5_twq5e"]
+[ext_resource type="AudioStream" uid="uid://bgxx3bbvgry8a" path="res://sounds/Charakter/Hüpfen/Springen-01.wav" id="6_q8vib"]
+[ext_resource type="AudioStream" uid="uid://bewcq4656jdv1" path="res://sounds/Charakter/Kristall Aktivieren/Kristall_aktivieren.wav" id="7_61stx"]
+[ext_resource type="AudioStream" uid="uid://rlh0od1iv6wj" path="res://sounds/Fusion/Fusion1.wav" id="8_tac00"]
+
+[node name="SoundsManager" type="Node2D"]
+script = ExtResource("1_g1vj5")
+
+[node name="snd_avatar_filled" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kgegw")
+
+[node name="snd_fall" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ve1db")
+
+[node name="snd_activate_end" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nafcb")
+
+[node name="snd_activate_end_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_twq5e")
+
+[node name="snd_jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_q8vib")
+
+[node name="snd_activate_crystal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_61stx")
+
+[node name="snd_fusion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_tac00")

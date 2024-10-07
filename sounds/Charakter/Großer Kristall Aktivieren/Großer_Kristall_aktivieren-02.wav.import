@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bj5uvpxnyqaua"
+path="res://.godot/imported/Großer_Kristall_aktivieren-02.wav-a32e7491b9a63c54ad8d2c9d31b8853b.sample"
+
+[deps]
+
+source_file="res://sounds/Charakter/Großer Kristall Aktivieren/Großer_Kristall_aktivieren-02.wav"
+dest_files=["res://.godot/imported/Großer_Kristall_aktivieren-02.wav-a32e7491b9a63c54ad8d2c9d31b8853b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

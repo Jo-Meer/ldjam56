@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cm4huj8vpno0m"
+path="res://.godot/imported/Button Digital Select Beep 09.wav-aae0532eca4ef6482c2f1cc8133fe2cf.sample"
+
+[deps]
+
+source_file="res://sounds/Trigger-Aktion/Button Digital Select Beep 09.wav"
+dest_files=["res://.godot/imported/Button Digital Select Beep 09.wav-aae0532eca4ef6482c2f1cc8133fe2cf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

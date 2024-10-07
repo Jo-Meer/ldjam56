@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1b4fqqleu1xs"]
+
+[ext_resource type="Script" path="res://music/music_manager.gd" id="1_q0u04"]
+[ext_resource type="AudioStream" uid="uid://bii6t5vhjnog" path="res://music/Song of Elements.ogg" id="2_cecod"]
+
+[node name="MusicManager" type="Node2D"]
+script = ExtResource("1_q0u04")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cecod")

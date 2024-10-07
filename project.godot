@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Globals="*res://scripts/globals.gd"
 SceneManager="*res://scenes/SceneManager.tscn"
+MusicManager="*res://music/MusicManager.tscn"
+SoundsManager="*res://sounds/SoundsManager.tscn"
 
 [global_group]
 

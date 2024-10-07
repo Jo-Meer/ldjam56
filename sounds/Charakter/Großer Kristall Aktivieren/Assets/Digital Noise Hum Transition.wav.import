@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ca40afjllvags"
+path="res://.godot/imported/Digital Noise Hum Transition.wav-e6c87365378cc06415b6d16492fab390.sample"
+
+[deps]
+
+source_file="res://sounds/Charakter/Großer Kristall Aktivieren/Assets/Digital Noise Hum Transition.wav"
+dest_files=["res://.godot/imported/Digital Noise Hum Transition.wav-e6c87365378cc06415b6d16492fab390.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

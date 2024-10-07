@@ -2,6 +2,7 @@
 extends Node2D
 
 @export var direction: Globals.Direction = Globals.Direction.DOWN;
+@onready var snd_mirror_hit = $snd_mirror_hit;
 
 @export var is_active: bool = true;
 
@@ -40,6 +41,7 @@ func _on_laser_beam_mirror_enter(beam_node: Node2D, mirror_node: Node2D, collide
 		next_beam.source_mirror = mirror_node;
 		next_beam.depth = beam_node.depth + 1;
 		beam_node.add_child(next_beam);
+		snd_mirror_hit.play();
 	
 	next_beam.direction = mirror_node.direction;
 	next_beam.global_position = collide_pos;
