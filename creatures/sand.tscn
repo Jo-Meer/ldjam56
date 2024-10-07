@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://b3q0xs2d8ar2" path="res://creatures/placeholder_element.png" id="2_ovwjp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hog4m"]
-size = Vector2(54, 54)
+size = Vector2(54, 118)
 
 [node name="Sand" type="CharacterBody2D" groups=["creatures"]]
 collision_layer = 2
-collision_mask = 65
+collision_mask = 193
 script = ExtResource("1_vhatq")
 type = 9
 
@@ -16,7 +16,7 @@ type = 9
 texture = ExtResource("2_ovwjp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, -27)
 shape = SubResource("RectangleShape2D_hog4m")
 one_way_collision_margin = 0.0
 

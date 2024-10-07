@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c8kptit4jpth0"]
+[gd_scene load_steps=23 format=4 uid="uid://c8kptit4jpth0"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_ea4dv"]
 [ext_resource type="PackedScene" uid="uid://d0a6um5afvhie" path="res://creatures/fire.tscn" id="2_tpb1p"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://dcvvfuyiuml3m" path="res://objects/TriggerLaserSensor.tscn" id="10_1r7jb"]
 [ext_resource type="PackedScene" uid="uid://dkpwt4qfwt5tm" path="res://objects/GridTile.tscn" id="11_sbtia"]
 [ext_resource type="PackedScene" uid="uid://x5xxk5juxypj" path="res://objects/Elevator.tscn" id="12_q6cfd"]
+[ext_resource type="PackedScene" uid="uid://culn18m3r0ju2" path="res://creatures/earth.tscn" id="14_8yprm"]
+[ext_resource type="PackedScene" uid="uid://drysl1numdpp5" path="res://creatures/air.tscn" id="15_pxq5s"]
+[ext_resource type="PackedScene" uid="uid://b44e2j15qwf2e" path="res://objects/EndCristal.tscn" id="16_uoqbv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmkd6"]
 size = Vector2(64, 320)
@@ -36,10 +39,10 @@ size = Vector2(384, 64)
 script = ExtResource("1_ea4dv")
 
 [node name="Fire" parent="." instance=ExtResource("2_tpb1p")]
-position = Vector2(992, -96)
+position = Vector2(1024, 408)
 
 [node name="Water" parent="." instance=ExtResource("3_anowc")]
-position = Vector2(928, -96)
+position = Vector2(960, 408)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD8/wIAAgABAAMAAAD9/wIAAgACAAMAAAD+/wIAAgACAAMAAAD//wIAAgACAAMAAAAAAAIAAgACAAMAAAABAAIAAgACAAMAAAACAAIAAgACAAMAAAADAAIAAgACAAMAAAAEAAIAAgACAAMAAAAFAAIAAgAEAAUAAAAHAAIAAgACAAIAAAAIAAIAAgACAAQAAAAIAAEAAgADAAEAAAAIAAAAAgADAAAAAAALAAAAAgAEAAAAAAALAAEAAgAEAAEAAAALAAIAAgAFAAUAAAAMAAIAAgACAAMAAAANAAIAAgACAAMAAAAOAAIAAgACAAMAAAAPAAIAAgACAAMAAAAQAAIAAgADAAMAAAD8//r/AgACAAMAAAD9//r/AgACAAMAAAD+//r/AgACAAMAAAD///r/AgACAAMAAAAAAPr/AgACAAMAAAABAPr/AgACAAMAAAACAPr/AgACAAMAAAADAPr/AgACAAMAAAAEAPr/AgACAAMAAAAFAPr/AgACAAMAAAAGAPr/AgACAAMAAAAHAPr/AgACAAMAAAAIAPr/AgACAAMAAAAJAPr/AgACAAMAAAAKAPr/AgACAAMAAAALAPr/AgACAAMAAAAMAPr/AgACAAMAAAANAPr/AgACAAMAAAAOAPr/AgACAAMAAAAPAPr/AgACAAMAAAAQAPr/AgACAAMAAAARAPr/AgACAAMAAAASAPr/AgACAAMAAAD5//r/AgAFAAQAAAD6//r/AgACAAMAAAD7//r/AgACAAMAAAATAPr/AgACAAMAAAAUAPr/AgACAAMAAAAWAPr/AgACAAMAAAAVAPr/AgACAAMAAAAXAPr/AgACAAMAAAAYAPr/AgAHAAQAAAAYAPv/AgAEAAEAAAAYAPz/AgAEAAEAAAAYAP3/AgAEAAEAAAAYAP7/AgAEAAEAAAAYAP//AgAEAAEAAAAYAAAAAgAEAAEAAAAYAAEAAgAEAAEAAAAYAAIAAgAEAAEAAAAYAAMAAgAEAAEAAAAYAAQAAgAEAAEAAAD5//v/AgAEAAEAAAD5//z/AgAEAAEAAAD5//3/AgAEAAEAAAD5//7/AgAEAAEAAAD5////AgAEAAEAAAD6/wAAAgADAAAAAAD6/wEAAgADAAEAAAD6/wIAAgADAAEAAAD6/wMAAgADAAEAAAD6/wQAAgADAAEAAAD5/wUAAgABAAEAAAD5/wQAAgABAAEAAAD5/wMAAgABAAEAAAD5/wIAAgABAAEAAAD5/wEAAgABAAEAAAD5/wAAAgABAAUAAAD6/wUAAgADAAEAAAD6/wYAAgADAAEAAAD6/wcAAgAFAAMAAAD5/wYAAgABAAEAAAD5/wcAAgABAAIAAAD6/wgAAgAEAAIAAAD7/wcAAgACAAMAAAD8/wcAAgACAAMAAAD9/wcAAgACAAMAAAD+/wcAAgACAAMAAAD//wcAAgACAAMAAAAAAAcAAgACAAMAAAABAAcAAgACAAMAAAACAAcAAgACAAMAAAADAAcAAgACAAMAAAAEAAcAAgACAAMAAAAFAAcAAgACAAMAAAAGAAcAAgACAAMAAAAHAAcAAgACAAMAAAAIAAcAAgACAAMAAAAJAAcAAgACAAMAAAAKAAcAAgACAAMAAAALAAcAAgACAAMAAAAMAAcAAgACAAMAAAANAAcAAgACAAMAAAAOAAcAAgACAAMAAAAPAAcAAgACAAMAAAAQAAcAAgACAAMAAAARAAcAAgACAAMAAAASAAcAAgACAAMAAAATAAcAAgACAAMAAAAUAAcAAgACAAMAAAAVAAYAAgABAAAAAAAWAAYAAgACAAAAAAAXAAYAAgACAAAAAAAYAAYAAgACAAUAAAAYAAcAAgADAAIAAAAYAAUAAgAEAAEAAAAXAAcAAgACAAIAAAAWAAcAAgACAAIAAAAVAAcAAgAEAAUAAAAIAAMAAgAFAAYAAAAJAAMAAgACAAMAAAAKAAMAAgACAAMAAAALAAMAAgAHAAYAAAAGAAIAAgACAAIAAAAFAP7/AgAEAAAAAAAFAP//AgABAAUAAAAFAAAAAgABAAEAAAAFAAEAAgABAAEAAAAGAP//AgADAAAAAAAGAAAAAgAFAAEAAAAGAAEAAgACAAEAAAAHAAAAAgACAAAAAAAHAAEAAgACAAEAAAA=")
@@ -135,9 +138,17 @@ shape = SubResource("RectangleShape2D_l7j5l")
 position = Vector2(-360, -224)
 
 [node name="Laser" parent="." instance=ExtResource("8_xs458")]
-position = Vector2(632, -208)
-direction = 0
+position = Vector2(1104, 232)
 
 [node name="TriggerFire2" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("3_4lfxq")]
 position = Vector2(704, 0)
 targets = [NodePath("../Laser")]
+
+[node name="Earth" parent="." instance=ExtResource("14_8yprm")]
+position = Vector2(1120, 400)
+
+[node name="Air" parent="." instance=ExtResource("15_pxq5s")]
+position = Vector2(1192, 384)
+
+[node name="EndCristal" parent="." instance=ExtResource("16_uoqbv")]
+position = Vector2(576, 320)

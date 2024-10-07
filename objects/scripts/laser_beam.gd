@@ -65,12 +65,14 @@ func update_laser_path():
 	var col_node = raycast.get_collider();
 	var col_point = raycast.get_collision_point();
 	
-	if not check_col_point_direction(col_point):
+	var local_col_point = to_local(col_point);
+	
+	if not check_col_point_direction(local_col_point):
+		print("no", col_point, " ", direction)
 		return false;
 		
 	check_mirror_hits(col_node, col_point);
-	
-	var local_col_point = to_local(col_point);
+
 	if local_col_point == path_endpoint:
 		return
 	

@@ -23,6 +23,8 @@ SceneManager="*res://scenes/SceneManager.tscn"
 [global_group]
 
 creatures=""
+activatable=""
+element=""
 
 [input]
 

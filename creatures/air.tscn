@@ -8,7 +8,7 @@ size = Vector2(54, 54)
 
 [node name="Air" type="CharacterBody2D" groups=["creatures"]]
 collision_layer = 2
-collision_mask = 97
+collision_mask = 225
 script = ExtResource("1_4i7co")
 type = 2
 
