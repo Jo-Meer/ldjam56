@@ -28,4 +28,3 @@ script = ExtResource("4_n52nu")
 position = Vector2(0, -121)
 sprite_frames = ExtResource("4_q15hs")
 animation = &"avatar"
-frame_progress = 0.190787
