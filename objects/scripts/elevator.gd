@@ -31,6 +31,9 @@ signal deactivated
 
 @onready var coll_shape: CollisionShape2D = $CollisionShape2D;
 
+@onready var activate_snd_1 = $activate_snd_1;
+@onready var activate_snd_2 = $activate_snd_2;
+
 var is_in_correct_position = true;
 
 func _ready() -> void:
@@ -98,6 +101,10 @@ func activate():
 	is_active = true;
 	is_in_correct_position = false;
 	activated.emit()
+	if randf() > 0.5:
+		activate_snd_1.play();
+	else:
+		activate_snd_2.play();
 
 func deactivate():
 	if not is_active:

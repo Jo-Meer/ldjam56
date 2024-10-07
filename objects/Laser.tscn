@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5tqajgscdup3"]
+[gd_scene load_steps=4 format=3 uid="uid://c5tqajgscdup3"]
 
 [ext_resource type="Script" path="res://objects/scripts/laser.gd" id="1_u2vs3"]
+[ext_resource type="AudioStream" uid="uid://bleod8nt6fphv" path="res://sounds/Laser auf Spiegel/Laserauf Spiegel.wav" id="3_ekydb"]
 [ext_resource type="Texture2D" uid="uid://bak3yngvurc13" path="res://objects/placeholder_sprites/placeholder_laser.png" id="3_nesso"]
 
 [node name="Laser" type="Node2D"]
@@ -8,3 +9,7 @@ script = ExtResource("1_u2vs3")
 
 [node name="PlaceholderLaser" type="Sprite2D" parent="."]
 texture = ExtResource("3_nesso")
+
+[node name="snd_mirror_hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ekydb")
+volume_db = -5.368

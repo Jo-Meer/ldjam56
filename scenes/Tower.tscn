@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bljut2rijnhk" path="res://creatures/avatar.tscn" id="2_7vawy"]
 [ext_resource type="TileSet" uid="uid://bmhk4rsadl00o" path="res://tiles/tileset.tres" id="3_1yyk4"]
 [ext_resource type="PackedScene" uid="uid://dkpwt4qfwt5tm" path="res://objects/GridTile.tscn" id="4_r05sh"]
-[ext_resource type="PackedScene" path="res://objects/Laser.tscn" id="5_ssgoh"]
-[ext_resource type="PackedScene" path="res://objects/Elevator.tscn" id="6_sjof7"]
+[ext_resource type="PackedScene" uid="uid://c5tqajgscdup3" path="res://objects/Laser.tscn" id="5_ssgoh"]
+[ext_resource type="PackedScene" uid="uid://x5xxk5juxypj" path="res://objects/Elevator.tscn" id="6_sjof7"]
 [ext_resource type="PackedScene" uid="uid://cglcykaqjpxl0" path="res://objects/TriggerFire.tscn" id="7_1cjfs"]
 [ext_resource type="PackedScene" uid="uid://dg6wlvr8uyxqe" path="res://objects/TriggerAir.tscn" id="7_pawdc"]
 [ext_resource type="PackedScene" uid="uid://cmrpjxtuy1cgk" path="res://objects/Door.tscn" id="8_g3623"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://de74m1nu5kftq" path="res://objects/Darkness.tscn" id="11_xfsk3"]
 [ext_resource type="PackedScene" uid="uid://b0dmum8hj8awy" path="res://objects/Glass.tscn" id="12_2m2ky"]
 [ext_resource type="PackedScene" uid="uid://b44e2j15qwf2e" path="res://objects/EndCristal.tscn" id="13_37pc3"]
-[ext_resource type="PackedScene" path="res://objects/LaserMirror.tscn" id="14_5fxu1"]
+[ext_resource type="PackedScene" uid="uid://010dbqlsa3an" path="res://objects/LaserMirror.tscn" id="14_5fxu1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpkl7"]
 size = Vector2(128, 128)

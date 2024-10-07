@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4xr50l3ojltc"
+path="res://.godot/imported/Electronic Techno Crash Disturbance Sparks Crackle Sizzle Shot.wav-5b830348a309088e6201577649cdfcba.sample"
+
+[deps]
+
+source_file="res://sounds/Charakter/Großer Kristall Aktivieren/Assets/Electronic Techno Crash Disturbance Sparks Crackle Sizzle Shot.wav"
+dest_files=["res://.godot/imported/Electronic Techno Crash Disturbance Sparks Crackle Sizzle Shot.wav-5b830348a309088e6201577649cdfcba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
