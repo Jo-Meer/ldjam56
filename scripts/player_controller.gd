@@ -211,7 +211,6 @@ func activate_by_fusion(to_be_merged: Array[Player]):
 	var original_scale = animation.scale
 	animation.scale = fusion_start_scale
 	tween.parallel().tween_property(animation, "scale", original_scale, 0.5).set_trans(fusion_trans).set_ease(fusion_ease).set_delay(0.2666)
-	# tween.parallel().tween_property(animation, "position", original_position, 0.5).set_ease(Tween.EaseType.EASE_OUT).set_delay(0.2666)
 
 	
 
