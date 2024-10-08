@@ -20,10 +20,6 @@ position = Vector2(0, -27)
 shape = SubResource("RectangleShape2D_hog4m")
 one_way_collision_margin = 0.0
 
-[node name="LaserMirror" parent="." instance=ExtResource("3_4ljfe")]
-visible = false
-position = Vector2(-32, -32)
-
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.6016, 0.94, 0.87232, 1)
 position = Vector2(0, -40)
@@ -37,3 +33,13 @@ visible = false
 position = Vector2(0, -39)
 sprite_frames = ExtResource("4_ayc4q")
 animation = &"ice"
+
+[node name="LaserMirror" parent="." instance=ExtResource("3_4ljfe")]
+visible = false
+position = Vector2(-32, -56)
+scale = Vector2(1, 0.61)
+
+[node name="LaserMirror2" parent="." instance=ExtResource("3_4ljfe")]
+visible = false
+position = Vector2(-12, -32)
+scale = Vector2(0.38, 1)

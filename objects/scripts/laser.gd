@@ -27,6 +27,13 @@ func _process(_delta: float) -> void:
 		beam.direction = direction;
 
 func _on_laser_beam_mirror_enter(beam_node: Node2D, mirror_node: Node2D, collide_pos: Vector2):
+	if (beam_node.direction == Globals.Direction.DOWN) and (mirror_node.direction == Globals.Direction.UP):
+		return;
+	if (beam_node.direction == Globals.Direction.RIGHT) and (mirror_node.direction == Globals.Direction.LEFT):
+		return;
+	if (beam_node.direction == Globals.Direction.LEFT) and (mirror_node.direction == Globals.Direction.RIGHT):
+		return;
+	
 	var next_beam = null;
 	
 	for child in beam_node.get_children():

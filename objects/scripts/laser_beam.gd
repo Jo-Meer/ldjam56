@@ -23,6 +23,7 @@ var meets_mirror: bool = false;
 var depth = 0;
 
 var active_sensors = [];
+@onready var last_pos = global_position;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,14 +41,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	update_raycast_target();
+	update_raycast_direction();
 
 	#if not create_timer.is_stopped():
 		#return
 	
 	update_laser_path();
 
-func update_raycast_target():
+func update_raycast_direction():
 	if raycast == null:
 		return
 	
@@ -77,7 +78,6 @@ func update_laser_path():
 	var local_col_point = to_local(col_point);
 	
 	if not check_col_point_direction(local_col_point):
-		print("no", col_point, " ", direction)
 		return false;
 		
 	check_mirror_hits(col_node, col_point);
@@ -85,8 +85,8 @@ func update_laser_path():
 	if local_col_point == path_endpoint:
 		return
 	
-	var vertical = local_col_point.y != 0;
-	var horizontal = local_col_point.x != 0;
+	var vertical = abs(local_col_point.y) > abs(local_col_point.x);
+	var horizontal = abs(local_col_point.x) > abs(local_col_point.y)
 	
 	# update beam area 2d
 	var x_size = max(abs(local_col_point.x), 2);

@@ -10,7 +10,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aprjb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33wbm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbfpq"]
 atlas = ExtResource("2_wfcqg")
@@ -253,7 +253,7 @@ collision_layer = 256
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BeamArea"]
-shape = SubResource("RectangleShape2D_aprjb")
+shape = SubResource("RectangleShape2D_33wbm")
 debug_color = Color(0.653333, 0, 0.7, 0.419608)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
