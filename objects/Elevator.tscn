@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://x5xxk5juxypj"]
+[gd_scene load_steps=5 format=3 uid="uid://x5xxk5juxypj"]
 
 [ext_resource type="Script" path="res://objects/scripts/elevator.gd" id="1_bfmep"]
 [ext_resource type="AudioStream" uid="uid://cbvt8i3c2wq33" path="res://sounds/Aufzüge/Aufzug-01.wav" id="2_mrag0"]
 [ext_resource type="AudioStream" uid="uid://cp3abejpkalmq" path="res://sounds/Aufzüge/Aufzug-02.wav" id="3_p0omp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cft0f"]
+size = Vector2(64, 64)
 
 [node name="Elevator" type="StaticBody2D" groups=["activatable", "elevator"]]
 collision_layer = 64
@@ -20,3 +23,7 @@ stream = ExtResource("2_mrag0")
 
 [node name="activate_snd_2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_p0omp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_cft0f")
